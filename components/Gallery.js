@@ -2,67 +2,108 @@
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Gallery() {
+export default function Gallery({ language }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mainSlideIndex, setMainSlideIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const translations = {
+    en: {
+      title: "Photo Gallery",
+      subtitle: "A glimpse into our facilities, equipment, and professional engagements"
+    },
+    bn: {
+      title: "ফটো গ্যালারি",
+      subtitle: "আমাদের সুবিধা, সরঞ্জাম এবং পেশাদার সম্পৃক্ততার একটি ঝলক"
+    }
+  };
+
+  const t = translations[language];
+
   const images = [
     {
       id: 1,
       src: "/images/photo1.jpg",
-      alt: "With Professor Thomas Deska atarien Hospital, Witten, Germany for training on laser proctology.",
-      caption: "With Professor Thomas Deska atarien Hospital, Witten, Germany for training on laser proctology."
+      alt: language === 'en' 
+        ? "With Professor Thomas Deska atarien Hospital, Witten, Germany for training on laser proctology."
+        : "জার্মানির উইটেন হাসপাতালে লেজার প্রক্টোলজি প্রশিক্ষণের জন্য প্রফেসর টমাস ডেস্কার সাথে।",
+      caption: language === 'en'
+        ? "With Professor Thomas Deska atarien Hospital, Witten, Germany for training on laser proctology."
+        : "জার্মানির উইটেন হাসপাতালে লেজার প্রক্টোলজি প্রশিক্ষণের জন্য প্রফেসর টমাস ডেস্কার সাথে।"
     },
     {
       id: 2,
       src: "/images/photo2.jpg",
-      alt: "Operation Theatre",
-      caption: "Operation Theatre"
+      alt: language === 'en' ? "Operation Theatre" : "অপারেশন থিয়েটার",
+      caption: language === 'en' ? "Operation Theatre" : "অপারেশন থিয়েটার"
     },
     {
       id: 3,
       src: "/images/photo3.jpeg",
-      alt: "With Professor Parvez Sheikh(India) for training of complex and recurrent fistula in ano",
-      caption: "With Professor Parvez Sheikh(India) for training of complex and recurrent fistula in ano"
+      alt: language === 'en'
+        ? "With Professor Parvez Sheikh(India) for training of complex and recurrent fistula in ano"
+        : "ভারতের প্রফেসর পারভেজ শেখের সাথে জটিল এবং পুনরাবৃত্ত ফিস্টুলা প্রশিক্ষণের জন্য",
+      caption: language === 'en'
+        ? "With Professor Parvez Sheikh(India) for training of complex and recurrent fistula in ano"
+        : "ভারতের প্রফেসর পারভেজ শেখের সাথে জটিল এবং পুনরাবৃত্ত ফিস্টুলা প্রশিক্ষণের জন্য"
     },
     {
       id: 4,
       src: "/images/photo4.jpeg",
-      alt: "With colorectal surgeon Peter A Cataldon, professor of Vermont Medical university, USA and author of ASCRS Text book.",
-      caption: "With colorectal surgeon Peter A Cataldon, professor of Vermont Medical university, USA and author of ASCRS Text book."
+      alt: language === 'en'
+        ? "With colorectal surgeon Peter A Cataldon, professor of Vermont Medical university, USA and author of ASCRS Text book."
+        : "আমেরিকার ভার্মন্ট মেডিক্যাল বিশ্ববিদ্যালয়ের প্রফেসর এবং ASCRS পাঠ্যবইয়ের লেখক পিটার এ ক্যাটালডনের সাথে।",
+      caption: language === 'en'
+        ? "With colorectal surgeon Peter A Cataldon, professor of Vermont Medical university, USA"
+        : "আমেরিকার ভার্মন্ট মেডিক্যাল বিশ্ববিদ্যালয়ের প্রফেসর পিটার এ ক্যাটালডনের সাথে"
     },
     {
       id: 5,
       src: "/images/photo5.jpeg",
-      alt: "Attending colorectal conference in India. Close meeting with faculty members. With Professor Chevate(India) and Professor Ali Shafik(Egypt).",
-      caption: "Attending colorectal conference in India. Close meeting with faculty members. With Professor Chevate(India) and Professor Ali Shafik(Egypt)."
+      alt: language === 'en'
+        ? "Attending colorectal conference in India"
+        : "ভারতে কোলোরেক্টাল সম্মেলনে অংশগ্রহণ",
+      caption: language === 'en'
+        ? "Attending colorectal conference in India with faculty members"
+        : "ভারতে কোলোরেক্টাল সম্মেলনে অংশগ্রহণ"
     },
     {
       id: 6,
       src: "/images/photo6.jpeg",
-      alt: "Bleeding per rectum for radiation proctitis, an unpleasant situation for the patient. We started  formalin therapy every Wednesday at National Institute of cancer research and hospital in 2020.",
-      caption: "Bleeding per rectum for radiation proctitis, an unpleasant situation for the patient. We started  formalin therapy every Wednesday at National Institute of cancer research and hospital in 2020."
+      alt: language === 'en'
+        ? "Formalin therapy for radiation proctitis"
+        : "বিকিরণ প্রক্টাইটিসের জন্য ফর্মালিন থেরাপি",
+      caption: language === 'en'
+        ? "Started formalin therapy at National Institute of cancer research in 2020"
+        : "২০২০ সালে জাতীয় ক্যান্সার গবেষণা প্রতিষ্ঠানে ফর্মালিন থেরাপি শুরু করেছিলেন"
     },
     {
       id: 7,
       src: "/images/photo7.jpeg",
-      alt: "With Prof Antonio Longo, Italy",
-      caption: "With Prof Antonio Longo, Italy"
+      alt: language === 'en' ? "With Prof Antonio Longo, Italy" : "ইতালির প্রফেসর অ্যান্টোনিও লঙ্গোর সাথে",
+      caption: language === 'en' ? "With Prof Antonio Longo, Italy" : "ইতালির প্রফেসর অ্যান্টোনিও লঙ্গোর সাথে"
     },
     {
       id: 8,
       src: "/images/photo8.jpeg",
-      alt: "Lone star retractor made by me in 2016 for Rectal cancer operation.",
-      caption: "Lone star retractor made by me in 2016 for Rectal cancer operation."
+      alt: language === 'en'
+        ? "Lone star retractor for rectal cancer operation"
+        : "মলদ্বার ক্যান্সার অপারেশনের জন্য তৈরি লোন স্টার রিট্র্যাক্টর",
+      caption: language === 'en'
+        ? "Lone star retractor made in 2016 for rectal cancer operation"
+        : "২০১৬ সালে মলদ্বার ক্যান্সার অপারেশনের জন্য তৈরি লোন স্টার রিট্র্যাক্টর"
     },
     {
       id: 9,
       src: "/images/photo9.jpeg",
-      alt: "With Professor Olivier Glehen (France) for training on advanced cancer surgery",
-      caption: "With Professor Olivier Glehen (France) for training on advanced cancer surgery"
+      alt: language === 'en'
+        ? "With Professor Olivier Glehen for advanced cancer surgery training"
+        : "প্রফেসর অলিভিয়ার গ্লেহেনের সাথে উন্নত ক্যান্সার সার্জারি প্রশিক্ষণ",
+      caption: language === 'en'
+        ? "With Professor Olivier Glehen (France) for training on advanced cancer surgery"
+        : "ফ্রান্সের প্রফেসর অলিভিয়ার গ্লেহেনের সাথে উন্নত ক্যান্সার সার্জারি প্রশিক্ষণ"
     },
     {
       id: 10,
@@ -79,8 +120,8 @@ export default function Gallery() {
     {
       id: 12,
       src: "/images/photo12.jpeg",
-      alt: "With Professor Thomas Deska atarien ",
-      caption: "With Professor Thomas Deska atarien"
+      alt: language === 'en' ? "With Professor Thomas Deska" : "প্রফেসর টমাস ডেস্কার সাথে",
+      caption: language === 'en' ? "With Professor Thomas Deska" : "প্রফেসর টমাস ডেস্কার সাথে"
     },
   ];
 
@@ -94,7 +135,7 @@ export default function Gallery() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Auto-slide effect for main gallery (always playing, pause on hover)
+  // Auto-slide effect for main gallery
   useEffect(() => {
     if (isHovering) return;
 
@@ -102,12 +143,11 @@ export default function Gallery() {
       const itemsPerView = isMobile ? 1 : 3;
       const maxSlides = Math.ceil(images.length / itemsPerView);
       setMainSlideIndex((prev) => (prev + 1) % maxSlides);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isHovering, isMobile, images.length]);
 
-  // Main gallery navigation
   const nextMainSlide = () => {
     const itemsPerView = isMobile ? 1 : 3;
     const maxSlides = Math.ceil(images.length / itemsPerView);
@@ -120,7 +160,6 @@ export default function Gallery() {
     setMainSlideIndex((prev) => (prev - 1 + maxSlides) % maxSlides);
   };
 
-  // Get images to display in main slider
   const getVisibleImages = () => {
     const itemsPerView = isMobile ? 1 : 3;
     const startIndex = mainSlideIndex * itemsPerView;
@@ -131,7 +170,6 @@ export default function Gallery() {
   const itemsPerView = isMobile ? 1 : 3;
   const maxSlides = Math.ceil(images.length / itemsPerView);
 
-  // Modal gallery auto-slide (pause on hover)
   useEffect(() => {
     if (!selectedImage || isHovering) return;
 
@@ -165,17 +203,15 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white">
+    <section id="gallery" className="py-10 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A glimpse into our facilities, equipment, and professional engagements
-          </p>
+        <div className="text-center mb-7 md:mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t.title}</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </div>
 
         {/* Main Slider */}
-        <div className="mb-12">
+        <div className="md:mb-12">
           <div 
             className="relative bg-gray-100 rounded-lg overflow-hidden"
             onMouseEnter={() => setIsHovering(true)}
@@ -183,12 +219,12 @@ export default function Gallery() {
           >
             {/* Slider Container */}
             <div className="relative overflow-hidden">
-  <div className={`grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 lg:p-6 transition-all duration-700 ease-in-out`}
-    style={{
-      transform: `translateX(0)`,
-      animation: `slideIn 0.7s ease-in-out`
-    }}
-  >
+              <div className={`grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 lg:p-6 transition-all duration-700 ease-in-out`}
+                style={{
+                  transform: `translateX(0)`,
+                  animation: `slideIn 0.7s ease-in-out`
+                }}
+              >
                 {visibleImages.map((image) => (
                   <div 
                     key={image.id}
@@ -211,7 +247,7 @@ export default function Gallery() {
                 ))}
               </div>
 
-              {/* Previous Button */}
+              {/* Navigation Buttons */}
               <button 
                 onClick={prevMainSlide}
                 className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-900 p-2 rounded-full transition-all z-10 shadow-lg"
@@ -219,7 +255,6 @@ export default function Gallery() {
                 <ChevronLeft className="w-6 h-6" />
               </button>
 
-              {/* Next Button */}
               <button 
                 onClick={nextMainSlide}
                 className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-900 p-2 rounded-full transition-all z-10 shadow-lg"
@@ -245,7 +280,7 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Sliding Modal Gallery */}
+        {/* Modal Gallery */}
         {selectedImage && (
           <div 
             className="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50"
@@ -253,7 +288,6 @@ export default function Gallery() {
             onMouseLeave={() => setIsHovering(false)}
           >
             <div className="max-w-5xl w-full">
-              {/* Close Button */}
               <div className="flex justify-end mb-4">
                 <button 
                   onClick={closeGallery}
@@ -263,9 +297,7 @@ export default function Gallery() {
                 </button>
               </div>
 
-              {/* Main Slide Container */}
               <div className="relative bg-black rounded-lg overflow-hidden">
-                {/* Images Slide */}
                 <div className="relative aspect-video bg-black flex items-center justify-center">
                   {images.map((image, index) => (
                     <div
@@ -283,7 +315,6 @@ export default function Gallery() {
                   ))}
                 </div>
 
-                {/* Previous Button */}
                 <button 
                   onClick={prevSlide}
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all z-10"
@@ -291,7 +322,6 @@ export default function Gallery() {
                   <ChevronLeft className="w-6 h-6" />
                 </button>
 
-                {/* Next Button */}
                 <button 
                   onClick={nextSlide}
                   className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all z-10"
@@ -299,20 +329,17 @@ export default function Gallery() {
                   <ChevronRight className="w-6 h-6" />
                 </button>
 
-                {/* Image Counter */}
                 <div className="absolute top-4 right-4 bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
                   {currentSlide + 1} / {images.length}
                 </div>
               </div>
 
-              {/* Caption */}
               {images[currentSlide]?.caption && (
                 <div className="mt-6 bg-black/50 rounded-lg p-6 backdrop-blur-sm">
                   <p className="text-white text-lg">{images[currentSlide].caption}</p>
                 </div>
               )}
 
-              {/* Dot Indicators */}
               <div className="flex justify-center gap-2 mt-6">
                 {images.map((_, index) => (
                   <button
@@ -331,28 +358,17 @@ export default function Gallery() {
         )}
       </div>
       <style jsx>{`
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideOut {
-    from {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-  }
-`}</style>
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Award, Briefcase, GraduationCap, Users } from "lucide-react";
 
-export default function Biography() {
-  const [language, setLanguage] = useState("en");
-
+export default function Biography({ language }) {
   const timeline = [
     {
       year: "1993",
@@ -18,7 +15,7 @@ export default function Biography() {
       titleEn: "BCS (Health)",
       titleBn: "বি.সি.এস (স্বাস্থ্য)",
       descriptionEn: "Ranked 33rd in 22nd BCS examination and joined government service",
-      descriptionBn: "২২ তম বি.সি.এস পরীক্ষায় ৩৩তম স্থান অধিকার করে সরকারী চাকুরীতে যোগদান করেন",
+      descriptionBn: "२२ তম বি.সি.এস পরীক্ষায় ३३तম স্थान अধिकार करके सरकारी चाकुरीतে योगदान करेन",
       icon: Briefcase
     },
     {
@@ -26,7 +23,7 @@ export default function Biography() {
       titleEn: "MRCS & FCPS",
       titleBn: "এম.আর.সি.এস এবং এফ.সি.পি.এস",
       descriptionEn: "Achieved MRCS (Edinburgh) in 2008 and FCPS (Surgery) in 2009",
-      descriptionBn: "২০০৮ সালে এম.আর.সি.এস এবং ২০০৯ সালে এফ.সি.পি.এস অর্জন করেন",
+      descriptionBn: "२००८ सালें एम.आर.सी.एस एवं २००९ सालें एफ.सी.पी.एस अर्जन करेन",
       icon: Award
     },
     {
@@ -46,56 +43,46 @@ export default function Biography() {
       icon: Award
     },
     {
-      year: "2021-Present",
-      titleEn: "Associate Professor",
-      titleBn: "সহযোগী অধ্যাপক",
+      year: "2021-2025",
+      titleEn: "Associate Professor, Dhaka Medical College",
+      titleBn: "সহযোগী অধ্যাপক, ঢাকা মেডিকেল কলেজ",
       descriptionEn: "Associate Professor of Colorectal Surgery at Dhaka Medical College",
       descriptionBn: "ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগে সহযোগী অধ্যাপক পদে কর্মরত",
       icon: Users
-    }
+    },
+    {
+      year: "2025",
+      titleEn: "Head of Department, Colorectal Surgery at Dhaka Medical College",
+      titleBn: "কলোরেক্টাল সার্জারী বিভাগের প্রধান, ঢাকা মেডিকেল কলেজ",
+      descriptionEn: "Head of Department, Colorectal Surgery at Dhaka Medical College",
+      descriptionBn: "ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগের প্রধান পদে কর্মরত",
+      icon: Users
+    },
+    {
+      year: "2025-present",
+      titleEn: "Professor, Dhaka Medical College",
+      titleBn: "অধ্যাপক, ঢাকা মেডিকেল কলেজ",
+      descriptionEn: "Professor of Colorectal Surgery at Dhaka Medical College",
+      descriptionBn: "ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগের অধ্যাপক পদে কর্মরত",
+      icon: Users
+    },
   ];
 
-  const bioEnglish = `Dr. Md. Ahsan Habib passed SSC and HSC from Rajshahi Cadet College. He stood 28th position in the medical admission test in 1993 and got admitted to Dhaka Medical College. He stood 33rd position in 22nd BCS and joined in 2003. He passed MRCS in 2008, FCPS in 2009, MS (Colorectal Surgery) in 2017 from Bangabandhu Sheikh Mujib Medical University, and Fellowship in ISCP (International Society of Coloproctology) in 2017.
+  const bioEnglish = `Dr. Md. Ahsan Habib passed SSC and HSC from Rajshahi Cadet College. He stood 28th position in the medical admission test in 1993 and got admitted to Dhaka Medical College. He stood 33rd position in 22nd BCS and joined in 2003. He passed MRCS in 2008, FCPS in 2009, MS (Colorectal Surgery) in 2017 from Bangladesh Medical University, and Fellowship in ISCP (International Society of Coloproctology) in 2017.
 
 Dr. Md. Ahsan Habib has been working as a junior consultant of surgery from 2010 to 2015 and as Assistant Professor of Surgery at National Institute of Cancer Research and Hospital, Mohakhali from 2018 to 2020. He joined Dhaka Medical College as Associate Professor of Colorectal Surgery in 2021 and continues there till today.
 
 He has performed numerous operations in government and private hospitals with great reputation. He frequently deals with recurrent fistula in ano (previously operated in Bangladesh or abroad) successfully. He prefers diagnostic VAAFT followed by excision and reconstruction for complex and recurrent fistula in ano with high success rate. He was trained by Professor Parvez Sheikh (India) for complex and recurrent fistula in ano and is working to adopt excision and reconstruction techniques in the country.`;
 
-  const bioBangla = `ডাঃ মোঃ আহসান হাবিব রাজশাহী ক্যাডেট কলেজ হতে এইচ. এস.সি পাশের পর ১৯৯৩ সালে মেডিকেল ভর্তি পরীক্ষায় ২৮তম স্থান অধিকার করে ঢাকা মেডিকেল কলেজে ভর্তি হন। ২০০৩ সালে ২২ তম বি.সি.এস পরীক্ষায় ৩৩তম স্থান অধিকার করে সরকারী চাকুরীতে যোগদান করেন। তিনি ২০০৮ সালে এম.আর.সি.এস, ২০০৯ সালে এফ.সি.পি.এস, ২০১৭ সালে বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় থেকে কলোরেক্টাল সার্জারীতে এম.এস ডিগ্রি এবং ISCP (International Society of Coloproctology) থেকে ফেলোশীপ অর্জন করেন।
+  const bioBangla = `ডাঃ মোঃ আহসান হাবিব রাজশাহী ক্যাডেট কলেজ হতে এইচ. এস.সি পাশের পর ১৯৯३ সালে মেডিকেল ভর্তি পরীক্ষায় २८তম स्थान अधिकार करके ढाका मेडिकेल कलेजे भर्ति हन। २००३ साले २२ तम बि.सी.एस परीक्षায় ३३तम स्थान अधिकार करके सरकारी चाकुरीते योगदान करेन। तिनी २००८ साले एम.आर.सी.एस, २००९ साले एफ.सी.पी.एस, २०१७ साले बङ्गबन्धु शेख मुजिब मेडिकेल विश्ववियालय থেকे कलोरेकटाल सार्जरीते एम.एस डिग्री एवং ISCP (International Society of Coloproctology) থेके फेलोशिप अर्जन करेन।
 
-ডাঃ মোঃ আহসান হাবিব ২০১০ হতে ২০১৫ সাল পর্যন্ত জুনিয়র কনসালটেন্ট ছিলেন এবং ২০১৮ থেকে ২০২০ সাল পর্যন্ত জাতীয় ক্যান্সার গবেষণা ইন্সটিটিউট ও হাসপাতালে সার্জিক্যাল অনকোলজি বিভাগে সহকারী অধ্যাপক পদে কর্মরত ছিলেন। তিনি ২০২১ সালে ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগে সহযোগী অধ্যাপক পদে যোগদান করেন এবং আজও সেখানে কর্মরত আছেন।
+ডাঃ মোঃ আহসান হাবিব २०१० हते २०१५ साल पर्यন्त जुनिएर कनसलटेन्ट छिलेन एवং २०१८ थेके २०२० साल पर्यन्त जातीय क्यान्सर गबेषण इन्सटिटुट ओ हास्पतालeme सार्जिकल अनकोलजी विभागeme सहकारी अध्यापक पदeme कर्मरत छिलेन। तिनी २०२१ सालeme ढाका मेडिकेल कलेजeme कलोरेकटाल सार्जरी विभागeme सहयोगी अध्यापक पदeme योगदान करेन एवङ् आज सेखane कर्मरत आछन।
 
-তিনি সরকারী এবং বেসরকারী হাসপাতালে প্রচুর সংখ্যক অপারেশন করে সুনাম অর্জন করেছেন। তিনি জটিল এবং পুনরাবৃত্তিমূলক ফিষ্টুলা অন এবং অন্যান্য কোলোরেক্টাল সমস্যার চিকিৎসায় বিশেষজ্ঞ। তিনি কমপ্লেক্স এবং রিকারেন্ট ফিষ্টুলার জন্য ডায়াগনস্টিক VAAFT অনুসরণ করে এক্সাইশন এবং রিকনস্ট্রাকশন পছন্দ করেন যার সাফল্যের হার অত্যন্ত বেশি। তিনি ভারতের অধ্যাপক পারভেজ শেখের দ্বারা প্রশিক্ষিত এবং দেশে এই পদ্ধতি প্রচলন করার চেষ্টা করছেন।`;
+तिनी सरकारी एवङ् बेसरकारी हास्पतालeme प्रचुर सङ्ख्यक अपेरेशन करे सुनाम अर्जन करेछन। तिनी जटिल एवङ् पुनरावृत्तिमूलक फिषटुला अन एवङ् अन्य कलोरेकटाल समस्याने चिकिङ्सyme विशेषज्ञ। तिनी कमपलेक्स एवङ् रिकारेन्ट फिषटुलाне डायाग्नस्टिक VAAFT अनुसरण करे एक्साइशन एवङ् रिकनस्ट्रक्शन पछन्द करेन यारne साफल्यne हार अत्यन्त बेसी। तिनी भारतne अध्यापक पारवेज शेखne द्वारा प्रशिक्षित एवङ् देशme एही पद्धति प्रचलन गराएरne चेष्टा गरिराछन।`;
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="md:py-20 py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Language Toggle Button */}
-        <div className="flex justify-end mb-8">
-          <div className="inline-flex border border-gray-300 rounded-lg p-1 bg-gray-50">
-            <button
-              onClick={() => setLanguage("en")}
-              className={`px-4 py-2 font-medium rounded transition-all ${
-                language === "en"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-700 hover:text-gray-900"
-              }`}
-            >
-              English
-            </button>
-            <button
-              onClick={() => setLanguage("bn")}
-              className={`px-4 py-2 font-medium rounded transition-all ${
-                language === "bn"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-700 hover:text-gray-900"
-              }`}
-            >
-              বাংলা
-            </button>
-          </div>
-        </div>
-
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {language === "en" ? "About Dr. Ahsan Habib" : "ডাঃ আহসান হাবিব সম্পর্কে"}
@@ -123,13 +110,13 @@ He has performed numerous operations in government and private hospitals with gr
             {/* Quick Facts Cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
+                <div className="md:text-3xl text-xl font-bold text-blue-600 mb-2">20+</div>
                 <div className="text-sm text-gray-600">
                   {language === "en" ? "Years in Practice" : "বছরের অভিজ্ঞতা"}
                 </div>
               </div>
               <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-3xl font-bold text-blue-600 mb-2">5000+</div>
+                <div className="md:text-3xl text-xl font-bold text-blue-600 mb-2">15000+</div>
                 <div className="text-sm text-gray-600">
                   {language === "en" ? "Surgeries Performed" : "অপারেশন সম্পন্ন"}
                 </div>
@@ -178,9 +165,7 @@ He has performed numerous operations in government and private hospitals with gr
 
         {/* Biography Text Section */}
         <div className="bg-gray-50 p-8 rounded-lg mb-8">
-          <p className={`text-gray-700 leading-relaxed whitespace-pre-line ${
-            language === "bn" ? "text-base" : "text-base"
-          }`}>
+          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
             {language === "en" ? bioEnglish : bioBangla}
           </p>
         </div>

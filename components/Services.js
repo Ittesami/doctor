@@ -1,16 +1,16 @@
+
 import { Activity, Zap, Heart, Stethoscope, Pill, AlertCircle, Scissors, Shield, X } from "lucide-react";
 import { useState } from "react";
-
-export default function Services() {
-  const [selectedService, setSelectedService] = useState(null);
-
+export default function Services({ language }) {
   const services = [
     {
       id: 1,
-      title: "Piles (Haemorrhoids)",
+      titleEn: "Piles (Haemorrhoids)",
+      titleBn: "অর্শ্বরোগ (হেমোরয়েডস)",
       icon: Activity,
-      shortDescription: "Advanced laser treatment for hemorrhoids with minimal pain and quick recovery.",
-      fullDescription: `Piles (Haemorrhoids) is a bunch of broadened veins in the anus and the lower rectum. The rectum is the last range of digestive tract which continues as the anus, from where stools are excreted.
+      shortDescriptionEn: "Advanced laser treatment for hemorrhoids with minimal pain and quick recovery.",
+      shortDescriptionBn: "অর্শ্বরোগের জন্য অ্যাডভান্সড লেজার চিকিৎসা ন্যূনতম ব্যথা এবং দ্রুত পুনরুদ্ধার সহ।",
+      fullDescriptionEn: `Piles (Haemorrhoids) is a bunch of broadened veins in the anus and the lower rectum. The rectum is the last range of digestive tract which continues as the anus, from where stools are excreted.
 
 Piles are generally classified into two types:
 1. Internal piles start in the lower rectum and don't come out of the anal opening
@@ -40,14 +40,18 @@ LASER HEMORRHOIDOPLASTY ADVANTAGES:
 - No incontinence
 - Can be done in post-CABG and postpartum patients
 - Several repetitions possible`,
+      fullDescriptionBn: `অর্শ্বরোগ (হেমোরয়েডস) হল পায়ুপথ এবং নিম্ন মলাশয়ে প্রসারিত শিরার একটি গুচ্ছ।`,
+      image: "/images/service-laser.jpg",
       treatments: ["Laser Hemorrhoidoplasty", "Conservative Management", "Minimally Invasive Procedures", "Rubber Band Ligation", "Sclerotherapy"]
     },
     {
       id: 2,
-      title: "Anal Fissure",
+      titleEn: "Anal Fissure",
+      titleBn: "পায়ু ফাটল",
       icon: Zap,
-      shortDescription: "Laser-assisted treatment for anal fissures ensuring quick healing and pain relief.",
-      fullDescription: `An anal fissure is a little tear or split in the coating of the anus. It might happen while passing hard stools.
+      shortDescriptionEn: "Laser-assisted treatment for anal fissures ensuring quick healing and pain relief.",
+      shortDescriptionBn: "পায়ু ফাটলের জন্য লেজার-সহায়তাপ্রাপ্ত চিকিৎসা দ্রুত নিরাময় এবং ব্যথা উপশম নিশ্চিত করে।",
+      fullDescriptionEn: `An anal fissure is a little tear or split in the coating of the anus. It might happen while passing hard stools.
 
 It can bring about sharp pain and bleeding during and after defecations. It might likewise bring about tingling and blaze in the anal region. Sometimes the pain gets too serious, that patient suffers vertigo and perspiration on passing stool. Few patients suffer discomfort while sitting.
 
@@ -76,14 +80,18 @@ ADVANTAGES OF LASER SPHINCTEROTOMY:
 - Less likely to need postoperative dressing
 - Can be done in post CABG (Cardiac), Pregnant & Lactational Patients
 - No loss of stool control (Incontinence)`,
+      fullDescriptionBn: `পায়ু ফাটল হল পায়ুমার্জন আবরণে একটি ছোট্ট ছিঁড়ে যাওয়া বা বিভাজন।`,
+      image: "/images/service-fissure.jpg",
       treatments: ["Laser Sphincterotomy", "Sitz Bath", "Local Ointment Application", "Laxatives", "Closed Lateral Sphincterotomy"]
     },
     {
       id: 3,
-      title: "Anal Fistula",
+      titleEn: "Anal Fistula",
+      titleBn: "ফিস্টুলা ইন অ্যানো",
       icon: Heart,
-      shortDescription: "Specialized VAAFT technique for complex and recurrent fistulas with high success rates.",
-      fullDescription: `An anal fistula is a little channel that is created between the lumen of the anus and the skin close to the perianal area.
+      shortDescriptionEn: "Specialized VAAFT technique for complex and recurrent fistulas with high success rates.",
+      shortDescriptionBn: "জটিল এবং পুনরাবৃত্ত ফিস্টুলার জন্য বিশেষায়িত VAAFT কৌশল উচ্চ সাফল্যের হার সহ।",
+      fullDescriptionEn: `An anal fistula is a little channel that is created between the lumen of the anus and the skin close to the perianal area.
 
 At times, it causes persistent seepage. In different cases, where the outside of the channel opening shuts, the outcome might be intermittent anal abscesses. The main cure for an anal fistula is surgery.
 
@@ -114,171 +122,130 @@ ADVANTAGES OF LASER TREATMENT:
 - No loss of stool control (Incontinence) - no sphincter damage
 - Uncommon recurrence of Fistula after Laser treatment
 - Superior operator control`,
+      fullDescriptionBn: `ফিস্টুলা ইন অ্যানো হল পায়ুর লুমেন এবং পেরিয়ানাল এলাকার কাছের ত্বকের মধ্যে তৈরি একটি ছোট্ট চ্যানেল।`,
+      image: "/images/service-fistula.jpg",
       treatments: ["VAAFT (Video-Assisted Anal Fistula Treatment)", "Laser Fistulotomy", "Excision & Reconstruction", "Open Fistulectomy", "Seton Tie"]
     },
     {
       id: 4,
-      title: "Rectal Prolapse",
+      titleEn: "Rectal Prolapse",
+      titleBn: "রেক্টাল প্রোল্যাপ্স",
       icon: Stethoscope,
-      shortDescription: "Surgical correction of rectal prolapse with modern techniques.",
-      fullDescription: `Rectal Prolapse is an illness in which Rectum turns out during defecation partially or totally. Sometimes it goes automatically or in some cases the patient needs to do it manually. This can happen for men, females, and kids. While this might be excruciating, it can likewise be reasonably mortifying and frequently has an earth-shattering negative effect on patients' personal satisfaction.
-
-TYPES OF RECTAL PROLAPSE:
-1. Full-thickness rectal prolapse is when some portion of the mass of your rectum comes out via your rear-end. This is the most well-known sort.
-2. Mucosal prolapse is when just the covering (mucosa) of your rectum juts out by means of your anus.
-3. Internal rectal prolapse is the point at which your rectum twists in on itself yet doesn't push out through your rear-end.
-
-SYMPTOMS OF RECTAL PROLAPSE:
-- A bulge or swelling leaving you rear-ended
-- May just happen when you have defecation, but if it deteriorates, can happen when you cough, sneeze or stand up
-- Find it dangerous to control your defecations
-- See some brilliant red blood leaving your rectum
-- Have some uneasiness
-- Develop an ulcer on the segment of your rectum that projects out
-
-CAUSES OF RECTAL PROLAPSE:
-- Excessive straining
-- Chronic Constipation
-- Chronic Diarrhoea
-- Weakness of Rectum Supporting Muscles & Ligaments
-- Some other unknown causative factors`,
+      shortDescriptionEn: "Surgical correction of rectal prolapse with modern techniques.",
+      shortDescriptionBn: "আধুনিক কৌশলের সাথে রেক্টাল প্রোল্যাপ্সের সার্জিক্যাল সংশোধন।",
+      fullDescriptionEn: `Rectal Prolapse is an illness in which Rectum turns out during defecation partially or totally. Sometimes it goes automatically or in some cases the patient needs to do it manually. This can happen for men, females, and kids. While this might be excruciating, it can likewise be reasonably mortifying and frequently has an earth-shattering negative effect on patients' personal satisfaction.`,
+      fullDescriptionBn: `রেক্টাল প্রোল্যাপ্স হল এমন একটি অসুখ যেখানে মলত্যাগের সময় মলাশয় আংশিক বা সম্পূর্ণভাবে বেরিয়ে আসে।`,
+      image: "/images/service-prolapse.jpg",
       treatments: ["Laparoscopic Rectopexy", "Delorme's Procedure", "Conservative Management", "Surgical Correction"]
     },
     {
       id: 5,
-      title: "STARR Surgery",
+      titleEn: "STARR Surgery",
+      titleBn: "STARR সার্জারি",
       icon: Pill,
-      shortDescription: "Stapled Transanal Resection for chronic constipation and ODS.",
-      fullDescription: `We are providing Stapled Transanal Resection of the Rectum STARR Surgery for Chronic Constipation and Obstructed Defecation Syndrome (O.D.S).
+      shortDescriptionEn: "Advanced surgical treatment for obstructed defecation syndrome with minimal scarring.",
+      shortDescriptionBn: "বাধাপ্রাপ্ত মলত্যাগ সিন্ড্রোমের জন্য অ্যাডভান্সড সার্জিক্যাল চিকিৎসা ন্যূনতম দাগ সহ।",
+      fullDescriptionEn: `STARR Surgery is a surgical system that is performed through the anus, requires no outside entry points, and leaves no obvious scars.
 
-STARR Surgery is a surgical system that is performed through the anus, requires no outside entry points, and leaves no obvious scars.
-
-When a patient has symptoms of chronic constipation, they may be suffering from Obstructed Defecation Syndrome or ODS. ODS is associated with deformities in the rectum, such as the formation of rectocele (prolapse of the wall between the rectum and the vagina) or telescoping of the intestinal wall.
-
-These abnormalities can cause bowel movements to become difficult, and often leave the patient with a feeling of incomplete evacuation.
-
-The STARR procedure is a new surgical procedure to help relieve these symptoms. It removes excess tissue in the rectum, reducing the deformities that contribute to ODS. After the STARR Surgery, the rectum is free from obstruction, allowing for a normal bowel movement.
-
-INDICATIONS FOR SURGERY:
-- When O.D.S. Longo's Score is > 7
-- Fecal incontinence, repeated straining
-- Digitation in rectum, perineum or vagina to aid defecation
-- External Prolapse
-- Enema Dependency
-- Excessive time spent in the toilet
-- Sense of incomplete or unsuccessful defecation`,
+When a patient has symptoms of chronic constipation, they may be suffering from Obstructed Defecation Syndrome or ODS. ODS is associated with deformities in the rectum, such as the formation of rectocele (prolapse of the wall between the rectum and the vagina) or telescoping of the intestinal wall.`,
+      fullDescriptionBn: `STARR সার্জারি হল একটি সার্জিক্যাল পদ্ধতি যা পায়ুর মাধ্যমে সঞ্চালিত হয়।`,
+      image: "/images/service-starr.jpg",
       treatments: ["STARR Procedure", "Post-operative Care", "Dietary Counseling", "Pelvic Floor Therapy"]
     },
     {
       id: 6,
-      title: "Perianal Abscess",
+      titleEn: "Perianal Abscess",
+      titleBn: "পেরিয়ানাল অ্যাবসেস",
       icon: AlertCircle,
-      shortDescription: "Immediate treatment for perianal abscesses to prevent complications.",
-      fullDescription: `Perianal Abscess is an agonizing condition in which a collection of pus develops near the rear-end. Most perianal abscesses are the consequence of disease from little anal glands.
+      shortDescriptionEn: "Immediate treatment for perianal abscesses to prevent complications.",
+      shortDescriptionBn: "পেরিয়ানাল অ্যাবসেসের জন্য জটিলতা প্রতিরোধের তাৎক্ষণিক চিকিৎসা।",
+      fullDescriptionEn: `Perianal Abscess is an agonizing condition in which a collection of pus develops near the rear-end. Most perianal abscesses are the consequence of disease from little anal glands.
 
-The most well-known sort of abscess is a perianal abscess. This frequently shows up as a difficult bubble-like swelling close to the rear-end. It might be red in shading and warm to the touch. Perianal abscesses situated in ischiorectal fossa are less normal and might be less obvious.
-
-Surgical cut and seepage is the most widely recognized treatment for a wide range of perianal abscesses and is normally effective.
-
-SYMPTOMS OF PERIANAL ABSCESS:
-Shallow anal abscesses are regularly connected with:
-- Pain, which is normally consistent, throbbing, and more terrible when taking a seat
-- Skin bothering around the anus, including swelling, redness, and delicacy
-- Discharge of pus
-- Constipation or pain related to solid discharges
-
-More profound Perianal abscesses may likewise be related with:
-- Fever
-- Chills
-- Malaise
-
-CAUSES OF PERIANAL ABSCESS:
-- Infection of an anal fissure
-- Sexually transmitted contamination
-- Blocked anal glands`,
+The most well-known sort of abscess is a perianal abscess. This frequently shows up as a difficult bubble-like swelling close to the rear-end. It might be red in shading and warm to the touch. Perianal abscesses situated in ischiorectal fossa are less regular and might be less obvious.`,
+      fullDescriptionBn: `পেরিয়ানাল অ্যাবসেস হল একটি যন্ত্রণাদায়ক অবস্থা যেখানে পায়ুর কাছে পুঁজের সংগ্রহ বিকশিত হয়।`,
+      image: "/images/service-abscess.jpg",
       treatments: ["Incision & Drainage", "Antibiotic Therapy", "Follow-up Care", "Abscess Management"]
     },
     {
       id: 7,
-      title: "Proctocolectomy",
+      titleEn: "Proctocolectomy",
+      titleBn: "প্রোক্টোকোলেক্টমি",
       icon: Scissors,
-      shortDescription: "Advanced colorectal surgery for inflammatory bowel disease and cancer.",
-      fullDescription: `In proctocolectomy, the large intestine and rectum are Removed, leaving the lower end of the small intestine (the ileum). The specialist sews the anus closed and makes a little opening called a stoma in the skin of the lower guts. The surgical methodology to make the stoma is called an ostomy.
-
-The ileum is associated with the stoma, making an opening to the outside of the body. The surgery that makes the opening of the digestive system is called an ileostomy. Stool empties into a little plastic pocket called an ostomy bag that is connected to the skin around the stoma.
-
-This methodology may likewise be required to treat certain birth abandons or to wipe out specific type of colon or rectal growth. Specialists may likewise play out this surgery on an emergency basis if the colon or rectum injured beyond repair.
-
-Add up to proctocolectomy with ileostomy surgery is done when other therapeutic treatment does not help issues with your digestive organ.
-
-THIS SURGERY MAY ALSO BE DONE IF YOU HAVE:
-- Colon or rectum cancer
-- Familial polyposis
-- Bleeding in your intestine
-- Birth defects that have damaged your intestines
-- Intestinal damage from an accident or injury`,
+      shortDescriptionEn: "Advanced colorectal surgery for inflammatory bowel disease and cancer.",
+      shortDescriptionBn: "প্রদাহজনক অন্ত্রের রোগ এবং ক্যান্সারের জন্য উন্নত কোলোরেক্টাল সার্জারি।",
+      fullDescriptionEn: `In proctocolectomy, the large intestine and rectum are Removed, leaving the lower end of the small intestine (the ileum). The specialist sews the anus closed and makes a little opening called a stoma in the skin of the lower guts.`,
+      fullDescriptionBn: `প্রোক্টোকোলেক্টমিতে, বৃহদন্ত্র এবং মলাশয় অপসারণ করা হয়, ছোট অন্ত্রের নীচের প্রান্ত রেখে যায়।`,
+      image: "/images/service-proctocolectomy.jpg",
       treatments: ["Total Proctocolectomy", "Restorative Procedures", "Stoma Care", "Ileostomy Management"]
     },
     {
       id: 8,
-      title: "Hernia Surgery",
+      titleEn: "Hernia Surgery",
+      titleBn: "হার্নিয়া সার্জারি",
       icon: Shield,
-      shortDescription: "Laparoscopic hernia repair with minimal scarring and faster recovery.",
-      fullDescription: `Hernia occurs when an inner part of the body, such as an organ or any fatty tissue, pushes or spills through a weak spot in the muscle or tissue wall around it. There are many different types of hernias.
-
-TYPES OF HERNIAS:
-
-AN INGUINAL HERNIA (inner groin):
-This is the most common type of a hernia, especially in men, and occurs when the intestines push through a weak spot or tear in the lower abdominal wall, often in the inguinal canal. This type of hernia is associated with aging and happens when the abdomen is stressed repeatedly.
-
-AN INCISION HERNIA (from an incision):
-Some people who have had abdominal surgery may have this condition. The intestines can push through the scar of the incision or the surrounding fabric.
-
-A FEMORAL HERNIA (outer groin):
-This condition is more prevalent in women than in men. It happens when your fatty tissue or part of your intestine spills into your groin at the top of your inner thigh.
-
-AN UMBILICAL HERNIA (belly button):
-This type of hernia occurs when the fatty tissue or part of the intestine pokes through the abdomen near the button of the belly. This condition may occur in infants if the opening in the abdomen through which the umbilical cord passes is not properly sealed after birth.
-
-HOW DOES HERNIA OCCUR?
-Hernias are usually caused by a combination of muscle weakness or connective tissue, caused by a disturbance or disruption in the natural tissue breakdown and repair cycle of the body. Increased pressure or stress in the weak tissue or muscles.
-
-TREATMENT:
-Surgery is the only hernia treatment. However, surgery can be riskier for patients with serious medical problems. With surgery, the weakened abdominal wall tissue can be secured and holes also closed.`,
+      shortDescriptionEn: "Laparoscopic hernia repair with minimal scarring and faster recovery.",
+      shortDescriptionBn: "ল্যাপারোস্কোপিক হার্নিয়া মেরামত ন্যূনতম দাগ এবং দ্রুত পুনরুদ্ধার সহ।",
+      fullDescriptionEn: `Hernia occurs when an inner part of the body, such as an organ or any fatty tissue, pushes or spills through a weak spot in the muscle or tissue wall around it. There are many different types of hernias.`,
+      fullDescriptionBn: `হার্নিয়া ঘটে যখন শরীরের অভ্যন্তরীণ অংশ, যেমন একটি অঙ্গ বা চর্বিযুক্ত টিস্যু, চারপাশের পেশী বা টিস্যু দেয়ালে একটি দুর্বল স্থান দিয়ে ঠেলে যায়।`,
+      image: "/images/service-hernia.jpg",
       treatments: ["Laparoscopic Hernia Repair", "Mesh Placement", "Open Hernia Surgery", "Day-care Surgery"]
     }
   ];
 
+  const [selectedService, setSelectedService] = useState(null);
+
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-10 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <div className="text-center mb-7 md:mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            {language === "en" ? "Our Services" : "আমাদের সেবা"}
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive colorectal care with advanced laser technology and minimally invasive techniques
+            {language === "en"
+              ? "Comprehensive colorectal care with advanced laser technology and minimally invasive techniques"
+              : "অ্যাডভান্সড লেজার প্রযুক্তি এবং ন্যূনতম আক্রমণাত্মক কৌশল সহ ব্যাপক কোলোরেক্টাল যত্ন"}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:mb-8">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const title = language === "en" ? service.titleEn : service.titleBn;
+            const shortDescription = language === "en" ? service.shortDescriptionEn : service.shortDescriptionBn;
+
             return (
               <div 
                 key={service.id}
-                className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg cursor-pointer transition-all transform hover:-translate-y-2"
+                className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg cursor-pointer transition-all transform hover:-translate-y-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setSelectedService(service)}
               >
-                <div className="w-12 h-12 rounded-md bg-blue-100 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-blue-600" />
+                {/* Service Image on Top */}
+                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-blue-600 overflow-hidden">
+                  <img 
+                    src={service.image}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-sm text-gray-600 line-clamp-3 mb-4">
-                  {service.shortDescription}
-                </p>
-                <button className="text-blue-600 hover:text-blue-700 font-medium text-sm">
-                  Learn More →
-                </button>
+
+                {/* Content */}
+                <div className="p-6">
+                  <div className="w-12 h-12 rounded-md bg-blue-100 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+                  <p className="text-sm text-gray-600 line-clamp-3 mb-4">
+                    {shortDescription}
+                  </p>
+                  <button className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                    {language === "en" ? "Learn More" : "আরও জানুন"} →
+                  </button>
+                </div>
               </div>
             );
           })}
@@ -293,7 +260,9 @@ Surgery is the only hernia treatment. However, surgery can be riskier for patien
                   <div className="w-16 h-16 rounded-md bg-blue-100 flex items-center justify-center mb-4">
                     {selectedService.icon && <selectedService.icon className="w-8 h-8 text-blue-600" />}
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">{selectedService.title}</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    {language === "en" ? selectedService.titleEn : selectedService.titleBn}
+                  </h2>
                 </div>
                 <button 
                   onClick={() => setSelectedService(null)}
@@ -303,35 +272,36 @@ Surgery is the only hernia treatment. However, surgery can be riskier for patien
                 </button>
               </div>
 
-              <div className="p-6 space-y-6 max-h-[60vh] overflow-y-auto">
-                <div>
-                  <p className="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-                    {selectedService.fullDescription}
+              <div className="p-6 max-h-96 overflow-y-auto">
+                <div className="prose prose-sm max-w-none">
+                  <p className="whitespace-pre-wrap text-gray-700">
+                    {language === "en" ? selectedService.fullDescriptionEn : selectedService.fullDescriptionBn}
                   </p>
-                </div>
 
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Treatment Options:</h4>
-                  <ul className="space-y-2">
-                    {selectedService.treatments.map((treatment, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-600">{treatment}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {selectedService.treatments && (
+                    <div className="mt-6">
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        {language === "en" ? "Available Treatments:" : "উপলব্ধ চিকিৎসা:"}
+                      </h4>
+                      <ul className="space-y-2">
+                        {selectedService.treatments.map((treatment, i) => (
+                          <li key={i} className="flex items-start gap-2 text-gray-700">
+                            <span className="text-blue-600 mt-1">•</span>
+                            <span>{treatment}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 p-6 flex gap-3 sticky bottom-0 bg-white">
-                <button 
+              <div className="border-t border-gray-200 p-6 bg-gray-50">
+                <button
                   onClick={() => setSelectedService(null)}
-                  className="flex-1 px-6 py-3 border border-gray-300 rounded-lg font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors"
                 >
-                  Close
-                </button>
-                <button className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                  Book Consultation
+                  {language === "en" ? "Close" : "বন্ধ করুন"}
                 </button>
               </div>
             </div>
