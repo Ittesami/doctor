@@ -5,190 +5,256 @@ export default function Services({ language }) {
   const services = [
     {
       id: 1,
-      titleEn: "Piles (Haemorrhoids)",
-      titleBn: "অর্শ্বরোগ (হেমোরয়েডস)",
+      titleEn: "Laparoscopic Surgery",
+      titleBn: "ল্যাপারোস্কোপিক সার্জারি",
       icon: Activity,
-      shortDescriptionEn: "Advanced laser treatment for hemorrhoids with minimal pain and quick recovery.",
-      shortDescriptionBn: "অর্শ্বরোগের জন্য অ্যাডভান্সড লেজার চিকিৎসা ন্যূনতম ব্যথা এবং দ্রুত পুনরুদ্ধার সহ।",
-      fullDescriptionEn: `Piles (Haemorrhoids) is a bunch of broadened veins in the anus and the lower rectum. The rectum is the last range of digestive tract which continues as the anus, from where stools are excreted.
+      shortDescriptionEn: "Advanced minimally invasive gynecologic surgery with faster recovery and minimal scarring.",
+      shortDescriptionBn: "দ্রুত পুনরুদ্ধার এবং ন্যূনতম দাগ সহ উন্নত ন্যূনতম আক্রমণাত্মক গাইনোকলজিক সার্জারি।",
+      fullDescriptionEn: `Laparoscopic gynecologic surgery is a minimally invasive technique that uses small incisions and specialized instruments to perform various gynecologic procedures.
 
-Piles are generally classified into two types:
-1. Internal piles start in the lower rectum and don't come out of the anal opening
-2. External piles start in the lower rectum and remain outside the anal opening
+PROCEDURES PERFORMED:
+- Laparoscopic Hysterectomy
+- Ovarian Cyst Removal
+- Myomectomy (Fibroid Removal)
+- Tubal Ligation
+- Endometriosis Treatment
+- Diagnostic Laparoscopy
 
-SYMPTOMS OF PILES:
-- Painless bleeding while passing stools
-- Itching
-- Mucus discharge
-- Burning on and around the anus
-- Severe pain, if complication occurs
-- Sensation of incomplete evacuation
-
-CAUSES:
-- Chronic constipation
-- Obesity, pregnancy, cirrhosis of the liver
-- Standing or sitting for long durations
-- Consuming a low fiber diet
-- Overconsumption of junk, spicy and fried food
-
-LASER HEMORRHOIDOPLASTY ADVANTAGES:
-- Postoperative period is least painful
-- Day care procedure
-- Minimal chances of postoperative bleeding
-- Generally, postoperative dressing is not required
-- No rectal stenosis
-- No incontinence
-- Can be done in post-CABG and postpartum patients
-- Several repetitions possible`,
-      fullDescriptionBn: `অর্শ্বরোগ (হেমোরয়েডস) হল পায়ুপথ এবং নিম্ন মলাশয়ে প্রসারিত শিরার একটি গুচ্ছ।`,
+ADVANTAGES:
+- Smaller incisions and minimal scarring
+- Less postoperative pain
+- Shorter hospital stay
+- Faster recovery time
+- Reduced risk of infection
+- Better cosmetic results
+- Earlier return to normal activities`,
+      fullDescriptionBn: `ল্যাপারোস্কোপিক গাইনোকলজিক সার্জারি একটি ন্যূনতম আক্রমণাত্মক কৌশল যা ছোট ছেদ এবং বিশেষ যন্ত্র ব্যবহার করে বিভিন্ন গাইনোকলজিক পদ্ধতি সম্পাদন করে।`,
       image: "/images/service-laser.jpg",
-      treatments: ["Laser Hemorrhoidoplasty", "Conservative Management", "Minimally Invasive Procedures", "Rubber Band Ligation", "Sclerotherapy"]
+      treatments: ["Laparoscopic Hysterectomy", "Ovarian Surgery", "Myomectomy", "Tubal Ligation", "Endometriosis Surgery"]
     },
     {
       id: 2,
-      titleEn: "Anal Fissure",
-      titleBn: "পায়ু ফাটল",
-      icon: Zap,
-      shortDescriptionEn: "Laser-assisted treatment for anal fissures ensuring quick healing and pain relief.",
-      shortDescriptionBn: "পায়ু ফাটলের জন্য লেজার-সহায়তাপ্রাপ্ত চিকিৎসা দ্রুত নিরাময় এবং ব্যথা উপশম নিশ্চিত করে।",
-      fullDescriptionEn: `An anal fissure is a little tear or split in the coating of the anus. It might happen while passing hard stools.
+      titleEn: "High-Risk Pregnancy Management",
+      titleBn: "উচ্চ ঝুঁকিপূর্ণ গর্ভাবস্থা ব্যবস্থাপনা",
+      icon: Heart,
+      shortDescriptionEn: "Comprehensive care for high-risk pregnancies ensuring safety for mother and baby.",
+      shortDescriptionBn: "মা এবং শিশুর নিরাপত্তা নিশ্চিত করে উচ্চ ঝুঁকিপূর্ণ গর্ভাবস্থার জন্য ব্যাপক যত্ন।",
+      fullDescriptionEn: `Specialized care for pregnancies that have potential complications or require additional monitoring and management.
 
-It can bring about sharp pain and bleeding during and after defecations. It might likewise bring about tingling and blaze in the anal region. Sometimes the pain gets too serious, that patient suffers vertigo and perspiration on passing stool. Few patients suffer discomfort while sitting.
+CONDITIONS MANAGED:
+- Gestational Diabetes
+- Preeclampsia and Eclampsia
+- Multiple Pregnancies (Twins, Triplets)
+- Placenta Previa
+- Previous Cesarean Sections
+- Advanced Maternal Age
+- Chronic Medical Conditions
 
-SYMPTOMS OF ANAL FISSURE:
-- A noticeable tear in the skin around the rear-end
-- A skin tag, or a little chunk of skin, by the tear
-- Sharp torment in the anal range amid solid discharges
-- Streaks of blood on stools or on tissue paper subsequent to wiping
-- Burning or tingling in the anal range
-
-CAUSES OF ANAL FISSURE:
-- Anal fissure regularly happens while passing hard stools
-- Chronic constipation or frequent diarrhea can cause a tear
-- Straining amid labor
-- Decreased bloodstream to the anorectal range
-- The overly tight or spastic anal sphincter muscle
-
-In rare cases, anal gap may develop due to: anal tumor, HIV, tuberculosis, herpes
-
-ADVANTAGES OF LASER SPHINCTEROTOMY:
-- Highly effective treatment for fissure
-- Very low recurrence rates after surgery
-- Minor operation performed as day case
-- No need to stay overnight
-- Helps fissure heal by decreasing pain and spasm
-- Less likely to need postoperative dressing
-- Can be done in post CABG (Cardiac), Pregnant & Lactational Patients
-- No loss of stool control (Incontinence)`,
-      fullDescriptionBn: `পায়ু ফাটল হল পায়ুমার্জন আবরণে একটি ছোট্ট ছিঁড়ে যাওয়া বা বিভাজন।`,
+SERVICES PROVIDED:
+- Regular monitoring and ultrasounds
+- Specialized prenatal care
+- Fetal monitoring
+- Coordinated care with specialists
+- Emergency delivery management`,
+      fullDescriptionBn: `বিশেষায়িত যত্ন যেসব গর্ভাবস্থায় সম্ভাব্য জটিলতা রয়েছে বা অতিরিক্ত পর্যবেক্ষণ ও ব্যবস্থাপনার প্রয়োজন।`,
       image: "/images/service-fissure.jpg",
-      treatments: ["Laser Sphincterotomy", "Sitz Bath", "Local Ointment Application", "Laxatives", "Closed Lateral Sphincterotomy"]
+      treatments: ["Prenatal Monitoring", "Ultrasound Surveillance", "Medical Management", "Emergency Care"]
     },
     {
       id: 3,
-      titleEn: "Anal Fistula",
-      titleBn: "ফিস্টুলা ইন অ্যানো",
-      icon: Heart,
-      shortDescriptionEn: "Specialized VAAFT technique for complex and recurrent fistulas with high success rates.",
-      shortDescriptionBn: "জটিল এবং পুনরাবৃত্ত ফিস্টুলার জন্য বিশেষায়িত VAAFT কৌশল উচ্চ সাফল্যের হার সহ।",
-      fullDescriptionEn: `An anal fistula is a little channel that is created between the lumen of the anus and the skin close to the perianal area.
+      titleEn: "Hysterectomy",
+      titleBn: "জরায়ু অপসারণ",
+      icon: Scissors,
+      shortDescriptionEn: "Surgical removal of uterus using advanced techniques for various gynecologic conditions.",
+      shortDescriptionBn: "বিভিন্ন গাইনোকলজিক অবস্থার জন্য উন্নত কৌশল ব্যবহার করে জরায়ু অস্ত্রোপচার অপসারণ।",
+      fullDescriptionEn: `Hysterectomy is a surgical procedure to remove the uterus. It may be performed for various conditions including fibroids, endometriosis, cancer, or abnormal bleeding.
 
-At times, it causes persistent seepage. In different cases, where the outside of the channel opening shuts, the outcome might be intermittent anal abscesses. The main cure for an anal fistula is surgery.
+TYPES OF HYSTERECTOMY:
+- Total Hysterectomy (uterus and cervix)
+- Partial Hysterectomy (uterus only)
+- Radical Hysterectomy (for cancer treatment)
+- Laparoscopic Hysterectomy
+- Vaginal Hysterectomy (NDVH)
 
-SYMPTOMS OF ANAL FISTULA:
-- Discharge of pus or blood on and off from the fistula opening
-- Pain which is generally consistent, throbbing and worse when taking a seat
-- Skin excoriation and itching around the anus
-- Constipation or torment related with bowel moments
-- Fever in acute cases
+INDICATIONS:
+- Uterine Fibroids
+- Endometriosis
+- Abnormal Uterine Bleeding
+- Uterine Prolapse
+- Gynecologic Cancers
+- Chronic Pelvic Pain
 
-CAUSES OF ANAL FISTULA:
-- The most widely recognized reason for fistula is an anal abscess
-- Most anal fistulas shape in the back midline
-- Intestinal provocative illness
-- Sexually transmitted diseases
-- Injury
-- Tumors including leukemia
-- Tuberculosis
-- Anorectal growth
-- HIV
-
-ADVANTAGES OF LASER TREATMENT:
-- Excellent Healing rates
-- Postoperative dressing required for very short duration
-- Post-operative bleeding less likely
-- Fewer complications observed
-- Can be done in post CABG (Cardiac), Pregnant & Lactational Patients
-- No loss of stool control (Incontinence) - no sphincter damage
-- Uncommon recurrence of Fistula after Laser treatment
-- Superior operator control`,
-      fullDescriptionBn: `ফিস্টুলা ইন অ্যানো হল পায়ুর লুমেন এবং পেরিয়ানাল এলাকার কাছের ত্বকের মধ্যে তৈরি একটি ছোট্ট চ্যানেল।`,
+ADVANTAGES OF MINIMALLY INVASIVE APPROACH:
+- Shorter hospital stay
+- Faster recovery
+- Less scarring
+- Reduced pain
+- Lower infection risk`,
+      fullDescriptionBn: `হিস্টেরেক্টমি হল জরায়ু অপসারণের জন্য একটি অস্ত্রোপচার পদ্ধতি।`,
       image: "/images/service-fistula.jpg",
-      treatments: ["VAAFT (Video-Assisted Anal Fistula Treatment)", "Laser Fistulotomy", "Excision & Reconstruction", "Open Fistulectomy", "Seton Tie"]
+      treatments: ["Laparoscopic Hysterectomy", "Vaginal Hysterectomy", "Total Hysterectomy", "Partial Hysterectomy"]
     },
     {
       id: 4,
-      titleEn: "Rectal Prolapse",
-      titleBn: "রেক্টাল প্রোল্যাপ্স",
+      titleEn: "Infertility Treatment",
+      titleBn: "বন্ধ্যাত্ব চিকিৎসা",
       icon: Stethoscope,
-      shortDescriptionEn: "Surgical correction of rectal prolapse with modern techniques.",
-      shortDescriptionBn: "আধুনিক কৌশলের সাথে রেক্টাল প্রোল্যাপ্সের সার্জিক্যাল সংশোধন।",
-      fullDescriptionEn: `Rectal Prolapse is an illness in which Rectum turns out during defecation partially or totally. Sometimes it goes automatically or in some cases the patient needs to do it manually. This can happen for men, females, and kids. While this might be excruciating, it can likewise be reasonably mortifying and frequently has an earth-shattering negative effect on patients' personal satisfaction.`,
-      fullDescriptionBn: `রেক্টাল প্রোল্যাপ্স হল এমন একটি অসুখ যেখানে মলত্যাগের সময় মলাশয় আংশিক বা সম্পূর্ণভাবে বেরিয়ে আসে।`,
+      shortDescriptionEn: "Comprehensive evaluation and treatment for couples facing fertility challenges.",
+      shortDescriptionBn: "প্রজনন চ্যালেঞ্জের সম্মুখীন দম্পতিদের জন্য ব্যাপক মূল্যায়ন এবং চিকিৎসা।",
+      fullDescriptionEn: `Specialized care for couples experiencing difficulty conceiving, including diagnostic evaluation and treatment options.
+
+DIAGNOSTIC SERVICES:
+- Hormonal Assessment
+- Ovulation Monitoring
+- Hysterosalpingography (HSG)
+- Ultrasound Evaluation
+- Laparoscopic Assessment
+
+TREATMENT OPTIONS:
+- Ovulation Induction
+- Intrauterine Insemination (IUI)
+- Surgical Treatment of Endometriosis
+- Tubal Surgery
+- Treatment of PCOS
+- Counseling and Support`,
+      fullDescriptionBn: `গর্ভধারণে অসুবিধার সম্মুখীন দম্পতিদের জন্য বিশেষায়িত যত্ন।`,
       image: "/images/service-prolapse.jpg",
-      treatments: ["Laparoscopic Rectopexy", "Delorme's Procedure", "Conservative Management", "Surgical Correction"]
+      treatments: ["Ovulation Induction", "IUI", "Surgical Correction", "PCOS Management"]
     },
     {
       id: 5,
-      titleEn: "STARR Surgery",
-      titleBn: "STARR সার্জারি",
+      titleEn: "Endometriosis Treatment",
+      titleBn: "এন্ডোমেট্রিওসিস চিকিৎসা",
       icon: Pill,
-      shortDescriptionEn: "Advanced surgical treatment for obstructed defecation syndrome with minimal scarring.",
-      shortDescriptionBn: "বাধাপ্রাপ্ত মলত্যাগ সিন্ড্রোমের জন্য অ্যাডভান্সড সার্জিক্যাল চিকিৎসা ন্যূনতম দাগ সহ।",
-      fullDescriptionEn: `STARR Surgery is a surgical system that is performed through the anus, requires no outside entry points, and leaves no obvious scars.
+      shortDescriptionEn: "Medical and surgical management of endometriosis for pain relief and fertility preservation.",
+      shortDescriptionBn: "ব্যথা উপশম এবং প্রজনন সংরক্ষণের জন্য এন্ডোমেট্রিওসিসের চিকিৎসা এবং অস্ত্রোপচার ব্যবস্থাপনা।",
+      fullDescriptionEn: `Endometriosis is a condition where tissue similar to the lining of the uterus grows outside the uterus, causing pain and potentially affecting fertility.
 
-When a patient has symptoms of chronic constipation, they may be suffering from Obstructed Defecation Syndrome or ODS. ODS is associated with deformities in the rectum, such as the formation of rectocele (prolapse of the wall between the rectum and the vagina) or telescoping of the intestinal wall.`,
-      fullDescriptionBn: `STARR সার্জারি হল একটি সার্জিক্যাল পদ্ধতি যা পায়ুর মাধ্যমে সঞ্চালিত হয়।`,
+SYMPTOMS:
+- Pelvic pain
+- Painful periods
+- Pain during intercourse
+- Infertility
+- Heavy menstrual bleeding
+- Fatigue
+
+TREATMENT OPTIONS:
+- Medical Management (Hormonal therapy)
+- Laparoscopic Surgery
+- Excision of Endometriotic Lesions
+- Pain Management
+- Fertility-Preserving Procedures
+
+ADVANTAGES OF LAPAROSCOPIC TREATMENT:
+- Precise removal of lesions
+- Minimal scarring
+- Faster recovery
+- Better fertility outcomes
+- Long-term pain relief`,
+      fullDescriptionBn: `এন্ডোমেট্রিওসিস হল এমন একটি অবস্থা যেখানে জরায়ুর আস্তরণের মতো টিস্যু জরায়ুর বাইরে বৃদ্ধি পায়।`,
       image: "/images/service-starr.jpg",
-      treatments: ["STARR Procedure", "Post-operative Care", "Dietary Counseling", "Pelvic Floor Therapy"]
+      treatments: ["Hormonal Therapy", "Laparoscopic Excision", "Pain Management", "Fertility Treatment"]
     },
     {
       id: 6,
-      titleEn: "Perianal Abscess",
-      titleBn: "পেরিয়ানাল অ্যাবসেস",
+      titleEn: "Ovarian Cyst Management",
+      titleBn: "ডিম্বাশয়ের সিস্ট ব্যবস্থাপনা",
       icon: AlertCircle,
-      shortDescriptionEn: "Immediate treatment for perianal abscesses to prevent complications.",
-      shortDescriptionBn: "পেরিয়ানাল অ্যাবসেসের জন্য জটিলতা প্রতিরোধের তাৎক্ষণিক চিকিৎসা।",
-      fullDescriptionEn: `Perianal Abscess is an agonizing condition in which a collection of pus develops near the rear-end. Most perianal abscesses are the consequence of disease from little anal glands.
+      shortDescriptionEn: "Diagnosis and treatment of ovarian cysts using advanced imaging and surgical techniques.",
+      shortDescriptionBn: "উন্নত ইমেজিং এবং অস্ত্রোপচার কৌশল ব্যবহার করে ডিম্বাশয়ের সিস্ট নির্ণয় এবং চিকিৎসা।",
+      fullDescriptionEn: `Ovarian cysts are fluid-filled sacs that develop on or in the ovaries. While most are harmless and resolve on their own, some require treatment.
 
-The most well-known sort of abscess is a perianal abscess. This frequently shows up as a difficult bubble-like swelling close to the rear-end. It might be red in shading and warm to the touch. Perianal abscesses situated in ischiorectal fossa are less regular and might be less obvious.`,
-      fullDescriptionBn: `পেরিয়ানাল অ্যাবসেস হল একটি যন্ত্রণাদায়ক অবস্থা যেখানে পায়ুর কাছে পুঁজের সংগ্রহ বিকশিত হয়।`,
+TYPES OF CYSTS:
+- Functional Cysts
+- Dermoid Cysts
+- Endometriomas
+- Cystadenomas
+- Polycystic Ovaries
+
+SYMPTOMS:
+- Pelvic pain
+- Bloating
+- Abdominal pressure
+- Irregular periods
+- Pain during intercourse
+
+TREATMENT OPTIONS:
+- Watchful Waiting
+- Medical Management
+- Laparoscopic Cystectomy
+- Ovarian Preservation Surgery
+- Emergency Surgery for Complications`,
+      fullDescriptionBn: `ডিম্বাশয়ের সিস্ট হল তরল-ভরা থলি যা ডিম্বাশয়ে বা এর উপর বিকশিত হয়।`,
       image: "/images/service-abscess.jpg",
-      treatments: ["Incision & Drainage", "Antibiotic Therapy", "Follow-up Care", "Abscess Management"]
+      treatments: ["Laparoscopic Cystectomy", "Medical Management", "Ultrasound Monitoring", "Emergency Surgery"]
     },
     {
       id: 7,
-      titleEn: "Proctocolectomy",
-      titleBn: "প্রোক্টোকোলেক্টমি",
-      icon: Scissors,
-      shortDescriptionEn: "Advanced colorectal surgery for inflammatory bowel disease and cancer.",
-      shortDescriptionBn: "প্রদাহজনক অন্ত্রের রোগ এবং ক্যান্সারের জন্য উন্নত কোলোরেক্টাল সার্জারি।",
-      fullDescriptionEn: `In proctocolectomy, the large intestine and rectum are Removed, leaving the lower end of the small intestine (the ileum). The specialist sews the anus closed and makes a little opening called a stoma in the skin of the lower guts.`,
-      fullDescriptionBn: `প্রোক্টোকোলেক্টমিতে, বৃহদন্ত্র এবং মলাশয় অপসারণ করা হয়, ছোট অন্ত্রের নীচের প্রান্ত রেখে যায়।`,
+      titleEn: "Abnormal Uterine Bleeding",
+      titleBn: "অস্বাভাবিক জরায়ু রক্তপাত",
+      icon: Zap,
+      shortDescriptionEn: "Comprehensive evaluation and treatment for irregular or heavy menstrual bleeding.",
+      shortDescriptionBn: "অনিয়মিত বা ভারী মাসিক রক্তপাতের জন্য ব্যাপক মূল্যায়ন এবং চিকিৎসা।",
+      fullDescriptionEn: `Abnormal uterine bleeding includes any irregular bleeding from the uterus, including heavy periods, irregular cycles, or bleeding between periods.
+
+CAUSES:
+- Hormonal Imbalance
+- Uterine Fibroids
+- Polyps
+- Endometrial Hyperplasia
+- Adenomyosis
+- Bleeding Disorders
+
+DIAGNOSTIC APPROACHES:
+- Ultrasound Evaluation
+- Endometrial Biopsy
+- Hysteroscopy
+- Hormonal Assessment
+
+TREATMENT OPTIONS:
+- Medical Management
+- Hormonal Therapy
+- D&C (Dilation and Curettage)
+- Hysteroscopic Polypectomy
+- Endometrial Ablation
+- Hysterectomy (when indicated)`,
+      fullDescriptionBn: `অস্বাভাবিক জরায়ু রক্তপাতে জরায়ু থেকে যেকোনো অনিয়মিত রক্তপাত অন্তর্ভুক্ত।`,
       image: "/images/service-proctocolectomy.jpg",
-      treatments: ["Total Proctocolectomy", "Restorative Procedures", "Stoma Care", "Ileostomy Management"]
+      treatments: ["Medical Management", "D&C", "Hysteroscopy", "Hormonal Therapy", "Surgical Options"]
     },
     {
       id: 8,
-      titleEn: "Hernia Surgery",
-      titleBn: "হার্নিয়া সার্জারি",
+      titleEn: "Cesarean Section",
+      titleBn: "সিজারিয়ান অপারেশন",
       icon: Shield,
-      shortDescriptionEn: "Laparoscopic hernia repair with minimal scarring and faster recovery.",
-      shortDescriptionBn: "ল্যাপারোস্কোপিক হার্নিয়া মেরামত ন্যূনতম দাগ এবং দ্রুত পুনরুদ্ধার সহ।",
-      fullDescriptionEn: `Hernia occurs when an inner part of the body, such as an organ or any fatty tissue, pushes or spills through a weak spot in the muscle or tissue wall around it. There are many different types of hernias.`,
-      fullDescriptionBn: `হার্নিয়া ঘটে যখন শরীরের অভ্যন্তরীণ অংশ, যেমন একটি অঙ্গ বা চর্বিযুক্ত টিস্যু, চারপাশের পেশী বা টিস্যু দেয়ালে একটি দুর্বল স্থান দিয়ে ঠেলে যায়।`,
+      shortDescriptionEn: "Safe surgical delivery for mothers and babies when vaginal delivery is not advisable.",
+      shortDescriptionBn: "নিরাপদ অস্ত্রোপচার প্রসব যখন যোনিপথে প্রসব উপদেশযোগ্য নয়।",
+      fullDescriptionEn: `Cesarean section is a surgical procedure used to deliver a baby through incisions in the abdomen and uterus.
+
+INDICATIONS:
+- Previous Cesarean Section
+- Breech Presentation
+- Placenta Previa
+- Fetal Distress
+- Multiple Pregnancies
+- Prolonged Labor
+- Medical Conditions
+
+PROCEDURE TYPES:
+- Elective C-Section
+- Emergency C-Section
+- Repeat C-Section
+- VBAC (Vaginal Birth After Cesarean) Evaluation
+
+POST-OPERATIVE CARE:
+- Pain management
+- Early mobilization
+- Wound care
+- Breastfeeding support
+- Recovery guidance`,
+      fullDescriptionBn: `সিজারিয়ান সেকশন হল একটি অস্ত্রোপচার পদ্ধতি যা পেট এবং জরায়ুতে ছেদের মাধ্যমে শিশু প্রসবের জন্য ব্যবহৃত হয়।`,
       image: "/images/service-hernia.jpg",
-      treatments: ["Laparoscopic Hernia Repair", "Mesh Placement", "Open Hernia Surgery", "Day-care Surgery"]
+      treatments: ["Elective C-Section", "Emergency C-Section", "Repeat C-Section", "VBAC Counseling"]
     }
   ];
 
@@ -203,8 +269,8 @@ The most well-known sort of abscess is a perianal abscess. This frequently shows
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {language === "en"
-              ? "Comprehensive colorectal care with advanced laser technology and minimally invasive techniques"
-              : "অ্যাডভান্সড লেজার প্রযুক্তি এবং ন্যূনতম আক্রমণাত্মক কৌশল সহ ব্যাপক কোলোরেক্টাল যত্ন"}
+              ? "Comprehensive gynecologic and obstetric care with advanced laparoscopic techniques"
+              : "উন্নত ল্যাপারোস্কোপিক কৌশল সহ ব্যাপক গাইনোকলজিক এবং প্রসূতি যত্ন"}
           </p>
         </div>
 
@@ -215,7 +281,7 @@ The most well-known sort of abscess is a perianal abscess. This frequently shows
             const shortDescription = language === "en" ? service.shortDescriptionEn : service.shortDescriptionBn;
 
             return (
-              <div 
+              <div
                 key={service.id}
                 className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg cursor-pointer transition-all transform hover:-translate-y-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -223,7 +289,7 @@ The most well-known sort of abscess is a perianal abscess. This frequently shows
               >
                 {/* Service Image on Top */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-blue-600 overflow-hidden">
-                  <img 
+                  <img
                     src={service.image}
                     alt={title}
                     className="w-full h-full object-cover"
@@ -264,7 +330,7 @@ The most well-known sort of abscess is a perianal abscess. This frequently shows
                     {language === "en" ? selectedService.titleEn : selectedService.titleBn}
                   </h2>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedService(null)}
                   className="text-gray-500 hover:text-gray-700"
                 >

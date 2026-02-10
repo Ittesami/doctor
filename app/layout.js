@@ -1,11 +1,11 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Dr. Md. Ahsan Habib - Colorectal Surgeon",
+  title: "Dr. Farida Khan",
   description:
-    "Expert Colorectal Surgeon specializing in fistula surgery, laser treatment, and advanced surgical procedures",
+    "Expert Gynecologist Surgeons",
   keywords:
-    "colorectal surgeon, fistula surgery, piles treatment, laser surgery, Dhaka Medical College",
+    "gynecologist, surgeon, women's health, fertility, laparoscopic surgery",
 };
 
 export default function RootLayout({ children }) {

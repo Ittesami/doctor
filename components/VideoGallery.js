@@ -22,60 +22,60 @@ export default function VideoGallery({ language }) {
   const videos = [
     {
       id: 1,
-      title: "Dr Ahsan Habib Treatment procedure of piles",
+      title: "Laparoscopic Gynecology Surgery",
       description: language === 'en'
-        ? "Dr Ahsan Habib Treatment procedure of piles"
-        : "ডা. আহসান হাবিব অর্শ্বরোগের চিকিৎসা পদ্ধতি",
+        ? "Advanced laparoscopic techniques in gynecologic procedures"
+        : "গাইনোকলজিক পদ্ধতিতে উন্নত ল্যাপারোস্কোপিক কৌশল",
       thumbnail: "https://i3.ytimg.com/vi/5SbP2XgWerc/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/watch?v=5SbP2XgWerc",
       duration: "4:31"
     },
     {
       id: 2,
-      title: "BSCRS 1st National Conference",
+      title: "Women's Health Awareness Seminar",
       description: language === 'en'
-        ? "BSCRS 1st National Conference"
-        : "BSCRS প্রথম জাতীয় সম্মেলন",
+        ? "Educational seminar on women's reproductive health"
+        : "মহিলাদের প্রজনন স্বাস্থ্যের উপর শিক্ষামূলক সেমিনার",
       thumbnail: "https://i3.ytimg.com/vi/u6HPjjhMqfk/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/watch?v=u6HPjjhMqfk",
       duration: "4:27"
     },
     {
       id: 3,
-      title: "Piles treatment - Colorectal polyps Dr. Md. Ahsan Habib",
+      title: "Gynecologic Surgery Techniques",
       description: language === 'en'
-        ? "Piles treatment - Colorectal polyps Dr. Md. Ahsan Habib"
-        : "অর্শ্বরোগ চিকিৎসা - কোলোরেক্টাল পলিপ ডা. এম ডি আহসান হাবিব",
+        ? "Modern surgical approaches in gynecology"
+        : "গাইনিকোলজিতে আধুনিক সার্জিক্যাল পদ্ধতি",
       thumbnail: "https://i3.ytimg.com/vi/7VIKi-V8SsI/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/watch?v=7VIKi-V8SsI",
       duration: "42:09"
     },
     {
       id: 4,
-      title: "Laparoscopic Ventral Rectopexy by Professor Sheikh",
+      title: "Minimally Invasive Surgery",
       description: language === 'en'
-        ? "Laparoscopic Ventral Rectopexy by Professor Sheikh"
-        : "প্রফেসর শেখ দ্বারা ল্যাপারোস্কোপিক ভেন্ট্রাল রেক্টোপেক্সি",
+        ? "Minimally invasive gynecologic surgical procedures"
+        : "ন্যূনতম আক্রমণাত্মক গাইনোকলজিক সার্জিক্যাল পদ্ধতি",
       thumbnail: "https://i3.ytimg.com/vi/fxQKA2AfwVk/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/watch?v=fxQKA2AfwVk",
       duration: "7:06"
     },
     {
       id: 5,
-      title: "লেজার পদ্ধতিতে পাইলস রোগের চিকিৎসা",
+      title: "Women's Healthcare Education",
       description: language === 'en'
-        ? "Laser treatment for piles disease"
-        : "লেজার পদ্ধতিতে পাইলস রোগের চিকিৎসা",
+        ? "Comprehensive guide to women's health and wellness"
+        : "মহিলা স্বাস্থ্য এবং সুস্থতার জন্য ব্যাপক নির্দেশিকা",
       thumbnail: "https://i3.ytimg.com/vi/I9sN7FYJvR8/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/watch?v=I9sN7FYJvR8",
       duration: "21:55"
     },
     {
       id: 6,
-      title: "Laser Treatment In Anal Fissure",
+      title: "Gynecology & Obstetrics Overview",
       description: language === 'en'
-        ? "Laser Treatment In Anal Fissure"
-        : "পায়ু ফাটলে লেজার চিকিৎসা",
+        ? "Overview of gynecology and obstetrics procedures"
+        : "গাইনিকোলজি এবং অবস্টেট্রিক্স পদ্ধতির সংক্ষিপ্ত বিবরণ",
       thumbnail: "https://i3.ytimg.com/vi/1t8k_SKT078/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/watch?v=1t8k_SKT078",
       duration: "23:59"
