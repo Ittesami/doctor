@@ -73,7 +73,7 @@ export default function Navbar({ language, setLanguage }) {
                 {language === 'en' ? 'Dr. Farida Khan' : 'ডা. ফারিদা খান'}
               </span>
               <span className="inline sm:hidden">
-                {language === 'en' ? 'Dr. Habib' : 'ডা. হাবিব'}
+                {language === 'en' ? 'Dr. Farida Khan' : 'ডা. ফারিদা খান'}
               </span>
             </span>
           </button>
