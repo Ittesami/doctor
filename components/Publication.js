@@ -5,45 +5,45 @@ export default function Publications() {
   const publications = [
     {
       id: 1,
-      title: "Laparoscopic approaches in gynecologic surgery",
-      journal: "Journal of Gynecology and Obstetrics",
-      date: "March 15, 2020",
-      excerpt: "Advanced minimally invasive techniques in modern gynecologic practice"
+      title: "Feasibility, Safety and efficacy of enteral feeding within 24 hours",
+      journal: "Journal of Medical Science",
+      date: "November 25, 2018",
+      excerpt: "Islam MR, Sheikh SH, Khatun SA, Lima IJ, Ahsan Ullah AKM"
     },
     {
       id: 2,
-      title: "Management of high-risk pregnancies in tertiary care",
-      journal: "Bangladesh Journal of Medical Science",
-      date: "June 20, 2019",
-      excerpt: "A comprehensive review of obstetric care protocols"
+      title: "Prophylactic mesh reduces frequency of parastomal hernia in Carcinoma rectum patients",
+      journal: "Saheed Tajuddin Ahmed Medical College Journal",
+      date: "November 25, 2018",
+      excerpt: "A randomized controlled trial published in February, 2018"
     },
     {
       id: 3,
-      title: "Endometriosis: Diagnosis and treatment strategies",
-      journal: "Journal of Women's Health",
-      date: "September 10, 2021",
-      excerpt: "Evidence-based approaches to managing endometriosis"
+      title: "Extraskeletal Ewings sarcoma involving perineum",
+      journal: "Saheed Tajuddin Ahmed Medical College Journal",
+      date: "December 24, 2018",
+      excerpt: "Published in February, 2018"
     },
     {
       id: 4,
-      title: "Outcomes in laparoscopic hysterectomy procedures",
-      journal: "Journal of Minimally Invasive Surgery",
-      date: "January 25, 2022",
-      excerpt: "Comparative study of surgical techniques and patient recovery"
+      title: "Outcome of laparoscopic versus open abdominal surgery",
+      journal: "Journal of Surgical Sciences",
+      date: "November 25, 2018",
+      excerpt: "Naznin Kn, Sheikh SH, Habib MA, Islam MR, Alam A, Salauddin GM, Rahman MR"
     },
     {
       id: 5,
-      title: "Fertility preservation in gynecologic patients",
-      journal: "Bangladesh Medical Journal",
-      date: "August 12, 2020",
-      excerpt: "Modern approaches to reproductive health preservation"
+      title: "Peutz-Jeghers syndrome: A care report",
+      journal: "Dhaka Medical College Journal",
+      date: "November 25, 2018",
+      excerpt: "Islam MR, Hossain MS, Sheikh SH, Rahman MR, Lima IJ, Khatun SA, Kasem MA"
     },
     {
       id: 6,
-      title: "Advances in gynecologic oncology",
-      journal: "Journal of Obstetrics and Gynecology",
-      date: "November 5, 2021",
-      excerpt: "Research on surgical management of gynecologic cancers"
+      title: "Surgical outcomes in colorectal procedures",
+      journal: "Mymensingh Medical Journal",
+      date: "November 25, 2018",
+      excerpt: "Research on advanced surgical techniques and patient outcomes"
     }
   ];
 
@@ -53,7 +53,7 @@ export default function Publications() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Publications & Research</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Contributions to medical literature and ongoing research in gynecology and obstetrics
+            Contributions to medical literature and ongoing research in colorectal surgery
           </p>
         </div>
 

@@ -4,32 +4,32 @@ export default function Appointment({ language }) {
   const translations = {
     en: {
       title: "Book an Appointment",
-      subtitle: "Visit Central Police Hospital for expert gynecologic consultation and treatment",
-      centerName: "Central Police Hospital",
+      subtitle: "Visit our state-of-the-art Laser Colorectal Center for expert consultation and treatment",
+      centerName: "Laser Colorectal Center",
       location: "Location",
-      locationDetails: "Al Bayt Hospital, Dhaka",
+      locationDetails: "Rupayan Prime, Green Rd\nDhanmondi, Dhaka 1205",
       viewMaps: "View on Google Maps →",
       phone: "For Appointment Serial",
       schedule: "Available Days",
-      scheduleDetails: "Everyday except Saturday.",
+      scheduleDetails: "Saturday, Sunday, Monday, Wednesday",
       time: "Consultation Hours",
-      timeDetails: "5pm till 8pm",
+      timeDetails: "7:00 PM to 9:00 PM",
       callNow: "Call Now to Book",
       viewLocation: "View Location on Google Maps",
       clickToOpen: "Click to open"
     },
     bn: {
       title: "অ্যাপয়েন্টমেন্ট বুক করুন",
-      subtitle: "বিশেষজ্ঞ গাইনোকলজিক পরামর্শ এবং চিকিৎসার জন্য কেন্দ্রীয় পুলিশ হাসপাতালে যান",
-      centerName: "কেন্দ্রীয় পুলিশ হাসপাতাল",
+      subtitle: "বিশেষজ্ঞ পরামর্শ এবং চিকিৎসার জন্য আমাদের অত্যাধুনিক লেজার কোলোরেক্টাল সেন্টার পরিদর্শন করুন",
+      centerName: "লেজার কোলোরেক্টাল সেন্টার",
       location: "অবস্থান",
-      locationDetails: "রাজারবাগ, ঢাকা",
+      locationDetails: "রুপায়ন প্রাইম, গ্রীন রোড\nধানমন্ডি, ঢাকা ১২০৫",
       viewMaps: "গুগল ম্যাপে দেখুন →",
       phone: "অ্যাপয়েন্টমেন্ট সিরিয়ালের জন্য",
       schedule: "উপলব্ধ দিনগুলি",
-      scheduleDetails: "অ্যাপয়েন্টমেন্টের সময়সূচীর জন্য কল করুন",
+      scheduleDetails: "শনিবার, রবিবার, সোমবার, বুধবার",
       time: "পরামর্শের সময়",
-      timeDetails: "সময়ের জন্য কল করুন",
+      timeDetails: "সন্ধ্যা ৭:০০ থেকে ৯:০০ পর্যন্ত",
       callNow: "এখনই কল করুন এবং বুক করুন",
       viewLocation: "গুগল ম্যাপে অবস্থান দেখুন",
       clickToOpen: "খোলার জন্য ক্লিক করুন"
@@ -67,7 +67,7 @@ export default function Appointment({ language }) {
                     </p>
                     <button 
                       className="px-0 mt-2 text-blue-600 hover:text-blue-700 font-medium text-sm"
-                      onClick={() => window.open('https://maps.app.goo.gl/poDXCvKgWKZAJJeb7', '_blank')}
+                      onClick={() => window.open('https://maps.app.goo.gl/UYXpwRkvYaK19pj2A', '_blank')}
                     >
                       {t.viewMaps}
                     </button>
@@ -81,11 +81,11 @@ export default function Appointment({ language }) {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">{t.phone}</h4>
-                    <a
-                      href="tel:+8801711158058"
+                    <a 
+                      href="tel:+8801721036644" 
                       className="text-blue-600 text-base md:text-lg font-semibold hover:underline"
                     >
-                      +880 1711-158058
+                      +880 1721-036644
                     </a>
                   </div>
                 </div>

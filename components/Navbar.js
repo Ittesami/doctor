@@ -70,10 +70,10 @@ export default function Navbar({ language, setLanguage }) {
           >
             <span className={isScrolled ? 'text-blue-600' : 'text-transparent'}>
               <span className="hidden sm:inline">
-                {language === 'en' ? 'Dr. Farida Khan' : 'ডা. ফারিদা খান'}
+                {language === 'en' ? 'Dr. Ahsan Habib' : 'ডা. আহসান হাবিব'}
               </span>
               <span className="inline sm:hidden">
-                {language === 'en' ? 'Dr. Farida Khan' : 'ডা. ফারিদা খান'}
+                {language === 'en' ? 'Dr. Habib' : 'ডা. হাবিব'}
               </span>
             </span>
           </button>

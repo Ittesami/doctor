@@ -20,9 +20,9 @@ export default function Home() {
         <Hero language={language} />
         <Biography language={language} />
         <Services language={language} />
-        {/* <Publications language={language} />
+        <Publications language={language} />
         <Gallery language={language} />
-        <VideoGallery language={language} /> */}
+        <VideoGallery language={language} />
         <Appointment language={language} />
         <Footer language={language} />
       </div>

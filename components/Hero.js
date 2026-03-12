@@ -3,10 +3,10 @@ import { Calendar, Phone } from "lucide-react";
 export default function HeroSection({ language }) {
   const translations = {
     en: {
-      title: "Dr. Farida Khan",
-      credentials: "MBBS (MAG Osmani Medical College) • FCPS (Gynae and Obs) • BCS (Health)",
-      subtitle: "Assistant Professor of Obstetrics and Gynecology, Central Police Hospital",
-      tagline: "Expert Gynecologist & Laparoscopic Surgeon in Bangladesh",
+      title: "Dr. Md. Ahsan Habib",
+      credentials: "MBBS (DMC) • BCS (Health) • FCPS (Surgery) • MRCS (Edinburgh) • MS (Colorectal Surgery)",
+      subtitle: "Professor of Colorectal Surgery, Dhaka Medical College",
+      tagline: "Pioneer Laser Colorectal Surgeon in Bangladesh",
       bookBtn: "Book Appointment",
       servicesBtn: "View Services",
       experience: "Years of Experience",
@@ -14,10 +14,10 @@ export default function HeroSection({ language }) {
       satisfaction: "Patient Satisfaction"
     },
     bn: {
-      title: "ডা. ফারিদা খান",
-      credentials: "এমবিবিএস (এম এ জি ওসমানী মেডিকেল কলেজ) • এফসিপিএস (গাইনি ও অবস) • বিসিএস (স্বাস্থ্য)",
-      subtitle: "সহকারী অধ্যাপক, প্রসূতি ও স্ত্রীরোগবিদ্যা, কেন্দ্রীয় পুলিশ হাসপাতাল",
-      tagline: "বাংলাদেশের বিশেষজ্ঞ গাইনিকোলজিস্ট ও ল্যাপারোস্কোপিক সার্জন",
+      title: "ডা. এম ডি আহসান হাবিব",
+      credentials: "এমবিবিএস (ডিএমসি) • বিসিএস (স্বাস্থ্য) • এফসিপিএস (সার্জারি) • এমআরসিএস (এডিনবার্গ) • এমএস (কোলোরেক্টাল সার্জারি)",
+      subtitle: "ঢাকা মেডিক্যাল কলেজের কোলোরেক্টাল সার্জারির অধ্যাপক",
+      tagline: "বাংলাদেশে লেজার কোলোরেক্টাল সার্জারির অগ্রদূত",
       bookBtn: "অ্যাপয়েন্টমেন্ট বুক করুন",
       servicesBtn: "সেবা দেখুন",
       experience: "বছরের অভিজ্ঞতা",
@@ -83,8 +83,8 @@ export default function HeroSection({ language }) {
         {/* Floating Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 max-w-4xl mx-auto">
           {[
-            { number: "25+", labelKey: "experience" },
-            { number: "11000+", labelKey: "surgeries" },
+            { number: "20+", labelKey: "experience" },
+            { number: "15000+", labelKey: "surgeries" },
           ].map((stat, index) => (
             <div 
               key={index}

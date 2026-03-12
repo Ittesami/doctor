@@ -3,94 +3,94 @@ import { Award, Briefcase, GraduationCap, Users } from "lucide-react";
 export default function Biography({ language }) {
   const timeline = [
     {
-      year: "2000",
-      titleEn: "MBBS Degree",
-      titleBn: "এমবিবিএস ডিগ্রি",
-      descriptionEn: "Graduated with MBBS from MAG Osmani Medical College, Sylhet",
-      descriptionBn: "এম এ জি ওসমানী মেডিকেল কলেজ, সিলেট থেকে এমবিবিএস ডিগ্রি অর্জন",
+      year: "1993",
+      titleEn: "Dhaka Medical College",
+      titleBn: "ঢাকা মেডিকেল কলেজ",
+      descriptionEn: "Ranked 28th in medical admission test, admitted to prestigious Dhaka Medical College",
+      descriptionBn: "১৯৯৩ সালে মেডিকেল ভর্তি পরীক্ষায় ২৮তম স্থান অধিকার করে ঢাকা মেডিকেল কলেজে ভর্তি হন",
       icon: GraduationCap
     },
     {
-      year: "2003-2005",
-      titleEn: "Assistant Register (Gynae)",
-      titleBn: "সহকারী রেজিস্টার (গাইনি)",
-      descriptionEn: "Started career as Assistant Register at ICMH, Dhaka",
-      descriptionBn: "আইসিএমএইচ, ঢাকায় সহকারী রেজিস্টার হিসেবে কর্মজীবন শুরু",
+      year: "2003",
+      titleEn: "BCS (Health)",
+      titleBn: "বি.সি.এস (স্বাস্থ্য)",
+      descriptionEn: "Ranked 33rd in 22nd BCS examination and joined government service",
+      descriptionBn: "२२ তম বি.সি.এস পরীক্ষায় ३३तম স্थान अধिकार करके सरकारी चाकुरीतে योगदान करेन",
       icon: Briefcase
     },
     {
-      year: "2005",
-      titleEn: "BCS (Health) Cadre",
-      titleBn: "বিসিএস (স্বাস্থ্য) ক্যাডার",
-      descriptionEn: "Joined Bangladesh Civil Service as Assistant Surgeon/Medical Officer",
-      descriptionBn: "সহকারী সার্জন/মেডিকেল অফিসার হিসেবে বাংলাদেশ সিভিল সার্ভিসে যোগদান",
+      year: "2008-2009",
+      titleEn: "MRCS & FCPS",
+      titleBn: "এম.আর.সি.এস এবং এফ.সি.পি.এস",
+      descriptionEn: "Achieved MRCS (Edinburgh) in 2008 and FCPS (Surgery) in 2009",
+      descriptionBn: "२००८ सালें एम.आर.सी.एस एवं २००९ सालें एफ.सी.पी.एस अर्जन करेन",
       icon: Award
     },
     {
-      year: "2007-2010",
-      titleEn: "FCPS Training & Course",
-      titleBn: "এফসিপিএস প্রশিক্ষণ ও কোর্স",
-      descriptionEn: "Completed FCPS training at Mitford Hospital and course at BSMMU",
-      descriptionBn: "মিটফোর্ড হাসপাতালে এফসিপিএস প্রশিক্ষণ এবং বিএসএমএমইউতে কোর্স সম্পন্ন",
+      year: "2017",
+      titleEn: "MS & Fellowship",
+      titleBn: "এম.এস এবং ফেলোশীপ",
+      descriptionEn: "MS in Colorectal Surgery from BSMMU and Fellowship in ISCP (International Society of Coloproctology)",
+      descriptionBn: "বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় থেকে কলোরেক্টাল সার্জারীতে এম.এস ডিগ্রি এবং ISCP থেকে ফেলোশীপ অর্জন করেন",
       icon: GraduationCap
     },
     {
-      year: "2010",
-      titleEn: "FCPS (Gynae and Obstetrics)",
-      titleBn: "এফসিপিএস (গাইনি এবং অবস)",
-      descriptionEn: "Achieved FCPS in Gynecology and Obstetrics from BCPS, Dhaka",
-      descriptionBn: "বিসিপিএস, ঢাকা থেকে গাইনিকোলজি ও অবস্টেট্রিক্সে এফসিপিএস অর্জন",
+      year: "2019",
+      titleEn: "Best Teacher Award",
+      titleBn: "সেরা শিক্ষক পুরস্কার",
+      descriptionEn: "Received Best Teacher Award from National Institute of Cancer Research & Hospital",
+      descriptionBn: "জাতীয় ক্যান্সার গবেষণা ইন্সটিটিউট ও হাসপাতাল থেকে সেরা শিক্ষক পুরস্কার অর্জন করেন",
       icon: Award
     },
     {
-      year: "2011-2019",
-      titleEn: "Junior Consultant",
-      titleBn: "জুনিয়র কনসালট্যান্ট",
-      descriptionEn: "Served as Junior Consultant at various health complexes across Bangladesh",
-      descriptionBn: "বাংলাদেশের বিভিন্ন স্বাস্থ্য কমপ্লেক্সে জুনিয়র কনসালট্যান্ট হিসেবে দায়িত্ব পালন",
+      year: "2021-2025",
+      titleEn: "Associate Professor, Dhaka Medical College",
+      titleBn: "সহযোগী অধ্যাপক, ঢাকা মেডিকেল কলেজ",
+      descriptionEn: "Associate Professor of Colorectal Surgery at Dhaka Medical College",
+      descriptionBn: "ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগে সহযোগী অধ্যাপক পদে কর্মরত",
       icon: Users
     },
     {
-      year: "2019-2025",
-      titleEn: "Junior Consultant, Police Hospital",
-      titleBn: "জুনিয়র কনসালট্যান্ট, পুলিশ হাসপাতাল",
-      descriptionEn: "Junior Consultant (Gynae and Obs) at Central Police Hospital, Rajarbagh",
-      descriptionBn: "কেন্দ্রীয় পুলিশ হাসপাতাল, রাজারবাগে জুনিয়র কনসালট্যান্ট (গাইনি ও অবস)",
+      year: "2025",
+      titleEn: "Head of Department, Colorectal Surgery at Dhaka Medical College",
+      titleBn: "কলোরেক্টাল সার্জারী বিভাগের প্রধান, ঢাকা মেডিকেল কলেজ",
+      descriptionEn: "Head of Department, Colorectal Surgery at Dhaka Medical College",
+      descriptionBn: "ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগের প্রধান পদে কর্মরত",
       icon: Users
     },
     {
-      year: "2025-Present",
-      titleEn: "Assistant Professor",
-      titleBn: "সহকারী অধ্যাপক",
-      descriptionEn: "Assistant Professor of Obstetrics and Gynecology at Central Police Hospital",
-      descriptionBn: "কেন্দ্রীয় পুলিশ হাসপাতালে প্রসূতি ও স্ত্রীরোগবিদ্যার সহকারী অধ্যাপক",
-      icon: Award
+      year: "2025-present",
+      titleEn: "Professor, Dhaka Medical College",
+      titleBn: "অধ্যাপক, ঢাকা মেডিকেল কলেজ",
+      descriptionEn: "Professor of Colorectal Surgery at Dhaka Medical College",
+      descriptionBn: "ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারী বিভাগের অধ্যাপক পদে কর্মরত",
+      icon: Users
     },
   ];
 
-  const bioEnglish = `Dr. Farida Khan completed her SSC from A K High School, Dhaka in 1990 and HSC from Begum Badrunnesa Govt. Women College, Dhaka in 1992. She graduated with MBBS from MAG Osmani Medical College, Sylhet in 2000.
+  const bioEnglish = `Dr. Md. Ahsan Habib passed SSC and HSC from Rajshahi Cadet College. He stood 28th position in the medical admission test in 1993 and got admitted to Dhaka Medical College. He stood 33rd position in 22nd BCS and joined in 2003. He passed MRCS in 2008, FCPS in 2009, MS (Colorectal Surgery) in 2017 from Bangladesh Medical University, and Fellowship in ISCP (International Society of Coloproctology) in 2017.
 
-Dr. Farida Khan started her career as Assistant Register (Gynae) at ICMH, Dhaka from 2003 to 2005. She joined Bangladesh Civil Service (BCS Health) in 2005 and served at various government hospitals across Bangladesh. She completed her FCPS training at Mitford Hospital (2007-2008) and course work at BSMMU (2008-2010), achieving FCPS in Gynecology and Obstetrics in 2010.
+Dr. Md. Ahsan Habib has been working as a junior consultant of surgery from 2010 to 2015 and as Assistant Professor of Surgery at National Institute of Cancer Research and Hospital, Mohakhali from 2018 to 2020. He joined Dhaka Medical College as Associate Professor of Colorectal Surgery in 2021 and continues there till today.
 
-With over 25 years of working experience, Dr. Farida Khan has performed over 11,000 surgeries in the diagnosis and treatment of gynecologic problems. She specializes in exploratory laparotomy, dilation and curettage, hysterectomy, oophorectomy, tubal ligation, non-descended vaginal hysterectomy and other surgical procedures with management of normal and complicated pregnancy, delivery and the postpartum period. She has been serving at Central Police Hospital, Rajarbagh since 2019 and was promoted to Assistant Professor in 2025.`;
+He has performed numerous operations in government and private hospitals with great reputation. He frequently deals with recurrent fistula in ano (previously operated in Bangladesh or abroad) successfully. He prefers diagnostic VAAFT followed by excision and reconstruction for complex and recurrent fistula in ano with high success rate. He was trained by Professor Parvez Sheikh (India) for complex and recurrent fistula in ano and is working to adopt excision and reconstruction techniques in the country.`;
 
-  const bioBangla = `ডা. ফারিদা খান ১৯৯০ সালে এ কে হাই স্কুল, ঢাকা থেকে এসএসসি এবং ১৯৯২ সালে বেগম বদরুন্নেসা সরকারি মহিলা কলেজ, ঢাকা থেকে এইচএসসি সম্পন্ন করেন। তিনি ২০০০ সালে এম এ জি ওসমানী মেডিকেল কলেজ, সিলেট থেকে এমবিবিএস ডিগ্রি অর্জন করেন।
+  const bioBangla = `ডাঃ মোঃ আহসান হাবিব রাজশাহী ক্যাডেট কলেজ হতে এইচ. এস.সি পাশের পর ১৯৯३ সালে মেডিকেল ভর্তি পরীক্ষায় २८তম स्थान अधिकार करके ढाका मेडिकेल कलेजे भर्ति हन। २००३ साले २२ तम बि.सी.एस परीक्षায় ३३तम स्थान अधिकार करके सरकारी चाकुरीते योगदान करेन। तिनी २००८ साले एम.आर.सी.एस, २००९ साले एफ.सी.पी.एस, २०१७ साले बङ्गबन्धु शेख मुजिब मेडिकेल विश्ववियालय থেকे कलोरेकटाल सार्जरीते एम.एस डिग्री एवং ISCP (International Society of Coloproctology) থेके फेलोशिप अर्जन करेन।
 
-ডা. ফারিদা খান ২০০৩ থেকে ২০০৫ সাল পর্যন্ত আইসিএমএইচ, ঢাকায় সহকারী রেজিস্টার (গাইনি) হিসেবে তার কর্মজীবন শুরু করেন। তিনি ২০০৫ সালে বাংলাদেশ সিভিল সার্ভিসে (বিসিএস স্বাস্থ্য) যোগদান করেন এবং বাংলাদেশের বিভিন্ন সরকারি হাসপাতালে দায়িত্ব পালন করেন। তিনি মিটফোর্ড হাসপাতালে এফসিপিএস প্রশিক্ষণ (২০০৭-২০০৮) এবং বিএসএমএমইউতে কোর্সওয়ার্ক (২০০৮-২০১০) সম্পন্ন করে ২০১০ সালে গাইনিকোলজি ও অবস্টেট্রিক্সে এফসিপিএস অর্জন করেন।
+ডাঃ মোঃ আহসান হাবিব २०१० हते २०१५ साल पर्यন्त जुनिएर कनसलटेन्ट छिलेन एवং २०१८ थेके २०२० साल पर्यन्त जातीय क्यान्सर गबेषण इन्सटिटुट ओ हास्पतालeme सार्जिकल अनकोलजी विभागeme सहकारी अध्यापक पदeme कर्मरत छिलेन। तिनी २०२१ सालeme ढाका मेडिकेल कलेजeme कलोरेकटाल सार्जरी विभागeme सहयोगी अध्यापक पदeme योगदान करेन एवङ् आज सेखane कर्मरत आछन।
 
-২৫ বছরেরও বেশি কাজের অভিজ্ঞতা সহ, ডা. ফারিদা খান গাইনোকলজিক সমস্যা নির্ণয় এবং চিকিৎসায় ১১,০০০ এর বেশি সার্জারি সম্পাদন করেছেন। তিনি এক্সপ্লোরেটরি ল্যাপারোটমি, ডাইলেশন এবং কিউরেটেজ, হিস্টেরেক্টমি, উফোরেক্টমি, টিউবাল লিগেশন, নন-ডিসেন্ডেড ভ্যাজাইনাল হিস্টেরেক্টমি এবং স্বাভাবিক ও জটিল গর্ভাবস্থা, প্রসব এবং প্রসবোত্তর সময়কাল ব্যবস্থাপনা সহ অন্যান্য অস্ত্রোপচার পদ্ধতিতে বিশেষজ্ঞ। তিনি ২০১৯ সাল থেকে কেন্দ্রীয় পুলিশ হাসপাতাল, রাজারবাগে দায়িত্ব পালন করছেন এবং ২০২৫ সালে সহকারী অধ্যাপক পদে পদোন্নতি পান।`;
+तिनी सरकारी एवङ् बेसरकारी हास्पतालeme प्रचुर सङ्ख्यक अपेरेशन करे सुनाम अर्जन करेछन। तिनी जटिल एवङ् पुनरावृत्तिमूलक फिषटुला अन एवङ् अन्य कलोरेकटाल समस्याने चिकिङ्सyme विशेषज्ञ। तिनी कमपलेक्स एवङ् रिकारेन्ट फिषटुलाне डायाग्नस्टिक VAAFT अनुसरण करे एक्साइशन एवङ् रिकनस्ट्रक्शन पछन्द करेन यारne साफल्यne हार अत्यन्त बेसी। तिनी भारतne अध्यापक पारवेज शेखne द्वारा प्रशिक्षित एवङ् देशme एही पद्धति प्रचलन गराएरne चेष्टा गरिराछन।`;
 
   return (
     <section id="about" className="md:py-20 py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {language === "en" ? "About Dr. Farida Khan" : "ডা. ফারিদা খান সম্পর্কে"}
+            {language === "en" ? "About Dr. Ahsan Habib" : "ডাঃ আহসান হাবিব সম্পর্কে"}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {language === "en"
-              ? "Over 25 years of excellence in gynecology and obstetrics with 11,000+ successful surgeries"
-              : "গাইনিকোলজি ও অবস্টেট্রিক্সে ২৫ বছরেরও বেশি অভিজ্ঞতা এবং ১১,০০০+ সফল অস্ত্রোপচার"}
+              ? "A distinguished career in colorectal surgery with pioneering contributions to laser surgery in Bangladesh"
+              : "বাংলাদেশে লেজার সার্জারিতে অগ্রণী অবদান রাখা কোলোরেক্টাল সার্জারিতে একজন বিশিষ্ট পেশাদার"}
           </p>
         </div>
 
@@ -100,8 +100,8 @@ With over 25 years of working experience, Dr. Farida Khan has performed over 11,
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="/images/farida.jpg"
-                  alt="Dr. Farida Khan"
+                  src="/images/doctor.jpg"
+                  alt="Dr. Md. Ahsan Habib"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -110,13 +110,13 @@ With over 25 years of working experience, Dr. Farida Khan has performed over 11,
             {/* Quick Facts Cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="md:text-3xl text-xl font-bold text-blue-600 mb-2">25+</div>
+                <div className="md:text-3xl text-xl font-bold text-blue-600 mb-2">20+</div>
                 <div className="text-sm text-gray-600">
                   {language === "en" ? "Years in Practice" : "বছরের অভিজ্ঞতা"}
                 </div>
               </div>
               <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="md:text-3xl text-xl font-bold text-blue-600 mb-2">11000+</div>
+                <div className="md:text-3xl text-xl font-bold text-blue-600 mb-2">15000+</div>
                 <div className="text-sm text-gray-600">
                   {language === "en" ? "Surgeries Performed" : "অপারেশন সম্পন্ন"}
                 </div>
@@ -176,34 +176,27 @@ With over 25 years of working experience, Dr. Farida Khan has performed over 11,
             <Award className="w-16 h-16 mx-auto mb-6 animate-bounce" />
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               {language === "en"
-                ? "Expert in Women's Health & Advanced Gynecologic Surgery"
-                : "মহিলা স্বাস্থ্য এবং উন্নত গাইনোকলজিক সার্জারিতে বিশেষজ্ঞ"}
+                ? "Pioneer in Laser Colorectal Surgery"
+                : "লেজার কোলোরেক্টাল সার্জারিতে অগ্রদূত"}
             </h3>
             <p className="text-lg text-blue-100 mb-6">
               {language === "en"
-                ? "Dr. Farida Khan specializes in comprehensive women's healthcare including reproductive disorders, abnormal bleeding, endometriosis, ovarian cysts, and complex gynecologic surgeries. With a holistic approach to patient care, she treats each woman as a physical, emotional, and social being, ensuring complete and speedy recovery."
-                : "ডা. ফারিদা খান প্রজনন সংক্রান্ত ব্যাধি, অস্বাভাবিক রক্তপাত, এন্ডোমেট্রিওসিস, ডিম্বাশয়ের সিস্ট এবং জটিল গাইনোকলজিক সার্জারি সহ ব্যাপক মহিলা স্বাস্থ্যসেবায় বিশেষজ্ঞ। রোগীর যত্নে একটি সামগ্রিক দৃষ্টিভঙ্গি সহ, তিনি প্রতিটি মহিলাকে একটি শারীরিক, মানসিক এবং সামাজিক সত্তা হিসাবে চিকিৎসা করেন, সম্পূর্ণ এবং দ্রুত পুনরুদ্ধার নিশ্চিত করেন।"}
+                ? "Dr. Ahsan Habib was the first surgeon in Bangladesh to introduce laser-assisted treatments for piles, fissures, and fistulas. He specializes in complex and recurrent fistula cases using advanced VAAFT (Video-Assisted Anal Fistula Treatment) followed by excision and reconstruction techniques."
+                : "ডাঃ আহসান হাবিব বাংলাদেশে প্রথম সার্জন যিনি পাইলস, ফিসার এবং ফিষ্টুলার জন্য লেজার সহায়তাপ্রাপ্ত চিকিৎসা প্রবর্তন করেছেন। তিনি উন্নত VAAFT (ভিডিও-সহায়তাপ্রাপ্ত অ্যানাল ফিষ্টুলা চিকিৎসা) ব্যবহার করে জটিল এবং পুনরাবৃত্তিমূলক ফিষ্টুলার ক্ষেত্রে বিশেষজ্ঞ।"}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">
                 <div className="text-sm font-semibold">
                   {language === "en"
-                    ? "Laparoscopic Surgery Expert"
-                    : "ল্যাপারোস্কোপিক সার্জারি বিশেষজ্ঞ"}
+                    ? "Trained by Prof. Parvez Sheikh, India"
+                    : "ভারতের অধ্যাপক পারভেজ শেখের দ্বারা প্রশিক্ষিত"}
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">
                 <div className="text-sm font-semibold">
                   {language === "en"
-                    ? "High Risk Pregnancy Management"
-                    : "উচ্চ ঝুঁকিপূর্ণ গর্ভাবস্থা ব্যবস্থাপনা"}
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">
-                <div className="text-sm font-semibold">
-                  {language === "en"
-                    ? "25+ Years Experience"
-                    : "২৫+ বছরের অভিজ্ঞতা"}
+                    ? "High Success Rate in Complex Cases"
+                    : "জটিল ক্ষেত্রে উচ্চ সাফল্যের হার"}
                 </div>
               </div>
             </div>
