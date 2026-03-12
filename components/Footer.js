@@ -7,10 +7,10 @@ export default function Footer({ language }) {
 
   const translations = {
     en: {
-      copyright: "© Copyright 2025 Dr. Md. Ahsan Habib. | Developed by Ittehad Sami"
+      copyright: "© Copyright 2025 Dr. Farida Khan. | Developed by Ittehad Sami"
     },
     bn: {
-      copyright: "© কপিরাইট ২০২৫ ডা. এম ডি আহসান হাবিব। | উন্নত করেছেন ইত্তেহাদ সামী"
+      copyright: "© কপিরাইট ২০২৫ ডা. ফারিদা খান। | উন্নত করেছেন ইত্তেহাদ সামী"
     }
   };
 
@@ -38,7 +38,7 @@ export default function Footer({ language }) {
           </p>
           <div className="flex justify-start gap-6">
             <a
-              href="https://www.facebook.com/Dr.MAhsanHabib/"
+              href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/80 hover:text-white hover:scale-110 transition-all duration-300"
