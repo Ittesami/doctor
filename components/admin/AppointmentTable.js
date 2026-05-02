@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import { Loader2, RefreshCw, LogOut, Eye, Calendar, Phone, User } from "lucide-react";
+import { Loader2, Eye, Calendar, Phone, User } from "lucide-react";
 import AppointmentDetailModal from "./AppointmentDetailModal";
 
-export default function AppointmentTable({ onLogout }) {
+export default function AppointmentTable() {
   const [appointments, setAppointments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filter, setFilter] = useState("all");
@@ -44,40 +44,9 @@ export default function AppointmentTable({ onLogout }) {
     { key: "rejected", label: "Rejected" },
   ];
 
-  const handleLogout = async () => {
-    document.cookie = "admin_token=; Max-Age=0; path=/";
-    onLogout();
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-bold text-gray-900">Appointment Management</h1>
-            <p className="text-sm text-gray-500">Dr. Farida Khan - Admin Panel</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={fetchAppointments}
-              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              <RefreshCw className="w-4 h-4" />
-              Refresh
-            </button>
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-1.5 text-sm text-red-600 hover:text-red-700 px-3 py-2 border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
-            >
-              <LogOut className="w-4 h-4" />
-              Logout
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+    <>
+      <div>
         {/* Filter Tabs */}
         <div className="flex gap-2 mb-6 overflow-x-auto pb-1">
           {tabs.map((tab) => (
@@ -184,6 +153,6 @@ export default function AppointmentTable({ onLogout }) {
           }}
         />
       )}
-    </div>
+    </>
   );
 }
