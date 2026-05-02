@@ -1,194 +1,577 @@
 
-import { Activity, Zap, Heart, Stethoscope, Pill, AlertCircle, Scissors, Shield, X } from "lucide-react";
+import { Activity, Zap, Heart, Stethoscope, Pill, AlertCircle, Scissors, Shield, X, RefreshCw, Clock, Target, Eye, Layers, Droplets, Radio } from "lucide-react";
 import { useState } from "react";
+
 export default function Services({ language }) {
   const services = [
     {
       id: 1,
-      titleEn: "Piles (Haemorrhoids)",
-      titleBn: "অর্শ্বরোগ (হেমোরয়েডস)",
-      icon: Activity,
-      shortDescriptionEn: "Advanced laser treatment for hemorrhoids with minimal pain and quick recovery.",
-      shortDescriptionBn: "অর্শ্বরোগের জন্য অ্যাডভান্সড লেজার চিকিৎসা ন্যূনতম ব্যথা এবং দ্রুত পুনরুদ্ধার সহ।",
-      fullDescriptionEn: `Piles (Haemorrhoids) is a bunch of broadened veins in the anus and the lower rectum. The rectum is the last range of digestive tract which continues as the anus, from where stools are excreted.
+      titleEn: "Fistula in Ano",
+      titleBn: "ফিস্টুলা ইন অ্যানো",
+      icon: Heart,
+      shortDescriptionEn: "Expert treatment for simple, complex, and multiple-failed fistulas using VAAFT and excision & reconstruction techniques.",
+      shortDescriptionBn: "VAAFT এবং এক্সিশন ও রিকনস্ট্রাকশন কৌশল ব্যবহার করে সরল, জটিল ও বারবার ব্যর্থ ফিস্টুলার বিশেষজ্ঞ চিকিৎসা।",
+      fullDescriptionEn: `An anal fistula is a small tunnel that forms between the inside of the anus and the skin near the anal opening. Dr. Ahsan Habib is one of Bangladesh's foremost experts in fistula surgery, trained under Prof. Parvez Sheikh at Saifee Hospital, India.
 
-Piles are generally classified into two types:
-1. Internal piles start in the lower rectum and don't come out of the anal opening
-2. External piles start in the lower rectum and remain outside the anal opening
+TYPES TREATED:
+• Simple fistula in ano
+• Complex fistula in ano
+• Multiple failed operations for fistula (operated in Bangladesh or abroad)
 
-SYMPTOMS OF PILES:
-- Painless bleeding while passing stools
-- Itching
-- Mucus discharge
-- Burning on and around the anus
-- Severe pain, if complication occurs
-- Sensation of incomplete evacuation
+PROCEDURES:
+• VAAFT (Video-Assisted Anal Fistula Treatment) — gold standard for complex cases
+• Excision and Reconstruction — high success rate for recurrent fistula
+• Laser fistulotomy
+• Seton placement
+• Fistulectomy
 
-CAUSES:
-- Chronic constipation
-- Obesity, pregnancy, cirrhosis of the liver
-- Standing or sitting for long durations
-- Consuming a low fiber diet
-- Overconsumption of junk, spicy and fried food
+ADVANTAGES OF LASER / VAAFT TREATMENT:
+• No sphincter damage — no risk of incontinence
+• Very low recurrence rate
+• Short recovery time
+• Minimal post-operative dressing required
+• Safe for cardiac, pregnant, and lactating patients`,
+      fullDescriptionBn: `ফিস্টুলা ইন অ্যানো হলো পায়ুর ভেতর থেকে পেরিয়ানাল ত্বকে একটি সুড়ঙ্গপথ তৈরি হওয়া। ডাঃ আহসান হাবিব ভারতের সাইফি হাসপাতালে অধ্যাপক পারভেজ শেখের অধীনে প্রশিক্ষণপ্রাপ্ত এবং বাংলাদেশের অন্যতম শীর্ষ ফিস্টুলা বিশেষজ্ঞ।
 
-LASER HEMORRHOIDOPLASTY ADVANTAGES:
-- Postoperative period is least painful
-- Day care procedure
-- Minimal chances of postoperative bleeding
-- Generally, postoperative dressing is not required
-- No rectal stenosis
-- No incontinence
-- Can be done in post-CABG and postpartum patients
-- Several repetitions possible`,
-      fullDescriptionBn: `অর্শ্বরোগ (হেমোরয়েডস) হল পায়ুপথ এবং নিম্ন মলাশয়ে প্রসারিত শিরার একটি গুচ্ছ।`,
-      image: "/images/service-laser.jpg",
-      treatments: ["Laser Hemorrhoidoplasty", "Conservative Management", "Minimally Invasive Procedures", "Rubber Band Ligation", "Sclerotherapy"]
+চিকিৎসার ধরন:
+• সরল ফিস্টুলা ইন অ্যানো
+• জটিল ফিস্টুলা ইন অ্যানো
+• দেশে বা বিদেশে বারবার অপারেশন ব্যর্থ হওয়া ফিস্টুলা
+
+পদ্ধতি:
+• VAAFT (ভিডিও-সহায়তাপ্রাপ্ত অ্যানাল ফিস্টুলা চিকিৎসা)
+• এক্সিশন ও রিকনস্ট্রাকশন
+• লেজার ফিস্টুলোটমি
+• সেটন পদ্ধতি`,
+      treatments: ["VAAFT", "Excision & Reconstruction", "Laser Fistulotomy", "Seton Placement", "Fistulectomy"]
     },
     {
       id: 2,
       titleEn: "Anal Fissure",
-      titleBn: "পায়ু ফাটল",
+      titleBn: "অ্যানাল ফিসার",
       icon: Zap,
-      shortDescriptionEn: "Laser-assisted treatment for anal fissures ensuring quick healing and pain relief.",
-      shortDescriptionBn: "পায়ু ফাটলের জন্য লেজার-সহায়তাপ্রাপ্ত চিকিৎসা দ্রুত নিরাময় এবং ব্যথা উপশম নিশ্চিত করে।",
-      fullDescriptionEn: `An anal fissure is a little tear or split in the coating of the anus. It might happen while passing hard stools.
+      shortDescriptionEn: "Simple and laser surgical treatment for anal fissures with minimal pain and rapid healing.",
+      shortDescriptionBn: "ন্যূনতম ব্যথা ও দ্রুত নিরাময়ের জন্য অ্যানাল ফিসারের সরল ও লেজার অস্ত্রোপচার।",
+      fullDescriptionEn: `An anal fissure is a small tear in the lining of the anus causing sharp pain and bleeding during bowel movements.
 
-It can bring about sharp pain and bleeding during and after defecations. It might likewise bring about tingling and blaze in the anal region. Sometimes the pain gets too serious, that patient suffers vertigo and perspiration on passing stool. Few patients suffer discomfort while sitting.
+PROCEDURES:
+• Simple surgical operation (Lateral Internal Sphincterotomy)
+• Laser operation — day-care procedure with faster recovery
 
-SYMPTOMS OF ANAL FISSURE:
-- A noticeable tear in the skin around the rear-end
-- A skin tag, or a little chunk of skin, by the tear
-- Sharp torment in the anal range amid solid discharges
-- Streaks of blood on stools or on tissue paper subsequent to wiping
-- Burning or tingling in the anal range
+SYMPTOMS:
+• Sharp pain during and after bowel movements
+• Bright red blood on stool or tissue paper
+• Burning or itching around the anus
+• A visible tear in skin near the anus
 
-CAUSES OF ANAL FISSURE:
-- Anal fissure regularly happens while passing hard stools
-- Chronic constipation or frequent diarrhea can cause a tear
-- Straining amid labor
-- Decreased bloodstream to the anorectal range
-- The overly tight or spastic anal sphincter muscle
+ADVANTAGES OF LASER TREATMENT:
+• Highly effective with very low recurrence
+• No overnight hospital stay required
+• No loss of stool control (incontinence)
+• Safe for cardiac, pregnant, and lactating patients`,
+      fullDescriptionBn: `অ্যানাল ফিসার হলো পায়ুর আবরণে একটি ছোট্ট ফাটল যা মলত্যাগের সময় তীব্র ব্যথা ও রক্তপাত ঘটায়।
 
-In rare cases, anal gap may develop due to: anal tumor, HIV, tuberculosis, herpes
+পদ্ধতি:
+• সরল অস্ত্রোপচার (ল্যাটারাল ইন্টার্নাল স্ফিংক্টেরোটমি)
+• লেজার অপারেশন — দিনেই ফিরে যাওয়ার সুবিধা
 
-ADVANTAGES OF LASER SPHINCTEROTOMY:
-- Highly effective treatment for fissure
-- Very low recurrence rates after surgery
-- Minor operation performed as day case
-- No need to stay overnight
-- Helps fissure heal by decreasing pain and spasm
-- Less likely to need postoperative dressing
-- Can be done in post CABG (Cardiac), Pregnant & Lactational Patients
-- No loss of stool control (Incontinence)`,
-      fullDescriptionBn: `পায়ু ফাটল হল পায়ুমার্জন আবরণে একটি ছোট্ট ছিঁড়ে যাওয়া বা বিভাজন।`,
-      image: "/images/service-fissure.jpg",
-      treatments: ["Laser Sphincterotomy", "Sitz Bath", "Local Ointment Application", "Laxatives", "Closed Lateral Sphincterotomy"]
+লক্ষণ:
+• মলত্যাগের সময় ও পরে তীব্র ব্যথা
+• মলে বা টিস্যুতে উজ্জ্বল লাল রক্ত
+• পায়ুপথে জ্বালা বা চুলকানি`,
+      treatments: ["Laser Sphincterotomy", "Lateral Internal Sphincterotomy", "Sitz Bath", "Local Ointment", "Laxative Therapy"]
     },
     {
       id: 3,
-      titleEn: "Anal Fistula",
-      titleBn: "ফিস্টুলা ইন অ্যানো",
-      icon: Heart,
-      shortDescriptionEn: "Specialized VAAFT technique for complex and recurrent fistulas with high success rates.",
-      shortDescriptionBn: "জটিল এবং পুনরাবৃত্ত ফিস্টুলার জন্য বিশেষায়িত VAAFT কৌশল উচ্চ সাফল্যের হার সহ।",
-      fullDescriptionEn: `An anal fistula is a little channel that is created between the lumen of the anus and the skin close to the perianal area.
+      titleEn: "Hemorrhoids (Piles)",
+      titleBn: "অর্শ্বরোগ (পাইলস)",
+      icon: Activity,
+      shortDescriptionEn: "Advanced treatment including Longo procedure and laser for hemorrhoids with minimal pain and quick recovery.",
+      shortDescriptionBn: "ন্যূনতম ব্যথা ও দ্রুত আরোগ্যের জন্য লোঙ্গো পদ্ধতি ও লেজার সহ অর্শ্বরোগের উন্নত চিকিৎসা।",
+      fullDescriptionEn: `Hemorrhoids (piles) are enlarged veins in the anus and lower rectum. Dr. Ahsan Habib offers the full range of modern treatment options.
 
-At times, it causes persistent seepage. In different cases, where the outside of the channel opening shuts, the outcome might be intermittent anal abscesses. The main cure for an anal fistula is surgery.
+PROCEDURES:
+• Longo Procedure (PSARP / Stapled Hemorrhoidopexy) — for advanced internal hemorrhoids
+• Laser Hemorrhoidoplasty — minimally invasive, day-care
+• Rubber Band Ligation
+• Sclerotherapy
+• Conservative management
 
-SYMPTOMS OF ANAL FISTULA:
-- Discharge of pus or blood on and off from the fistula opening
-- Pain which is generally consistent, throbbing and worse when taking a seat
-- Skin excoriation and itching around the anus
-- Constipation or torment related with bowel moments
-- Fever in acute cases
+SYMPTOMS:
+• Painless bleeding during bowel movements
+• Itching and mucus discharge
+• Burning around the anus
+• Sensation of incomplete evacuation
 
-CAUSES OF ANAL FISTULA:
-- The most widely recognized reason for fistula is an anal abscess
-- Most anal fistulas shape in the back midline
-- Intestinal provocative illness
-- Sexually transmitted diseases
-- Injury
-- Tumors including leukemia
-- Tuberculosis
-- Anorectal growth
-- HIV
+ADVANTAGES OF LONGO / LASER:
+• Minimal post-operative pain
+• Day-care procedure
+• No rectal stenosis
+• Low chance of recurrence
+• No incontinence risk`,
+      fullDescriptionBn: `অর্শ্বরোগ বা পাইলস হলো পায়ুপথ ও নিম্ন মলাশয়ের শিরা ফুলে যাওয়া। ডাঃ আহসান হাবিব আধুনিক সব পদ্ধতিতে চিকিৎসা প্রদান করেন।
 
-ADVANTAGES OF LASER TREATMENT:
-- Excellent Healing rates
-- Postoperative dressing required for very short duration
-- Post-operative bleeding less likely
-- Fewer complications observed
-- Can be done in post CABG (Cardiac), Pregnant & Lactational Patients
-- No loss of stool control (Incontinence) - no sphincter damage
-- Uncommon recurrence of Fistula after Laser treatment
-- Superior operator control`,
-      fullDescriptionBn: `ফিস্টুলা ইন অ্যানো হল পায়ুর লুমেন এবং পেরিয়ানাল এলাকার কাছের ত্বকের মধ্যে তৈরি একটি ছোট্ট চ্যানেল।`,
-      image: "/images/service-fistula.jpg",
-      treatments: ["VAAFT (Video-Assisted Anal Fistula Treatment)", "Laser Fistulotomy", "Excision & Reconstruction", "Open Fistulectomy", "Seton Tie"]
+পদ্ধতি:
+• লোঙ্গো পদ্ধতি (স্টেপলড হেমোরয়েডোপেক্সি)
+• লেজার হেমোরয়েডোপ্লাস্টি
+• রাবার ব্যান্ড লাইগেশন
+• স্ক্লেরোথেরাপি
+• রক্ষণশীল ব্যবস্থাপনা`,
+      treatments: ["Longo Procedure", "Laser Hemorrhoidoplasty", "Rubber Band Ligation", "Sclerotherapy", "Conservative Management"]
     },
     {
       id: 4,
-      titleEn: "Rectal Prolapse",
-      titleBn: "রেক্টাল প্রোল্যাপ্স",
-      icon: Stethoscope,
-      shortDescriptionEn: "Surgical correction of rectal prolapse with modern techniques.",
-      shortDescriptionBn: "আধুনিক কৌশলের সাথে রেক্টাল প্রোল্যাপ্সের সার্জিক্যাল সংশোধন।",
-      fullDescriptionEn: `Rectal Prolapse is an illness in which Rectum turns out during defecation partially or totally. Sometimes it goes automatically or in some cases the patient needs to do it manually. This can happen for men, females, and kids. While this might be excruciating, it can likewise be reasonably mortifying and frequently has an earth-shattering negative effect on patients' personal satisfaction.`,
-      fullDescriptionBn: `রেক্টাল প্রোল্যাপ্স হল এমন একটি অসুখ যেখানে মলত্যাগের সময় মলাশয় আংশিক বা সম্পূর্ণভাবে বেরিয়ে আসে।`,
-      image: "/images/service-prolapse.jpg",
-      treatments: ["Laparoscopic Rectopexy", "Delorme's Procedure", "Conservative Management", "Surgical Correction"]
+      titleEn: "Anal Stenosis",
+      titleBn: "অ্যানাল স্টেনোসিস",
+      icon: Scissors,
+      shortDescriptionEn: "Plastic surgical procedures to correct narrowing of the anal canal and restore normal function.",
+      shortDescriptionBn: "পায়ুনালীর সংকীর্ণতা সংশোধন ও স্বাভাবিক কার্যক্রম পুনরুদ্ধারের জন্য প্লাস্টিক সার্জারি।",
+      fullDescriptionEn: `Anal stenosis is an abnormal narrowing of the anal canal that can cause pain and difficulty with bowel movements.
+
+PROCEDURES:
+• Plastic surgical procedure — flap-based reconstruction to widen the anal canal and restore function
+
+CAUSES:
+• Previous anal surgery (hemorrhoidectomy, fistula surgery)
+• Inflammatory bowel disease
+• Radiation injury
+• Chronic anal fissure
+
+SYMPTOMS:
+• Difficulty passing stools
+• Pain during bowel movements
+• Sensation of incomplete evacuation
+• Thin, ribbon-like stools`,
+      fullDescriptionBn: `অ্যানাল স্টেনোসিস হলো পায়ুনালীর অস্বাভাবিক সংকীর্ণতা যা ব্যথা ও মলত্যাগে কষ্টের কারণ হয়।
+
+পদ্ধতি:
+• প্লাস্টিক সার্জিক্যাল পদ্ধতি — ফ্ল্যাপ ভিত্তিক পুনর্গঠন
+
+কারণ:
+• পূর্বের অ্যানাল সার্জারি
+• প্রদাহজনক অন্ত্রের রোগ
+• রেডিয়েশনের আঘাত
+• দীর্ঘস্থায়ী অ্যানাল ফিসার`,
+      treatments: ["Plastic Surgical Procedure", "Flap Reconstruction", "Post-op Dilation", "Dietary Management"]
     },
     {
       id: 5,
-      titleEn: "STARR Surgery",
-      titleBn: "STARR সার্জারি",
-      icon: Pill,
-      shortDescriptionEn: "Advanced surgical treatment for obstructed defecation syndrome with minimal scarring.",
-      shortDescriptionBn: "বাধাপ্রাপ্ত মলত্যাগ সিন্ড্রোমের জন্য অ্যাডভান্সড সার্জিক্যাল চিকিৎসা ন্যূনতম দাগ সহ।",
-      fullDescriptionEn: `STARR Surgery is a surgical system that is performed through the anus, requires no outside entry points, and leaves no obvious scars.
+      titleEn: "Pilonidal Sinus",
+      titleBn: "পাইলোনিডাল সাইনাস",
+      icon: Layers,
+      shortDescriptionEn: "Laser and plastic surgical treatment for pilonidal sinus disease with low recurrence rates.",
+      shortDescriptionBn: "কম পুনরাবৃত্তির হারসহ পাইলোনিডাল সাইনাস রোগের লেজার ও প্লাস্টিক সার্জিক্যাল চিকিৎসা।",
+      fullDescriptionEn: `A pilonidal sinus is a small cyst or abscess that occurs at the top of the cleft of the buttocks. Without proper treatment, it frequently recurs.
 
-When a patient has symptoms of chronic constipation, they may be suffering from Obstructed Defecation Syndrome or ODS. ODS is associated with deformities in the rectum, such as the formation of rectocele (prolapse of the wall between the rectum and the vagina) or telescoping of the intestinal wall.`,
-      fullDescriptionBn: `STARR সার্জারি হল একটি সার্জিক্যাল পদ্ধতি যা পায়ুর মাধ্যমে সঞ্চালিত হয়।`,
-      image: "/images/service-starr.jpg",
-      treatments: ["STARR Procedure", "Post-operative Care", "Dietary Counseling", "Pelvic Floor Therapy"]
+PROCEDURES:
+• Laser treatment — minimally invasive, low recurrence
+• Plastic surgical procedure — wide excision with flap closure for recurrent or large sinuses
+
+SYMPTOMS:
+• Pain and swelling near the tailbone
+• Redness and tenderness
+• Discharge of pus or blood
+• Hair protruding from the sinus
+
+ADVANTAGES:
+• Low recurrence with proper surgical technique
+• Faster recovery with laser approach
+• Good cosmetic outcome with flap repair`,
+      fullDescriptionBn: `পাইলোনিডাল সাইনাস হলো নিতম্বের উপরিভাগে একটি ছোট সিস্ট বা ফোড়া। সঠিক চিকিৎসা ছাড়া এটি বারবার ফিরে আসে।
+
+পদ্ধতি:
+• লেজার চিকিৎসা — ন্যূনতম আক্রমণাত্মক, কম পুনরাবৃত্তি
+• প্লাস্টিক সার্জিক্যাল পদ্ধতি — পুনরাবৃত্তি বা বড় সাইনাসের জন্য বিস্তৃত এক্সিশন ও ফ্ল্যাপ বন্ধ`,
+      treatments: ["Laser Treatment", "Plastic Surgical Procedure", "Wide Excision + Flap Closure", "Wound Care"]
     },
     {
       id: 6,
-      titleEn: "Perianal Abscess",
-      titleBn: "পেরিয়ানাল অ্যাবসেস",
-      icon: AlertCircle,
-      shortDescriptionEn: "Immediate treatment for perianal abscesses to prevent complications.",
-      shortDescriptionBn: "পেরিয়ানাল অ্যাবসেসের জন্য জটিলতা প্রতিরোধের তাৎক্ষণিক চিকিৎসা।",
-      fullDescriptionEn: `Perianal Abscess is an agonizing condition in which a collection of pus develops near the rear-end. Most perianal abscesses are the consequence of disease from little anal glands.
+      titleEn: "Obstructed Defecation Syndrome (ODS)",
+      titleBn: "অবস্ট্রাকটেড ডিফিকেশন সিন্ড্রোম (ODS)",
+      icon: Stethoscope,
+      shortDescriptionEn: "Full range of ODS treatments including STARR, ventral mesh rectopexy, and pelvic floor repair.",
+      shortDescriptionBn: "STARR, ভেন্ট্রাল মেশ রেক্টোপেক্সি এবং পেলভিক ফ্লোর মেরামতসহ ODS-এর সম্পূর্ণ চিকিৎসা।",
+      fullDescriptionEn: `Obstructed Defecation Syndrome (ODS) is a condition where patients feel unable to empty the rectum properly despite straining.
 
-The most well-known sort of abscess is a perianal abscess. This frequently shows up as a difficult bubble-like swelling close to the rear-end. It might be red in shading and warm to the touch. Perianal abscesses situated in ischiorectal fossa are less regular and might be less obvious.`,
-      fullDescriptionBn: `পেরিয়ানাল অ্যাবসেস হল একটি যন্ত্রণাদায়ক অবস্থা যেখানে পায়ুর কাছে পুঁজের সংগ্রহ বিকশিত হয়।`,
-      image: "/images/service-abscess.jpg",
-      treatments: ["Incision & Drainage", "Antibiotic Therapy", "Follow-up Care", "Abscess Management"]
+PROCEDURES:
+• STARR Procedure (Stapled Trans-Anal Rectal Resection)
+• Ventral Mesh Rectopexy — open and laparoscopic
+• Posterior Colpoperiniorrhaphy
+• Sling procedure for perineal descent
+
+SYMPTOMS:
+• Chronic straining during bowel movements
+• Sensation of incomplete evacuation
+• Need to press on the perineum or vagina to aid defecation
+• Rectal prolapse or rectocele`,
+      fullDescriptionBn: `অবস্ট্রাকটেড ডিফিকেশন সিন্ড্রোম (ODS) হলো এমন একটি অবস্থা যেখানে রোগী চাপ দেওয়া সত্ত্বেও মলাশয় সঠিকভাবে খালি করতে পারেন না।
+
+পদ্ধতি:
+• STARR পদ্ধতি
+• ভেন্ট্রাল মেশ রেক্টোপেক্সি — ওপেন ও ল্যাপারোস্কোপিক
+• পোস্টেরিয়র কোলপোপেরিনিওরাফি
+• পেরিনিয়াল ডিসেন্টের জন্য স্লিং পদ্ধতি`,
+      treatments: ["STARR Procedure", "Ventral Mesh Rectopexy (Laparoscopic)", "Ventral Mesh Rectopexy (Open)", "Posterior Colpoperiniorrhaphy", "Sling Procedure"]
     },
     {
       id: 7,
-      titleEn: "Proctocolectomy",
-      titleBn: "প্রোক্টোকোলেক্টমি",
-      icon: Scissors,
-      shortDescriptionEn: "Advanced colorectal surgery for inflammatory bowel disease and cancer.",
-      shortDescriptionBn: "প্রদাহজনক অন্ত্রের রোগ এবং ক্যান্সারের জন্য উন্নত কোলোরেক্টাল সার্জারি।",
-      fullDescriptionEn: `In proctocolectomy, the large intestine and rectum are Removed, leaving the lower end of the small intestine (the ileum). The specialist sews the anus closed and makes a little opening called a stoma in the skin of the lower guts.`,
-      fullDescriptionBn: `প্রোক্টোকোলেক্টমিতে, বৃহদন্ত্র এবং মলাশয় অপসারণ করা হয়, ছোট অন্ত্রের নীচের প্রান্ত রেখে যায়।`,
-      image: "/images/service-proctocolectomy.jpg",
-      treatments: ["Total Proctocolectomy", "Restorative Procedures", "Stoma Care", "Ileostomy Management"]
+      titleEn: "Rectal Prolapse",
+      titleBn: "রেক্টাল প্রোল্যাপ্স",
+      icon: RefreshCw,
+      shortDescriptionEn: "Comprehensive surgical correction including Delorme's, Altemeier, ventral mesh rectopexy, and suture rectopexy.",
+      shortDescriptionBn: "ডেলোর্মেস, অল্টেমিয়ার, ভেন্ট্রাল মেশ রেক্টোপেক্সি এবং সুচার রেক্টোপেক্সি সহ ব্যাপক সার্জিক্যাল সংশোধন।",
+      fullDescriptionEn: `Rectal prolapse occurs when the rectum turns inside out and protrudes through the anal opening — partially or completely.
+
+PROCEDURES:
+• Delorme's Procedure — mucosal sleeve resection for partial prolapse
+• Altemeier's Procedure — perineal proctosigmoidectomy for full-thickness prolapse
+• Ventral Mesh Rectopexy — open and laparoscopic approaches
+• Suture Rectopexy
+
+SYMPTOMS:
+• Visible protrusion of tissue from the anus
+• Mucus or blood discharge
+• Difficulty controlling bowel movements
+• Feeling of incomplete bowel emptying`,
+      fullDescriptionBn: `রেক্টাল প্রোল্যাপ্স হয় যখন মলাশয় ভেতর থেকে বাইরে এসে পায়ুপথ দিয়ে বেরিয়ে আসে — আংশিক বা সম্পূর্ণভাবে।
+
+পদ্ধতি:
+• ডেলোর্মেস পদ্ধতি
+• অল্টেমিয়ার পদ্ধতি
+• ভেন্ট্রাল মেশ রেক্টোপেক্সি — ওপেন ও ল্যাপারোস্কোপিক
+• সুচার রেক্টোপেক্সি`,
+      treatments: ["Delorme's Procedure", "Altemeier's Procedure", "Ventral Mesh Rectopexy (Laparoscopic)", "Ventral Mesh Rectopexy (Open)", "Suture Rectopexy"]
     },
     {
       id: 8,
-      titleEn: "Hernia Surgery",
-      titleBn: "হার্নিয়া সার্জারি",
+      titleEn: "Perianal Abscess",
+      titleBn: "পেরিয়ানাল অ্যাবসেস",
+      icon: AlertCircle,
+      shortDescriptionEn: "Prompt surgical drainage of perianal abscesses to relieve pain and prevent fistula formation.",
+      shortDescriptionBn: "ব্যথা উপশম ও ফিস্টুলা গঠন প্রতিরোধের জন্য পেরিয়ানাল অ্যাবসেসের দ্রুত সার্জিক্যাল ড্রেনেজ।",
+      fullDescriptionEn: `A perianal abscess is a painful collection of pus near the anus, commonly caused by infection of anal glands.
+
+PROCEDURES:
+• Incision and Drainage (I&D) — primary treatment
+• Antibiotic therapy (adjunct)
+• Follow-up to monitor for fistula development
+
+SYMPTOMS:
+• Severe throbbing pain near the anus
+• Swelling and redness
+• Fever and feeling unwell
+• Difficulty sitting
+
+IMPORTANT:
+Untreated abscesses frequently progress to fistula in ano. Early treatment prevents complications.`,
+      fullDescriptionBn: `পেরিয়ানাল অ্যাবসেস হলো পায়ুর কাছে পুঁজের বেদনাদায়ক সংগ্রহ, সাধারণত অ্যানাল গ্রন্থির সংক্রমণ থেকে হয়।
+
+পদ্ধতি:
+• ইনসিশন ও ড্রেনেজ — প্রাথমিক চিকিৎসা
+• অ্যান্টিবায়োটিক থেরাপি
+• ফিস্টুলা বিকাশ পর্যবেক্ষণ
+
+চিকিৎসা না করলে অ্যাবসেস প্রায়ই ফিস্টুলায় পরিণত হয়।`,
+      treatments: ["Incision & Drainage", "Antibiotic Therapy", "Wound Care", "Follow-up Monitoring"]
+    },
+    {
+      id: 9,
+      titleEn: "Anal & Perianal Itching",
+      titleBn: "পায়ু ও পেরিয়ানাল চুলকানি",
+      icon: Radio,
+      shortDescriptionEn: "Diagnosis and treatment of chronic perianal pruritus (itching) with medical and surgical options.",
+      shortDescriptionBn: "চিকিৎসা ও সার্জিক্যাল বিকল্পের মাধ্যমে দীর্ঘস্থায়ী পেরিয়ানাল চুলকানির নির্ণয় ও চিকিৎসা।",
+      fullDescriptionEn: `Anal and perianal itching (pruritus ani) is a common, distressing condition that can significantly affect quality of life.
+
+CAUSES:
+• Hemorrhoids, fissures, or fistulas
+• Skin conditions (dermatitis, psoriasis)
+• Fungal or parasitic infection
+• Poor hygiene or excessive moisture
+• Dietary factors (spicy food, caffeine)
+
+TREATMENT:
+• Identify and treat underlying cause
+• Topical treatments and hygiene advice
+• Dietary modifications
+• Surgical correction of contributing conditions (hemorrhoids, fistula)`,
+      fullDescriptionBn: `পায়ু ও পেরিয়ানাল চুলকানি (প্রুরিটাস অ্যানি) একটি সাধারণ কিন্তু কষ্টদায়ক সমস্যা।
+
+কারণ:
+• অর্শ্বরোগ, ফিসার বা ফিস্টুলা
+• চর্মরোগ
+• ছত্রাক বা পরজীবী সংক্রমণ
+• খাদ্যাভ্যাসগত কারণ
+
+চিকিৎসা:
+• অন্তর্নিহিত কারণ খুঁজে বের করে চিকিৎসা
+• টপিক্যাল ওষুধ ও স্বাস্থ্যবিধি পরামর্শ`,
+      treatments: ["Topical Treatments", "Dietary Modification", "Hygiene Counselling", "Treatment of Underlying Cause"]
+    },
+    {
+      id: 10,
+      titleEn: "Ulcerative Colitis & Crohn's Disease",
+      titleBn: "আলসারেটিভ কোলাইটিস ও ক্রোহনস রোগ",
+      icon: Pill,
+      shortDescriptionEn: "Medical and surgical management of inflammatory bowel disease including colectomy when required.",
+      shortDescriptionBn: "প্রয়োজনে কোলেক্টমি সহ প্রদাহজনক অন্ত্রের রোগের চিকিৎসা ও সার্জিক্যাল ব্যবস্থাপনা।",
+      fullDescriptionEn: `Ulcerative colitis and Crohn's disease are chronic inflammatory bowel diseases (IBD) requiring long-term management.
+
+TREATMENT:
+• Medical management — aminosalicylates, steroids, immunosuppressants, biologics
+• Surgical treatment — colectomy, ileostomy, resection of affected bowel segments, stricturoplasty (Crohn's)
+
+INDICATIONS FOR SURGERY:
+• Failed medical therapy
+• Bowel perforation or obstruction
+• Cancer or pre-cancerous changes
+• Severe hemorrhage
+• Toxic megacolon`,
+      fullDescriptionBn: `আলসারেটিভ কোলাইটিস ও ক্রোহনস রোগ দীর্ঘস্থায়ী প্রদাহজনক অন্ত্রের রোগ।
+
+চিকিৎসা:
+• ওষুধ চিকিৎসা — অ্যামিনোসালিসাইলেটস, স্টেরয়েড, ইমিউনোসাপ্রেসেন্ট
+• সার্জিক্যাল চিকিৎসা — কোলেক্টমি, আইলিওস্টমি, অন্ত্রের আক্রান্ত অংশ অপসারণ`,
+      treatments: ["Medical Management", "Colectomy", "Ileostomy", "Bowel Resection", "Stricturoplasty (Crohn's)"]
+    },
+    {
+      id: 11,
+      titleEn: "Radiation Proctitis",
+      titleBn: "রেডিয়েশন প্রক্টাইটিস",
+      icon: Zap,
+      shortDescriptionEn: "Medical, formalin therapy, and surgical treatment for radiation-induced rectal injury.",
+      shortDescriptionBn: "রেডিয়েশনজনিত মলাশয়ের আঘাতের জন্য চিকিৎসা, ফরমালিন থেরাপি ও সার্জিক্যাল চিকিৎসা।",
+      fullDescriptionEn: `Radiation proctitis is inflammation and damage to the rectum following radiation therapy for pelvic cancers (cervical, prostate, rectal).
+
+PROCEDURES:
+• Medical treatment — sucralfate enemas, anti-inflammatory agents
+• Formalin therapy — effective for bleeding radiation proctitis
+• Surgical procedure — for severe cases with stricture, fistula, or perforation
+
+SYMPTOMS:
+• Rectal bleeding
+• Diarrhea and urgency
+• Rectal pain or tenesmus
+• Mucus discharge`,
+      fullDescriptionBn: `রেডিয়েশন প্রক্টাইটিস হলো পেলভিক ক্যান্সারের রেডিয়েশন থেরাপির পরে মলাশয়ে প্রদাহ ও ক্ষতি।
+
+পদ্ধতি:
+• চিকিৎসা — সুক্রালফেট এনিমা, প্রদাহবিরোধী ওষুধ
+• ফরমালিন থেরাপি — রক্তপাতকারী রেডিয়েশন প্রক্টাইটিসে কার্যকর
+• সার্জিক্যাল পদ্ধতি — গুরুতর ক্ষেত্রে`,
+      treatments: ["Medical Treatment", "Formalin Therapy", "Sucralfate Enema", "Surgical Procedure"]
+    },
+    {
+      id: 12,
+      titleEn: "Constipation",
+      titleBn: "কোষ্ঠকাঠিন্য",
+      icon: Clock,
+      shortDescriptionEn: "Comprehensive evaluation and management of chronic constipation including dietary, medical, and surgical options.",
+      shortDescriptionBn: "খাদ্যতালিকা, চিকিৎসা ও সার্জিক্যাল বিকল্পসহ দীর্ঘস্থায়ী কোষ্ঠকাঠিন্যের সম্পূর্ণ মূল্যায়ন ও ব্যবস্থাপনা।",
+      fullDescriptionEn: `Chronic constipation is a common condition that can arise from dietary, lifestyle, functional, or structural causes.
+
+EVALUATION:
+• Clinical assessment and dietary history
+• Transit studies and defecography
+• Anorectal manometry
+
+TREATMENT:
+• Dietary modifications — high fibre, adequate hydration
+• Medical management — laxatives, prokinetics
+• Biofeedback therapy for pelvic floor dysfunction
+• Surgical options for structural abnormalities (rectocele, prolapse, ODS)`,
+      fullDescriptionBn: `দীর্ঘস্থায়ী কোষ্ঠকাঠিন্য একটি সাধারণ সমস্যা যা খাদ্য, জীবনধারা, কার্যকরী বা গঠনগত কারণ থেকে হতে পারে।
+
+মূল্যায়ন ও চিকিৎসা:
+• ক্লিনিক্যাল মূল্যায়ন ও খাদ্য ইতিহাস
+• উচ্চ আঁশযুক্ত খাবার ও পানি গ্রহণ
+• ওষুধ চিকিৎসা
+• পেলভিক ফ্লোর ডিসফাংশনের জন্য বায়োফিডব্যাক
+• গঠনগত অস্বাভাবিকতার জন্য সার্জারি`,
+      treatments: ["Dietary Modification", "Medical Management", "Biofeedback Therapy", "Surgical Correction (if structural cause)"]
+    },
+    {
+      id: 13,
+      titleEn: "Fecal Incontinence",
+      titleBn: "মলনিঃসরণ অসংযম",
+      icon: Droplets,
+      shortDescriptionEn: "Diagnosis and treatment of fecal incontinence with medical, physiotherapy, and surgical approaches.",
+      shortDescriptionBn: "চিকিৎসা, ফিজিওথেরাপি ও সার্জিক্যাল পদ্ধতিতে মলনিঃসরণ অসংযমের নির্ণয় ও চিকিৎসা।",
+      fullDescriptionEn: `Fecal incontinence is the inability to control bowel movements, causing stool to leak unexpectedly.
+
+CAUSES:
+• Sphincter damage (childbirth, surgery, trauma)
+• Nerve damage
+• Rectal prolapse or rectocele
+• Chronic diarrhea or constipation
+
+TREATMENT:
+• Dietary and lifestyle modification
+• Pelvic floor physiotherapy and biofeedback
+• Medical management
+• Surgical repair (sphincteroplasty)
+• Sacral nerve stimulation`,
+      fullDescriptionBn: `মলনিঃসরণ অসংযম হলো অন্ত্রের গতিবিধি নিয়ন্ত্রণ করতে না পারা।
+
+কারণ:
+• স্ফিংক্টার ক্ষতি (প্রসব, সার্জারি, আঘাত)
+• স্নায়ু ক্ষতি
+• রেক্টাল প্রোল্যাপ্স বা রেক্টোসিল
+
+চিকিৎসা:
+• পেলভিক ফ্লোর ফিজিওথেরাপি
+• বায়োফিডব্যাক
+• সার্জিক্যাল মেরামত`,
+      treatments: ["Dietary Modification", "Pelvic Floor Physiotherapy", "Biofeedback", "Sphincteroplasty", "Sacral Nerve Stimulation"]
+    },
+    {
+      id: 14,
+      titleEn: "Colorectal Cancer",
+      titleBn: "কোলোরেক্টাল ক্যান্সার",
       icon: Shield,
-      shortDescriptionEn: "Laparoscopic hernia repair with minimal scarring and faster recovery.",
-      shortDescriptionBn: "ল্যাপারোস্কোপিক হার্নিয়া মেরামত ন্যূনতম দাগ এবং দ্রুত পুনরুদ্ধার সহ।",
-      fullDescriptionEn: `Hernia occurs when an inner part of the body, such as an organ or any fatty tissue, pushes or spills through a weak spot in the muscle or tissue wall around it. There are many different types of hernias.`,
-      fullDescriptionBn: `হার্নিয়া ঘটে যখন শরীরের অভ্যন্তরীণ অংশ, যেমন একটি অঙ্গ বা চর্বিযুক্ত টিস্যু, চারপাশের পেশী বা টিস্যু দেয়ালে একটি দুর্বল স্থান দিয়ে ঠেলে যায়।`,
-      image: "/images/service-hernia.jpg",
-      treatments: ["Laparoscopic Hernia Repair", "Mesh Placement", "Open Hernia Surgery", "Day-care Surgery"]
+      shortDescriptionEn: "Open and laparoscopic colorectal cancer surgery with curative and palliative intent.",
+      shortDescriptionBn: "নিরাময়মূলক ও উপশমমূলক উদ্দেশ্যে ওপেন ও ল্যাপারোস্কোপিক কোলোরেক্টাল ক্যান্সার সার্জারি।",
+      fullDescriptionEn: `Colorectal cancer (colon and rectal cancer) requires expert surgical management, often combined with chemotherapy and radiotherapy.
+
+PROCEDURES:
+• Open colorectal resection (right hemicolectomy, left hemicolectomy, anterior resection, abdominoperineal resection)
+• Laparoscopic colorectal resection — less pain, faster recovery, better cosmesis
+• Total mesorectal excision (TME) for rectal cancer
+• Stoma formation (colostomy/ileostomy) when required
+
+MULTIDISCIPLINARY APPROACH:
+Surgery is coordinated with oncology for adjuvant or neoadjuvant chemotherapy and radiotherapy as needed.`,
+      fullDescriptionBn: `কোলোরেক্টাল ক্যান্সারের জন্য বিশেষজ্ঞ সার্জিক্যাল ব্যবস্থাপনা প্রয়োজন, প্রায়ই কেমোথেরাপি ও রেডিওথেরাপির সাথে।
+
+পদ্ধতি:
+• ওপেন কোলোরেক্টাল রিসেকশন
+• ল্যাপারোস্কোপিক কোলোরেক্টাল রিসেকশন
+• টোটাল মেসোরেক্টাল এক্সিশন (TME)
+• স্টোমা গঠন (প্রয়োজন হলে)`,
+      treatments: ["Laparoscopic Colectomy", "Open Colectomy", "Anterior Resection", "Abdominoperineal Resection (APR)", "TME", "Stoma Formation"]
+    },
+    {
+      id: 15,
+      titleEn: "Anal Cancer",
+      titleBn: "অ্যানাল ক্যান্সার",
+      icon: Shield,
+      shortDescriptionEn: "Medical (chemoradiotherapy) and surgical treatment for anal canal and perianal cancers.",
+      shortDescriptionBn: "পায়ুনালী ও পেরিয়ানাল ক্যান্সারের চিকিৎসা (কেমোরেডিওথেরাপি) ও সার্জিক্যাল চিকিৎসা।",
+      fullDescriptionEn: `Anal cancer is less common than colorectal cancer but requires specialized treatment combining oncology and surgery.
+
+TREATMENT:
+• Medical treatment — chemoradiotherapy is the first-line treatment for most anal cancers (Nigro protocol)
+• Surgical treatment — abdominoperineal resection (APR) for residual or recurrent disease after chemoradiotherapy
+• Excision for early perianal skin cancers
+
+TYPES:
+• Squamous cell carcinoma (most common)
+• Adenocarcinoma
+• Basal cell carcinoma
+• Melanoma (rare)`,
+      fullDescriptionBn: `অ্যানাল ক্যান্সার কোলোরেক্টাল ক্যান্সারের চেয়ে কম সাধারণ কিন্তু অনকোলজি ও সার্জারির সমন্বয়ে বিশেষায়িত চিকিৎসা প্রয়োজন।
+
+চিকিৎসা:
+• কেমোরেডিওথেরাপি — বেশিরভাগ অ্যানাল ক্যান্সারের প্রথম সারির চিকিৎসা (নিগ্রো প্রোটোকল)
+• সার্জিক্যাল চিকিৎসা — অ্যাবডোমিনোপেরিনিয়াল রিসেকশন (APR)`,
+      treatments: ["Chemoradiotherapy (Nigro Protocol)", "Abdominoperineal Resection (APR)", "Wide Local Excision", "Multidisciplinary Oncology Care"]
+    },
+    {
+      id: 16,
+      titleEn: "Recurrent Colorectal Cancer",
+      titleBn: "পুনরাবৃত্তিমূলক কোলোরেক্টাল ক্যান্সার",
+      icon: RefreshCw,
+      shortDescriptionEn: "Surgical treatment for locally recurrent colorectal and rectal cancer after initial treatment.",
+      shortDescriptionBn: "প্রাথমিক চিকিৎসার পর স্থানীয়ভাবে পুনরাবৃত্ত কোলোরেক্টাল ও রেক্টাল ক্যান্সারের সার্জিক্যাল চিকিৎসা।",
+      fullDescriptionEn: `Recurrent colorectal cancer presents a significant surgical challenge requiring expert planning and execution.
+
+SURGICAL TREATMENT:
+• Re-resection of locally recurrent rectal cancer
+• Extended resection involving adjacent organs (bladder, uterus, pelvic wall)
+• Salvage surgery after chemoradiotherapy
+• Cytoreductive surgery + HIPEC for peritoneal metastasis from colorectal cancer
+
+APPROACH:
+All recurrent cancer cases are assessed in a multidisciplinary team (MDT) meeting involving surgeons, oncologists, and radiologists.`,
+      fullDescriptionBn: `পুনরাবৃত্তিমূলক কোলোরেক্টাল ক্যান্সার একটি উল্লেখযোগ্য সার্জিক্যাল চ্যালেঞ্জ।
+
+সার্জিক্যাল চিকিৎসা:
+• স্থানীয়ভাবে পুনরাবৃত্ত রেক্টাল ক্যান্সারের পুনরায় রিসেকশন
+• প্রতিবেশী অঙ্গ জড়িত বর্ধিত রিসেকশন
+• কেমোরেডিওথেরাপির পর স্যালভেজ সার্জারি
+• পেরিটোনিয়াল মেটাস্ট্যাসিসের জন্য সাইটোরিডাক্টিভ সার্জারি + HIPEC`,
+      treatments: ["Re-resection", "Extended Pelvic Resection", "Salvage Surgery", "Cytoreductive Surgery + HIPEC", "MDT-based Planning"]
+    },
+    {
+      id: 17,
+      titleEn: "Cytoreductive Surgery & HIPEC",
+      titleBn: "সাইটোরিডাক্টিভ সার্জারি ও HIPEC",
+      icon: Target,
+      shortDescriptionEn: "Advanced cancer surgery combining complete tumour removal with heated chemotherapy for peritoneal malignancies.",
+      shortDescriptionBn: "পেরিটোনিয়াল ম্যালিগন্যান্সির জন্য সম্পূর্ণ টিউমার অপসারণ ও উত্তপ্ত কেমোথেরাপির সমন্বয়ে উন্নত ক্যান্সার সার্জারি।",
+      fullDescriptionEn: `Cytoreductive Surgery (CRS) combined with Hyperthermic Intraperitoneal Chemotherapy (HIPEC) is a specialised treatment for cancers that have spread to the peritoneum (lining of the abdomen).
+
+Dr. Ahsan Habib completed 1 month of CRS & HIPEC training at Basingstoke and North Hampshire Hospital, UK (April 2026).
+
+CANCERS TREATED:
+• Appendix cancer (pseudomyxoma peritonei)
+• Colorectal cancer with peritoneal metastasis
+• Stomach (gastric) cancer
+• Ovarian cancer
+• Mesothelioma
+• Pseudomyxoma peritonei
+
+PROCEDURE:
+• Cytoreductive Surgery — removal of all visible tumour deposits from the peritoneal surface
+• HIPEC — heated chemotherapy solution circulated in the abdomen for 60–90 minutes immediately after surgery to destroy microscopic cancer cells
+
+ADVANTAGE:
+Significantly improves survival compared to systemic chemotherapy alone for selected patients.`,
+      fullDescriptionBn: `সাইটোরিডাক্টিভ সার্জারি (CRS) ও হাইপারথার্মিক ইন্ট্রাপেরিটোনিয়াল কেমোথেরাপি (HIPEC) হলো পেরিটোনিয়ামে ছড়িয়ে পড়া ক্যান্সারের বিশেষায়িত চিকিৎসা।
+
+ডাঃ আহসান হাবিব এপ্রিল ২০২৬ সালে যুক্তরাজ্যের বেসিংস্টোক ও নর্থ হ্যাম্পশায়ার হাসপাতালে CRS ও HIPEC বিষয়ে ১ মাসের প্রশিক্ষণ সম্পন্ন করেছেন।
+
+চিকিৎসাযোগ্য ক্যান্সার:
+• অ্যাপেন্ডিক্স ক্যান্সার
+• পেরিটোনিয়াল মেটাস্ট্যাসিস সহ কোলোরেক্টাল ক্যান্সার
+• পাকস্থলীর ক্যান্সার
+• ডিম্বাশয়ের ক্যান্সার
+• মেসোথেলিওমা
+• সিউডোমিক্সোমা পেরিটোনি`,
+      treatments: ["Cytoreductive Surgery (CRS)", "HIPEC", "Appendix Cancer Surgery", "Peritoneal Metastasis Treatment", "Gastric Cancer Surgery", "Ovarian Cancer Debulking"]
+    },
+    {
+      id: 18,
+      titleEn: "Colonoscopy",
+      titleBn: "কোলোনোস্কপি",
+      icon: Eye,
+      shortDescriptionEn: "Diagnostic and interventional colonoscopy including polypectomy and balloon dilatation.",
+      shortDescriptionBn: "পলিপেক্টমি ও বেলুন ডাইলেটেশন সহ ডায়াগনস্টিক ও ইন্টারভেনশনাল কোলোনোস্কপি।",
+      fullDescriptionEn: `Colonoscopy is an examination of the large intestine (colon and rectum) using a flexible camera. Dr. Ahsan Habib trained in Interventional Colonoscopy at Zhengzhou Medical University, China (2023) under Prof. Bing Rong Liu.
+
+TYPES:
+• Diagnostic Colonoscopy — screening for cancer, polyps, and IBD; investigation of rectal bleeding, change in bowel habits
+• Interventional / Therapeutic Colonoscopy:
+  - Polypectomy (removal of polyps)
+  - Balloon dilatation of colonic strictures
+  - Haemostasis for colonoscopic bleeding
+  - Stent placement
+
+INDICATIONS:
+• Colorectal cancer screening
+• Rectal bleeding or change in bowel habit
+• Chronic diarrhea or constipation
+• Surveillance after previous polyp removal or cancer surgery
+• Inflammatory bowel disease assessment`,
+      fullDescriptionBn: `কোলোনোস্কপি হলো একটি নমনীয় ক্যামেরা দিয়ে বৃহদান্ত্রের পরীক্ষা। ডাঃ আহসান হাবিব ২০২৩ সালে চীনের ঝেংঝো মেডিকেল বিশ্ববিদ্যালয়ে অধ্যাপক বিং রং লিউয়ের অধীনে ইন্টারভেনশনাল কোলোনোস্কপি বিষয়ে প্রশিক্ষণ নিয়েছেন।
+
+ধরন:
+• ডায়াগনস্টিক কোলোনোস্কপি — ক্যান্সার, পলিপ ও IBD স্ক্রিনিং
+• ইন্টারভেনশনাল কোলোনোস্কপি:
+  - পলিপেক্টমি (পলিপ অপসারণ)
+  - বেলুন ডাইলেটেশন
+  - হেমোস্ট্যাসিস`,
+      treatments: ["Diagnostic Colonoscopy", "Polypectomy", "Balloon Dilatation", "Haemostasis", "Stent Placement", "Cancer Screening"]
     }
   ];
 
@@ -203,35 +586,26 @@ The most well-known sort of abscess is a perianal abscess. This frequently shows
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {language === "en"
-              ? "Comprehensive colorectal care with advanced laser technology and minimally invasive techniques"
-              : "অ্যাডভান্সড লেজার প্রযুক্তি এবং ন্যূনতম আক্রমণাত্মক কৌশল সহ ব্যাপক কোলোরেক্টাল যত্ন"}
+              ? "Comprehensive colorectal care with advanced laser, laparoscopic, and HIPEC procedures"
+              : "উন্নত লেজার, ল্যাপারোস্কোপিক ও HIPEC পদ্ধতি সহ ব্যাপক কলোরেক্টাল সেবা"}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:mb-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             const title = language === "en" ? service.titleEn : service.titleBn;
             const shortDescription = language === "en" ? service.shortDescriptionEn : service.shortDescriptionBn;
 
             return (
-              <div 
+              <div
                 key={service.id}
                 className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg cursor-pointer transition-all transform hover:-translate-y-2"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
                 onClick={() => setSelectedService(service)}
               >
-                {/* Service Image on Top */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-blue-600 overflow-hidden">
-                  <img 
-                    src={service.image}
-                    alt={title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                </div>
+                {/* Icon Header */}
+                <div className="h-2 bg-blue-600" />
 
                 {/* Content */}
                 <div className="p-6">
@@ -264,7 +638,7 @@ The most well-known sort of abscess is a perianal abscess. This frequently shows
                     {language === "en" ? selectedService.titleEn : selectedService.titleBn}
                   </h2>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedService(null)}
                   className="text-gray-500 hover:text-gray-700"
                 >
