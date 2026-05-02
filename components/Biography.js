@@ -43,6 +43,14 @@ export default function Biography({ language }) {
       icon: Award
     },
     {
+      year: "2018",
+      titleEn: "Training Abroad — Witten, Germany",
+      titleBn: "বিদেশে প্রশিক্ষণ — উইটেন, জার্মানি",
+      descriptionEn: "Laser proctology training with Prof. Thomas Deska at Atarien Hospital, Witten, Germany — advanced laser techniques for colorectal procedures",
+      descriptionBn: "জার্মানির উইটেনে অ্যাটারিয়েন হাসপাতালে অধ্যাপক টমাস ডেস্কার অধীনে লেজার প্রক্টোলজি প্রশিক্ষণ — কোলোরেক্টাল পদ্ধতির জন্য উন্নত লেজার কৌশল",
+      icon: Globe
+    },
+    {
       year: "2019",
       titleEn: "Training Abroad — Saifee Hospital, India",
       titleBn: "বিদেশে প্রশিক্ষণ — সাইফি হাসপাতাল, ভারত",
@@ -96,13 +104,13 @@ export default function Biography({ language }) {
 
 Dr. Md. Ahsan Habib worked as Junior Consultant of Surgery from 2010 to 2015 and as Assistant Professor at the National Institute of Cancer Research and Hospital, Mohakhali from 2018 to 2020. He joined Dhaka Medical College as Associate Professor of Colorectal Surgery in 2021, became Head of Department in 2025, and currently serves as Professor of Colorectal Surgery.
 
-He has trained internationally at Saifee Hospital, India (2019) under Prof. Parvez Sheikh for complex and recurrent fistula in ano, at Zhengzhou Medical University, China (2023) under Prof. Bing Rong Liu for Interventional Colonoscopy, and at Basingstoke and North Hampshire Hospital, UK (2026) for Cytoreductive Surgery and HIPEC. He has performed thousands of operations in government and private hospitals with outstanding outcomes. His expertise spans the full spectrum of colorectal surgery including laser procedures, VAAFT, laparoscopic colorectal cancer surgery, and advanced procedures such as HIPEC for peritoneal malignancies.`;
+He has trained internationally at Atarien Hospital, Witten, Germany under Prof. Thomas Deska for laser proctology; at Saifee Hospital, India (2019) under Prof. Parvez Sheikh for complex and recurrent fistula in ano; at Zhengzhou Medical University, China (2023) under Prof. Bing Rong Liu for Interventional Colonoscopy; and at Basingstoke and North Hampshire Hospital, UK (2026) for Cytoreductive Surgery and HIPEC. He has performed thousands of operations in government and private hospitals with outstanding outcomes. His expertise spans the full spectrum of colorectal surgery including laser procedures, VAAFT, laparoscopic colorectal cancer surgery, and advanced procedures such as HIPEC for peritoneal malignancies.`;
 
   const bioBangla = `ডাঃ মোঃ আহসান হাবিব রাজশাহী ক্যাডেট কলেজ থেকে এস.এস.সি ও এইচ.এস.সি পাশ করেন। ১৯৯৩ সালে মেডিকেল ভর্তি পরীক্ষায় ২৮তম স্থান অধিকার করে ঢাকা মেডিকেল কলেজে ভর্তি হন। ২২তম বি.সি.এস পরীক্ষায় ৩৩তম স্থান অধিকার করে ২০০৩ সালে সরকারি চাকুরিতে যোগদান করেন। তিনি ২০০৮ সালে এম.আর.সি.এস (এডিনবরা), ২০০৯ সালে এফ.সি.পি.এস (সার্জারি), ২০১৭ সালে বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয় থেকে কলোরেক্টাল সার্জারিতে এম.এস ডিগ্রি এবং ISCP থেকে ফেলোশিপ অর্জন করেন।
 
 ডাঃ মোঃ আহসান হাবিব ২০১০ থেকে ২০১৫ সাল পর্যন্ত জুনিয়র কনসালটেন্ট হিসেবে এবং ২০১৮ থেকে ২০২০ সাল পর্যন্ত জাতীয় ক্যান্সার গবেষণা ইন্সটিটিউট ও হাসপাতালে সহকারী অধ্যাপক পদে কর্মরত ছিলেন। তিনি ২০২১ সালে ঢাকা মেডিকেল কলেজে কলোরেক্টাল সার্জারি বিভাগে সহযোগী অধ্যাপক হিসেবে যোগদান করেন, ২০২৫ সালে বিভাগীয় প্রধান হন এবং বর্তমানে অধ্যাপক হিসেবে কর্মরত আছেন।
 
-তিনি আন্তর্জাতিকভাবে প্রশিক্ষিত — ২০১৯ সালে ভারতের সাইফি হাসপাতালে অধ্যাপক পারভেজ শেখের অধীনে জটিল ফিস্টুলা চিকিৎসায়, ২০২৩ সালে চীনের ঝেংঝো মেডিকেল বিশ্ববিদ্যালয়ে অধ্যাপক বিং রং লিউয়ের অধীনে ইন্টারভেনশনাল কোলোনোস্কপিতে এবং ২০২৬ সালে যুক্তরাজ্যের বেসিংস্টোক ও নর্থ হ্যাম্পশায়ার হাসপাতালে সাইটোরিডাক্টিভ সার্জারি ও HIPEC বিষয়ে। তিনি সরকারি ও বেসরকারি হাসপাতালে হাজার হাজার সফল অপারেশন সম্পন্ন করেছেন।`;
+তিনি আন্তর্জাতিকভাবে প্রশিক্ষিত — জার্মানির উইটেনে অধ্যাপক টমাস ডেস্কার অধীনে লেজার প্রক্টোলজিতে, ২০১৯ সালে ভারতের সাইফি হাসপাতালে অধ্যাপক পারভেজ শেখের অধীনে জটিল ফিস্টুলা চিকিৎসায়, ২০২৩ সালে চীনের ঝেংঝো মেডিকেল বিশ্ববিদ্যালয়ে অধ্যাপক বিং রং লিউয়ের অধীনে ইন্টারভেনশনাল কোলোনোস্কপিতে এবং ২০২৬ সালে যুক্তরাজ্যের বেসিংস্টোক ও নর্থ হ্যাম্পশায়ার হাসপাতালে সাইটোরিডাক্টিভ সার্জারি ও HIPEC বিষয়ে। তিনি সরকারি ও বেসরকারি হাসপাতালে হাজার হাজার সফল অপারেশন সম্পন্ন করেছেন।`;
 
   return (
     <section id="about" className="md:py-20 py-10 bg-white">

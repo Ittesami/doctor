@@ -1,4 +1,5 @@
-import { Calendar, Phone } from "lucide-react";
+import { Calendar } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSection({ language }) {
   const translations = {
@@ -27,13 +28,6 @@ export default function HeroSection({ language }) {
   };
 
   const t = translations[language];
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-20 ">
@@ -64,19 +58,19 @@ export default function HeroSection({ language }) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-in-right">
-            <button 
+            <Link
+              href="/appointment"
               className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md border-2 border-blue-700/50 transition-all font-medium flex items-center justify-center gap-2"
-              onClick={() => scrollToSection('appointment')}
             >
               <Calendar className="w-5 h-5" />
               {t.bookBtn}
-            </button>
-            <button 
+            </Link>
+            <Link
+              href="/services"
               className="text-lg px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-md hover:bg-white/20 transition-all font-medium"
-              onClick={() => scrollToSection('services')}
             >
               {t.servicesBtn}
-            </button>
+            </Link>
           </div>
         </div>
 
