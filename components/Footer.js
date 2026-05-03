@@ -10,7 +10,7 @@ export default function Footer() {
 
   const t = {
     en: {
-      copyright: "© Copyright 2025 Dr. Md. Ahsan Habib. | Developed by Ittehad Sami",
+      copyright: "© Copyright 2025 Dr. Md. Ahsan Habib. | Developed by Tasnuva Mahjabin",
       quickLinks: "Quick Links",
       home: "Home",
       about: "About",
@@ -30,7 +30,7 @@ export default function Footer() {
       website: "www.drmdahsanhabib.com",
     },
     bn: {
-      copyright: "© কপিরাইট ২০২৫ ডা. এম ডি আহসান হাবিব। | উন্নত করেছেন ইত্তেহাদ সামী",
+      copyright: "© কপিরাইট ২০২৫ ডা. এম ডি আহসান হাবিব। | উন্নত করেছেন তাসনুভা মাহজাবিন",
       quickLinks: "দ্রুত লিঙ্ক",
       home: "হোম",
       about: "আমাদের সম্পর্কে",
