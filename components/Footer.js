@@ -15,14 +15,15 @@ export default function Footer() {
       home: "Home",
       about: "About",
       services: "Services",
-      publications: "Publications",
+      publications: "Publications", 
       gallery: "Gallery",
       appointment: "Book Appointment",
       contact: "Contact",
-      chamber1Name: "Laser Colorectal Center",
+      chamber1Name: "Specialised Colorectal Center",
       chamber2Name: "Asia Hospital, Tangail",
       address: "Rupayan Prime, Green Rd\nDhanmondi, Dhaka 1205",
       phone: "+880 1721-036644",
+      phone1: "+880 1307-242788",
       hours: "Sat, Sun, Mon, Wed — 7:00 PM to 9:00 PM",
       address2: "Asia Hospital, Mymensingh Road\nSabalia, Tangail",
       phone2: "+880 1740-614450",
@@ -39,10 +40,10 @@ export default function Footer() {
       gallery: "গ্যালারি",
       appointment: "অ্যাপয়েন্টমেন্ট বুক করুন",
       contact: "যোগাযোগ",
-      chamber1Name: "লেজার কোলোরেক্টাল সেন্টার",
+      chamber1Name: "স্পেশালাইজড কোলোরেক্টাল সেন্টার",
       chamber2Name: "এশিয়া হসপিটাল, টাঙ্গাইল",
       address: "রুপায়ন প্রাইম, গ্রীন রোড\nধানমন্ডি, ঢাকা ১২০৫",
-      phone: "+৮৮০ ১৭২১-০৩৬৬৪৪",
+      phone: "+৮৮০ ১৭২১-০৩৬৬৪৪, +৮৮০ ১৩০৭-২৪২৭৮৮",
       hours: "শনি, রবি, সোম, বুধ — সন্ধ্যা ৭:০০ – ৯:০০",
       address2: "এশিয়া হসপিটাল, ময়মনসিংহ রোড\nসাবালিয়া, টাঙ্গাইল",
       phone2: "+৮৮০ ১৭৪০-৬১৪৪৫০",
@@ -74,7 +75,7 @@ export default function Footer() {
           {/* Branding */}
           <div>
             <h3 className="text-lg font-bold mb-2">
-              {language === "en" ? "Dr. Md. Ahsan Habib" : "ডা. এম ডি আহসান হাবিব"}
+              {language === "en" ? "Dr. Md. Ahsan Habib" : "ডা: মো: আহসান হাবিব"}
             </h3>
             <p className="text-blue-200 text-sm leading-relaxed mb-4">
               {language === "en"
@@ -128,7 +129,8 @@ export default function Footer() {
               <div>
                 <p className="text-white font-medium text-xs mb-1">{t.chamber1Name || "Laser Colorectal Center"}</p>
                 <p className="whitespace-pre-line">{t.address}</p>
-                <a href="tel:+8801721036644" className="hover:text-white transition-colors">{t.phone}</a>
+                <a href="tel:+8801721036644" className="hover:text-white transition-colors">{t.phone}, </a>
+                <a href="tel:+8801307242788" className="hover:text-white transition-colors">{t.phone1}</a>
                 <p className="text-blue-300 text-xs mt-0.5">{t.hours}</p>
               </div>
               {/* Chamber 2 */}

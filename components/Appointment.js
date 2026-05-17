@@ -4,8 +4,8 @@ export default function Appointment({ language }) {
   const translations = {
     en: {
       title: "Book an Appointment",
-      subtitle: "Visit our state-of-the-art Laser Colorectal Center for expert consultation and treatment",
-      centerName: "Laser Colorectal Center",
+      subtitle: "Visit our state-of-the-art Specialised Colorectal Center for expert consultation and treatment",
+      centerName: "Specialised Colorectal Center",
       location: "Location",
       locationDetails: "Rupayan Prime, Green Rd\nDhanmondi, Dhaka 1205",
       viewMaps: "View on Google Maps →",
@@ -20,8 +20,8 @@ export default function Appointment({ language }) {
     },
     bn: {
       title: "অ্যাপয়েন্টমেন্ট বুক করুন",
-      subtitle: "বিশেষজ্ঞ পরামর্শ এবং চিকিৎসার জন্য আমাদের অত্যাধুনিক লেজার কোলোরেক্টাল সেন্টার পরিদর্শন করুন",
-      centerName: "লেজার কোলোরেক্টাল সেন্টার",
+      subtitle: "বিশেষজ্ঞ পরামর্শ এবং চিকিৎসার জন্য আমাদের অত্যাধুনিক স্পেশালাইজড কোলোরেক্টাল সেন্টার পরিদর্শন করুন",
+      centerName: "স্পেশালাইজড কোলোরেক্টাল সেন্টার",
       location: "অবস্থান",
       locationDetails: "রুপায়ন প্রাইম, গ্রীন রোড\nধানমন্ডি, ঢাকা ১২০৫",
       viewMaps: "গুগল ম্যাপে দেখুন →",
@@ -85,7 +85,13 @@ export default function Appointment({ language }) {
                       href="tel:+8801721036644" 
                       className="text-blue-600 text-base md:text-lg font-semibold hover:underline"
                     >
-                      +880 1721-036644
+                      +880 1721-036644 
+                    </a>
+                    <a 
+                      href="tel:+8801307242788" 
+                      className="text-blue-600 text-base md:text-lg font-semibold hover:underline"
+                    >
+                      +880 1307-242788
                     </a>
                   </div>
                 </div>

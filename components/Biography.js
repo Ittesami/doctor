@@ -3,6 +3,14 @@ import { Award, Briefcase, GraduationCap, Users, Globe } from "lucide-react";
 export default function Biography({ language }) {
   const timeline = [
     {
+      year: "1987-1993",
+      titleEn: "Rajshahi Cadet College",
+      titleBn: "রাজশাহী ক্যাডেট কলেজ",
+      descriptionEn: "Completed SSC and HSC from Rajshahi Cadet College",
+      descriptionBn: "রাজশাহী ক্যাডেট কলেজ থেকে এস.এস.সি ও এইচ.এস.সি পাশ করেন",
+      icon: GraduationCap
+    },
+    {
       year: "1993",
       titleEn: "Dhaka Medical College",
       titleBn: "ঢাকা মেডিকেল কলেজ",
@@ -214,13 +222,13 @@ He has trained internationally at Atarien Hospital, Witten, Germany under Prof. 
             </h3>
             <p className="text-lg text-blue-100 mb-6">
               {language === "en"
-                ? "Dr. Ahsan Habib is among the first surgeons in Bangladesh to introduce laser-assisted colorectal treatments. He has trained internationally in India, China, and the UK, bringing world-class expertise in complex fistula surgery, interventional colonoscopy, and cytoreductive surgery with HIPEC."
-                : "ডাঃ আহসান হাবিব বাংলাদেশে লেজার কলোরেক্টাল চিকিৎসা প্রবর্তনকারী অগ্রণী সার্জনদের একজন। তিনি ভারত, চীন ও যুক্তরাজ্যে আন্তর্জাতিক প্রশিক্ষণ গ্রহণ করে জটিল ফিস্টুলা সার্জারি, ইন্টারভেনশনাল কোলোনোস্কপি এবং HIPEC-সহ সাইটোরিডাক্টিভ সার্জারিতে বিশ্বমানের দক্ষতা অর্জন করেছেন।"}
+                ? "Dr. Md. Ahsan Habib is among the first surgeons in Bangladesh to introduce laser-assisted colorectal treatments. He has trained internationally in India, China, Germany, and the UK, bringing world-class expertise in complex fistula surgery, interventional colonoscopy, and cytoreductive surgery with HIPEC."
+                : "ডা: মো: আহসান হাবিব বাংলাদেশে লেজার কলোরেক্টাল চিকিৎসা প্রবর্তনকারী অগ্রণী সার্জনদের একজন। তিনি ভারত, চীন, জার্মানি ও যুক্তরাজ্যে আন্তর্জাতিক প্রশিক্ষণ গ্রহণ করে জটিল ফিস্টুলা সার্জারি, ইন্টারভেনশনাল কোলোনোস্কপি এবং HIPEC-সহ সাইটোরিডাক্টিভ সার্জারিতে बिश्वमानेर दक्षता अर्जन करें।"}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">
                 <div className="text-sm font-semibold">
-                  {language === "en" ? "Trained in India, China & UK" : "ভারত, চীন ও যুক্তরাজ্যে প্রশিক্ষিত"}
+                  {language === "en" ? "Trained in India, China, Germany & UK" : "ভারত, চীন, জার্মানি ও যুক্তরাজ্যে প্রশিক্ষিত"}
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">

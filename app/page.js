@@ -32,7 +32,7 @@ export default function Home() {
       learnMore: "Learn More",
       aboutTitle: "About Dr. Ahsan Habib",
       aboutDesc:
-        "Professor of Colorectal Surgery at Dhaka Medical College. Pioneer in laser colorectal surgery in Bangladesh, with international training in India, China, and the UK.",
+        "Professor of Colorectal Surgery at Dhaka Medical College. Pioneer in laser colorectal surgery in Bangladesh, with international training in India, China, Germany and the UK.",
       aboutBtn: "Full Biography",
       yearsExp: "Years in Practice",
       surgeries: "Surgeries Performed",
@@ -48,9 +48,9 @@ export default function Home() {
         "উন্নত লেজার, ল্যাপারোস্কোপিক ও HIPEC পদ্ধতি সহ ব্যাপক কলোরেক্টাল সেবা",
       viewAll: "সকল ১৮টি সেবা দেখুন",
       learnMore: "আরও জানুন",
-      aboutTitle: "ডাঃ আহসান হাবিব সম্পর্কে",
+      aboutTitle: "ডা: মো: আহসান হাবিব সম্পর্কে",
       aboutDesc:
-        "ঢাকা মেডিকেল কলেজের কোলোরেক্টাল সার্জারির অধ্যাপক। বাংলাদেশে লেজার কোলোরেক্টাল সার্জারির অগ্রদূত। ভারত, চীন ও যুক্তরাজ্যে আন্তর্জাতিক প্রশিক্ষণপ্রাপ্ত।",
+        "ঢাকা মেডিকেল কলেজের কোলোরেক্টাল সার্জারির অধ্যাপক। বাংলাদেশে লেজার কোলোরেক্টাল সার্জারির অগ্রদূত। ভারত, চীন, জার্মানি ও যুক্তরাজ্যে আন্তর্জাতিক প্রশিক্ষণপ্রাপ্ত।",
       aboutBtn: "সম্পূর্ণ জীবনী",
       yearsExp: "বছরের অভিজ্ঞতা",
       surgeries: "অপারেশন সম্পন্ন",
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* Specialty Highlight */}
+      {/* Specialty Highlight */}
         <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white p-8 md:p-12 rounded-lg">
           <div className="max-w-4xl mx-auto text-center">
             <Award className="w-16 h-16 mx-auto mb-6 animate-bounce" />
@@ -119,13 +119,13 @@ export default function Home() {
             </h3>
             <p className="text-lg text-blue-100 mb-6">
               {language === "en"
-                ? "Dr. Ahsan Habib is among the first surgeons in Bangladesh to introduce laser-assisted colorectal treatments. He has trained internationally in India, China, and the UK, bringing world-class expertise in complex fistula surgery, interventional colonoscopy, and cytoreductive surgery with HIPEC."
-                : "ডাঃ আহসান হাবিব বাংলাদেশে লেজার কলোরেক্টাল চিকিৎসা প্রবর্তনকারী অগ্রণী সার্জনদের একজন। তিনি ভারত, চীন ও যুক্তরাজ্যে আন্তর্জাতিক প্রশিক্ষণ গ্রহণ করে জটিল ফিস্টুলা সার্জারি, ইন্টারভেনশনাল কোলোনোস্কপি এবং HIPEC-সহ সাইটোরিডাক্টিভ সার্জারিতে বিশ্বমানের দক্ষতা অর্জন করেছেন।"}
+                ? "Dr. Md. Ahsan Habib is among the first surgeons in Bangladesh to introduce laser-assisted colorectal treatments. He has trained internationally in India, China, Germany, and the UK, bringing world-class expertise in complex fistula surgery, interventional colonoscopy, and cytoreductive surgery with HIPEC."
+                : "ডা: মো: আহসান হাবিব বাংলাদেশে লেজার কলোরেক্টাল চিকিৎসা প্রবর্তনকারী অগ্রণী সার্জনদের একজন। তিনি ভারত, চীন, জার্মানি ও যুক্তরাজ্যে আন্তর্জাতিক প্রশিক্ষণ গ্রহণ করে জটিল ফিস্টুলা সার্জারি, ইন্টারভেনশনাল কোলোনোস্কপি এবং HIPEC-সহ সাইটোরিডাক্টিভ সার্জারিতে বিশ্বমানের দক্ষতা অর্জন করেছেন।"}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">
                 <div className="text-sm font-semibold">
-                  {language === "en" ? "Trained in India, China & UK" : "ভারত, চীন ও যুক্তরাজ্যে প্রশিক্ষিত"}
+                  {language === "en" ? "Trained in India, China, Germany & UK" : "ভারত, চীন, জার্মানি ও যুক্তরাজ্যে প্রশিক্ষিত"}
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-md px-6 py-3">

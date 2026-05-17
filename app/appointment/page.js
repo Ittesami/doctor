@@ -41,11 +41,12 @@ export default function AppointmentPage() {
       errorFallback: "Something went wrong. Please try again.",
       chambersTitle: "Chamber Locations",
       // Chamber 1
-      chamber1Name: "Laser Colorectal Center",
+      chamber1Name: "Specialised Colorectal Center",
       chamber1Address: "Rupayan Prime, Green Rd\nDhanmondi, Dhaka 1205",
       chamber1Days: "Sat, Sun, Mon, Wed",
       chamber1Hours: "7:00 PM – 9:00 PM",
       chamber1Phone: "+880 1721-036644",
+      chamber1Phone1: "+880 1307-242788",
       chamber1Map: "View on Google Maps →",
       // Chamber 2
       chamber2Name: "Asia Hospital",
@@ -127,7 +128,7 @@ export default function AppointmentPage() {
     "w-full border border-gray-300 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all";
   const labelClass = "block text-sm font-medium text-gray-700 mb-1.5";
 
-  const ChamberCard = ({ name, address, days, hours, phone, mapUrl, mapLabel }) => (
+  const ChamberCard = ({ name, address, days, hours, phone, phone1, mapUrl, mapLabel }) => (
     <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
       <h3 className="text-lg font-bold text-gray-900 mb-5 pb-3 border-b border-gray-100">
         {name}
@@ -312,6 +313,7 @@ export default function AppointmentPage() {
                 days={t.chamber1Days}
                 hours={t.chamber1Hours}
                 phone={t.chamber1Phone}
+                phone1={t.chamber1Phone1}
                 mapUrl="https://maps.app.goo.gl/UYXpwRkvYaK19pj2A"
                 mapLabel={t.chamber1Map}
               />

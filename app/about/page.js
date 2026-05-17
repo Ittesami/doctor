@@ -22,7 +22,7 @@ export default function AboutPage() {
       <div className="bg-gradient-to-br from-blue-700 to-blue-900 text-white pt-28 pb-12 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl md:text-5xl font-bold mb-3">
-            {language === "en" ? "About Dr. Ahsan Habib" : "ডাঃ আহসান হাবিব সম্পর্কে"}
+            {language === "en" ? "About Dr. Md. Ahsan Habib" : "ডা: মো:আহসান হাবিব সম্পর্কে"}
           </h1>
           <p className="text-blue-100 text-lg max-w-2xl">
             {language === "en"
