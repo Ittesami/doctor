@@ -20,14 +20,10 @@ export default function Footer() {
       appointment: "Book Appointment",
       contact: "Contact",
       chamber1Name: "Specialised Colorectal Center",
-      chamber2Name: "Asia Hospital, Tangail",
       address: "Rupayan Prime, Green Rd\nDhanmondi, Dhaka 1205",
       phone: "+880 1721-036644",
       phone1: "+880 1307-242788",
       hours: "Sat, Sun, Mon, Wed — 7:00 PM to 9:00 PM",
-      address2: "Asia Hospital, Mymensingh Road\nSabalia, Tangail",
-      phone2: "+880 1740-614450",
-      hours2: "Thu: 5–8 PM · Fri: All Day",
       website: "www.drmdahsanhabib.com",
     },
     bn: {
@@ -134,12 +130,12 @@ export default function Footer() {
                 <p className="text-blue-300 text-xs mt-0.5">{t.hours}</p>
               </div>
               {/* Chamber 2 */}
-              <div>
+              {/* <div>
                 <p className="text-white font-medium text-xs mb-1">{t.chamber2Name || "Asia Hospital, Tangail"}</p>
                 <p className="whitespace-pre-line">{t.address2}</p>
                 <a href="tel:+8801740614450" className="hover:text-white transition-colors">{t.phone2}</a>
                 <p className="text-blue-300 text-xs mt-0.5">{t.hours2}</p>
-              </div>
+              </div> */}
               {/* Website */}
               <div>
                 <a

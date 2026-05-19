@@ -168,7 +168,14 @@ export default function AppointmentPage() {
               href={`tel:${phone.replace(/\s|-/g, "")}`}
               className="text-blue-600 font-semibold hover:underline text-sm"
             >
-              {phone}
+              {phone} 
+            </a>
+              <br />
+            <a
+              href={`tel:${phone1.replace(/\s|-/g, "")}`}
+              className="text-blue-600 font-semibold hover:underline text-sm"
+            >
+              {phone1}
             </a>
           </div>
         </div>
@@ -319,13 +326,13 @@ export default function AppointmentPage() {
               />
 
               {/* Chamber 2 — Asia Hospital, Tangail */}
-              <ChamberCard
+              {/* <ChamberCard
                 name={t.chamber2Name}
                 address={t.chamber2Address}
                 days={t.chamber2Days}
                 hours={t.chamber2Hours}
                 phone={t.chamber2Phone}
-              />
+              /> */}
 
               {/* Map thumbnail for Dhanmondi */}
               <button
