@@ -3,49 +3,62 @@ import connectDB from "@/lib/mongodb";
 import Appointment from "@/lib/models/Appointment";
 import { getAdminFromToken } from "@/lib/auth";
 
+const VALID_STATUSES = ["pending", "confirmed", "attended", "no_show", "cancelled"];
+
 export async function GET(request) {
   const admin = await getAdminFromToken();
   if (!admin) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await connectDB();
+  try {
+    await connectDB();
 
-  const { searchParams } = new URL(request.url);
-  const status = searchParams.get("status");
+    const { searchParams } = new URL(request.url);
+    const status = searchParams.get("status");
 
-  const filter = {};
-  if (status && ["pending", "approved", "rejected"].includes(status)) {
-    filter.status = status;
+    const filter = {};
+    if (status && VALID_STATUSES.includes(status)) {
+      filter.status = status;
+    }
+
+    const appointments = await Appointment.find(filter).sort({ createdAt: -1 });
+    return NextResponse.json({ appointments });
+  } catch (err) {
+    console.error("Appointments GET error:", err);
+    return NextResponse.json({ error: "Internal server error." }, { status: 500 });
   }
-
-  const appointments = await Appointment.find(filter).sort({ createdAt: -1 });
-  return NextResponse.json({ appointments });
 }
 
 export async function POST(request) {
-  await connectDB();
+  try {
+    await connectDB();
 
-  const body = await request.json();
-  const { patientName, whatsappNumber, sex, age, details, paymentMethod, transactionId } = body;
+    const body = await request.json();
+    const { fullName, phone, email, preferredChamber, preferredDate, message } = body;
 
-  if (!patientName || !whatsappNumber || !sex || !age || !paymentMethod || !transactionId) {
-    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    if (!fullName?.trim() || !phone?.trim()) {
+      return NextResponse.json(
+        { error: "Full name and phone number are required." },
+        { status: 400 }
+      );
+    }
+
+    const appointment = await Appointment.create({
+      fullName: fullName.trim(),
+      phone: phone.trim(),
+      email: email?.trim() || "",
+      preferredChamber: preferredChamber || "any",
+      preferredDate: preferredDate ? new Date(preferredDate) : null,
+      message: message?.trim() || "",
+    });
+
+    return NextResponse.json(
+      { success: true, id: appointment._id },
+      { status: 201 }
+    );
+  } catch (err) {
+    console.error("Appointment POST error:", err);
+    return NextResponse.json({ error: "Internal server error." }, { status: 500 });
   }
-
-  const appointment = await Appointment.create({
-    patientName,
-    whatsappNumber,
-    sex,
-    age: Number(age),
-    details: details || "",
-    paymentMethod,
-    transactionId,
-    status: "pending",
-  });
-
-  return NextResponse.json(
-    { appointment, message: "Appointment submitted successfully" },
-    { status: 201 }
-  );
 }
