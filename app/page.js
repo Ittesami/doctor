@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import { useLanguage } from "@/context/LanguageContext";
 import { services } from "@/lib/services-data";
 import Link from "next/link";
-import { Calendar, Phone, Award, ArrowRight } from "lucide-react";
+import { Calendar, Phone, Award, ArrowRight, MapPin, Clock } from "lucide-react";
 
 const FEATURED_SLUGS = [
   "fistula-in-ano",
@@ -218,6 +218,157 @@ export default function Home() {
               <Phone className="w-5 h-5" />
               {t.ctaCall}
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Chamber Location */}
+      <section className="py-14 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              {language === "en" ? "Visit Our Chamber" : "আমাদের চেম্বারে আসুন"}
+            </h2>
+            <p className="text-gray-500 text-base">
+              {language === "en"
+                ? "Walk-ins welcome during consultation hours"
+                : "পরামর্শের সময় সরাসরি আসতে পারেন"}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Info card */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-7 space-y-5">
+              <div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {language === "en" ? "Specialised Colorectal Center" : "লেজার কোলোরেক্টাল সেন্টার"}
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {/* Address */}
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+                      {language === "en" ? "Address" : "ঠিকানা"}
+                    </p>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {language === "en"
+                        ? "Rupayan Khan Plaza, Lift 8, House 18\nDhanmondi 7, Mirpur Road, Dhaka"
+                        : "রূপায়ন খান প্লাজা, লিফট ৮, হাউস ১৮\nধানমন্ডি ৭, মিরপুর রোড, ঢাকা"}
+                    </p>
+                    <button
+                      onClick={() => window.open("https://maps.app.goo.gl/UYXpwRkvYaK19pj2A", "_blank")}
+                      className="mt-1.5 text-blue-600 hover:text-blue-700 font-medium text-xs inline-flex items-center gap-1"
+                    >
+                      <MapPin className="w-3 h-3" />
+                      {language === "en" ? "Open in Google Maps →" : "গুগল ম্যাপে খুলুন →"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Days */}
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+                      {language === "en" ? "Available Days" : "উপলব্ধ দিন"}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-1">
+                      {(language === "en"
+                        ? ["Sat", "Sun", "Mon", "Wed"]
+                        : ["শনি", "রবি", "সোম", "বুধ"]
+                      ).map((day) => (
+                        <span key={day} className="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 rounded-md">
+                          {day}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hours */}
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+                      {language === "en" ? "Consultation Hours" : "পরামর্শের সময়"}
+                    </p>
+                    <p className="text-gray-700 text-sm font-semibold">
+                      {language === "en" ? "7:00 PM – 9:00 PM" : "সন্ধ্যা ৭:০০ – রাত ৯:০০"}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Phones */}
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+                      {language === "en" ? "Appointment Serial" : "অ্যাপয়েন্টমেন্ট সিরিয়াল"}
+                    </p>
+                    <a href="tel:+8801721036644" className="text-blue-600 font-semibold hover:underline text-sm block">
+                      +880 1721-036644
+                    </a>
+                    <a href="tel:+8801307242788" className="text-blue-600 font-semibold hover:underline text-sm block">
+                      +880 1307-242788
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action buttons */}
+              <div className="flex gap-3 pt-2">
+                <Link
+                  href="/appointment"
+                  className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2.5 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+                >
+                  <Calendar className="w-4 h-4" />
+                  {language === "en" ? "Book Online" : "অনলাইনে বুক করুন"}
+                </Link>
+                <a
+                  href="tel:+8801721036644"
+                  className="flex-1 flex items-center justify-center gap-2 border border-blue-600 text-blue-600 py-2.5 px-4 rounded-lg hover:bg-blue-50 transition-colors font-medium text-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  {language === "en" ? "Call Now" : "এখনই কল করুন"}
+                </a>
+              </div>
+            </div>
+
+            {/* Map thumbnail */}
+            <button
+              onClick={() => window.open("https://maps.app.goo.gl/UYXpwRkvYaK19pj2A", "_blank")}
+              className="relative w-full min-h-64 rounded-xl overflow-hidden group shadow-sm border border-gray-200"
+              title={language === "en" ? "Open in Google Maps" : "গুগল ম্যাপে খুলুন"}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                style={{ backgroundImage: "url(/images/map.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end justify-center pb-8 group-hover:from-black/70 transition-all">
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:scale-110 transition-transform">
+                    <MapPin className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <p className="text-white font-semibold text-base">
+                    {language === "en" ? "Click to open in Google Maps" : "গুগল ম্যাপে খোলার জন্য ক্লিক করুন"}
+                  </p>
+                  <p className="text-white/70 text-sm mt-1">
+                    {language === "en" ? "Dhanmondi, Dhaka" : "ধানমন্ডি, ঢাকা"}
+                  </p>
+                </div>
+              </div>
+            </button>
           </div>
         </div>
       </section>
