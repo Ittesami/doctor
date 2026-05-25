@@ -136,8 +136,13 @@ export default function AppointmentPage() {
     return `${day}, ${d} ${month} ${year}`;
   };
 
-  // ISO value stored in form state
-  const toISODate = (date) => date.toISOString().split("T")[0];
+  // ISO value stored in form state — uses local date parts to avoid UTC offset shifting the day
+  const toISODate = (date) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  };
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
