@@ -1,13 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Loader2, LogOut, Calendar, MessageSquare } from "lucide-react";
+import { Loader2, LogOut, Calendar, MessageSquare, BookOpen, Image as ImageIcon } from "lucide-react";
 import LoginForm from "@/components/admin/LoginForm";
 import AppointmentTable from "@/components/admin/AppointmentTable";
 import ContactsTable from "@/components/admin/ContactsTable";
+import PublicationsManager from "@/components/admin/PublicationsManager";
+import GalleryManager from "@/components/admin/GalleryManager";
 
 const TABS = [
-  { key: "appointments", label: "Appointments", icon: Calendar },
-  { key: "contacts",     label: "Contact Requests", icon: MessageSquare },
+  { key: "appointments",  label: "Appointments", icon: Calendar },
+  { key: "contacts",      label: "Contact Requests", icon: MessageSquare },
+  { key: "publications",  label: "Publications", icon: BookOpen },
+  { key: "gallery",       label: "Gallery", icon: ImageIcon },
 ];
 
 export default function AdminPage() {
@@ -78,8 +82,10 @@ export default function AdminPage() {
 
       {/* ── Tab Content ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        {activeTab === "appointments" && <AppointmentTable />}
-        {activeTab === "contacts"     && <ContactsTable />}
+        {activeTab === "appointments"  && <AppointmentTable />}
+        {activeTab === "contacts"      && <ContactsTable />}
+        {activeTab === "publications"  && <PublicationsManager />}
+        {activeTab === "gallery"       && <GalleryManager />}
       </div>
 
     </div>

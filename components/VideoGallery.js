@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Play } from "lucide-react";
+import { Play, Loader2 } from "lucide-react";
 
 export default function VideoGallery({ language }) {
+  const [videos, setVideos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [isHovering, setIsHovering] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -19,68 +21,13 @@ export default function VideoGallery({ language }) {
 
   const t = translations[language];
 
-  const videos = [
-    {
-      id: 1,
-      title: "Dr Ahsan Habib Treatment procedure of piles",
-      description: language === 'en'
-        ? "Dr Ahsan Habib Treatment procedure of piles"
-        : "ডা. আহসান হাবিব অর্শ্বরোগের চিকিৎসা পদ্ধতি",
-      thumbnail: "https://i3.ytimg.com/vi/5SbP2XgWerc/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=5SbP2XgWerc",
-      duration: "4:31"
-    },
-    {
-      id: 2,
-      title: "BSCRS 1st National Conference",
-      description: language === 'en'
-        ? "BSCRS 1st National Conference"
-        : "BSCRS প্রথম জাতীয় সম্মেলন",
-      thumbnail: "https://i3.ytimg.com/vi/u6HPjjhMqfk/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=u6HPjjhMqfk",
-      duration: "4:27"
-    },
-    {
-      id: 3,
-      title: "Piles treatment - Colorectal polyps Dr. Md. Ahsan Habib",
-      description: language === 'en'
-        ? "Piles treatment - Colorectal polyps Dr. Md. Ahsan Habib"
-        : "অর্শ্বরোগ চিকিৎসা - কোলোরেক্টাল পলিপ ডা. এম ডি আহসান হাবিব",
-      thumbnail: "https://i3.ytimg.com/vi/7VIKi-V8SsI/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=7VIKi-V8SsI",
-      duration: "42:09"
-    },
-    {
-      id: 4,
-      title: "Laparoscopic Ventral Rectopexy by Professor Sheikh",
-      description: language === 'en'
-        ? "Laparoscopic Ventral Rectopexy by Professor Sheikh"
-        : "প্রফেসর শেখ দ্বারা ল্যাপারোস্কোপিক ভেন্ট্রাল রেক্টোপেক্সি",
-      thumbnail: "https://i3.ytimg.com/vi/fxQKA2AfwVk/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=fxQKA2AfwVk",
-      duration: "7:06"
-    },
-    {
-      id: 5,
-      title: "লেজার পদ্ধতিতে পাইলস রোগের চিকিৎসা",
-      description: language === 'en'
-        ? "Laser treatment for piles disease"
-        : "লেজার পদ্ধতিতে পাইলস রোগের চিকিৎসা",
-      thumbnail: "https://i3.ytimg.com/vi/I9sN7FYJvR8/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=I9sN7FYJvR8",
-      duration: "21:55"
-    },
-    {
-      id: 6,
-      title: "Laser Treatment In Anal Fissure",
-      description: language === 'en'
-        ? "Laser Treatment In Anal Fissure"
-        : "পায়ু ফাটলে লেজার চিকিৎসা",
-      thumbnail: "https://i3.ytimg.com/vi/1t8k_SKT078/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/watch?v=1t8k_SKT078",
-      duration: "23:59"
-    },
-  ];
+  useEffect(() => {
+    fetch("/api/gallery/videos")
+      .then((res) => res.json())
+      .then((data) => setVideos(data.videos?.map((v) => ({ ...v, id: v._id })) || []))
+      .catch(() => console.error("Failed to load gallery videos"))
+      .finally(() => setIsLoading(false));
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -103,7 +50,18 @@ export default function VideoGallery({ language }) {
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </div>
 
+        {isLoading && (
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+          </div>
+        )}
+
+        {!isLoading && videos.length === 0 && (
+          <p className="text-center text-gray-500 py-10">No videos yet.</p>
+        )}
+
         {/* Videos Grid */}
+        {!isLoading && videos.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {videos.map((video, index) => (
             <button
@@ -146,6 +104,7 @@ export default function VideoGallery({ language }) {
             </button>
           ))}
         </div>
+        )}
       </div>
     </section>
   );

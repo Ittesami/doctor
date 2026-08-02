@@ -4,6 +4,8 @@ import { useLanguage } from "@/context/LanguageContext";
 import { getServiceBySlug, services } from "@/lib/services-data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { buildMedicalProcedureSchema } from "@/lib/schema";
 import Link from "next/link";
 import { Calendar, Phone, ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 
@@ -62,6 +64,7 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="min-h-screen">
+      <JsonLd data={buildMedicalProcedureSchema(service, language)} />
       <Navbar />
 
       {/* Page Header */}

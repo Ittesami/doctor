@@ -1,5 +1,9 @@
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import JsonLd from "@/components/JsonLd";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { GTMScript, GTMNoScript } from "@/components/GoogleTagManager";
+import { buildPhysicianSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "Prof. Dr. Md. Ahsan Habib - Colorectal Surgeon | drmdahsanhabib.com",
@@ -17,13 +21,22 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  }),
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <GTMScript />
+      </head>
       <body suppressHydrationWarning>
+        <GTMNoScript />
+        <JsonLd data={buildPhysicianSchema()} />
         <LanguageProvider>{children}</LanguageProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   );

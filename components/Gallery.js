@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 
 export default function Gallery({ language }) {
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mainSlideIndex, setMainSlideIndex] = useState(0);
@@ -22,108 +24,13 @@ export default function Gallery({ language }) {
 
   const t = translations[language];
 
-  const images = [
-    {
-      id: 1,
-      src: "/images/photo1.jpg",
-      alt: language === 'en' 
-        ? "With Professor Thomas Deska atarien Hospital, Witten, Germany for training on laser proctology."
-        : "জার্মানির উইটেন হাসপাতালে লেজার প্রক্টোলজি প্রশিক্ষণের জন্য প্রফেসর টমাস ডেস্কার সাথে।",
-      caption: language === 'en'
-        ? "With Professor Thomas Deska atarien Hospital, Witten, Germany for training on laser proctology."
-        : "জার্মানির উইটেন হাসপাতালে লেজার প্রক্টোলজি প্রশিক্ষণের জন্য প্রফেসর টমাস ডেস্কার সাথে।"
-    },
-    {
-      id: 2,
-      src: "/images/photo2.jpg",
-      alt: language === 'en' ? "Operation Theatre" : "অপারেশন থিয়েটার",
-      caption: language === 'en' ? "Operation Theatre" : "অপারেশন থিয়েটার"
-    },
-    {
-      id: 3,
-      src: "/images/photo3.jpeg",
-      alt: language === 'en'
-        ? "With Professor Parvez Sheikh(India) for training of complex and recurrent fistula in ano"
-        : "ভারতের প্রফেসর পারভেজ শেখের সাথে জটিল এবং পুনরাবৃত্ত ফিস্টুলা প্রশিক্ষণের জন্য",
-      caption: language === 'en'
-        ? "With Professor Parvez Sheikh(India) for training of complex and recurrent fistula in ano"
-        : "ভারতের প্রফেসর পারভেজ শেখের সাথে জটিল এবং পুনরাবৃত্ত ফিস্টুলা প্রশিক্ষণের জন্য"
-    },
-    {
-      id: 4,
-      src: "/images/photo4.jpeg",
-      alt: language === 'en'
-        ? "With colorectal surgeon Peter A Cataldon, professor of Vermont Medical university, USA and author of ASCRS Text book."
-        : "আমেরিকার ভার্মন্ট মেডিক্যাল বিশ্ববিদ্যালয়ের প্রফেসর এবং ASCRS পাঠ্যবইয়ের লেখক পিটার এ ক্যাটালডনের সাথে।",
-      caption: language === 'en'
-        ? "With colorectal surgeon Peter A Cataldon, professor of Vermont Medical university, USA"
-        : "আমেরিকার ভার্মন্ট মেডিক্যাল বিশ্ববিদ্যালয়ের প্রফেসর পিটার এ ক্যাটালডনের সাথে"
-    },
-    {
-      id: 5,
-      src: "/images/photo5.jpeg",
-      alt: language === 'en'
-        ? "Attending colorectal conference in India"
-        : "ভারতে কোলোরেক্টাল সম্মেলনে অংশগ্রহণ",
-      caption: language === 'en'
-        ? "Attending colorectal conference in India with faculty members"
-        : "ভারতে কোলোরেক্টাল সম্মেলনে অংশগ্রহণ"
-    },
-    {
-      id: 6,
-      src: "/images/photo6.jpeg",
-      alt: language === 'en'
-        ? "Formalin therapy for radiation proctitis"
-        : "বিকিরণ প্রক্টাইটিসের জন্য ফর্মালিন থেরাপি",
-      caption: language === 'en'
-        ? "Started formalin therapy at National Institute of cancer research in 2020"
-        : "২০২০ সালে জাতীয় ক্যান্সার গবেষণা প্রতিষ্ঠানে ফর্মালিন থেরাপি শুরু করেছিলেন"
-    },
-    {
-      id: 7,
-      src: "/images/photo7.jpeg",
-      alt: language === 'en' ? "With Prof Antonio Longo, Italy" : "ইতালির প্রফেসর অ্যান্টোনিও লঙ্গোর সাথে",
-      caption: language === 'en' ? "With Prof Antonio Longo, Italy" : "ইতালির প্রফেসর অ্যান্টোনিও লঙ্গোর সাথে"
-    },
-    {
-      id: 8,
-      src: "/images/photo8.jpeg",
-      alt: language === 'en'
-        ? "Lone star retractor for rectal cancer operation"
-        : "মলদ্বার ক্যান্সার অপারেশনের জন্য তৈরি লোন স্টার রিট্র্যাক্টর",
-      caption: language === 'en'
-        ? "Lone star retractor made in 2016 for rectal cancer operation"
-        : "২০১৬ সালে মলদ্বার ক্যান্সার অপারেশনের জন্য তৈরি লোন স্টার রিট্র্যাক্টর"
-    },
-    {
-      id: 9,
-      src: "/images/photo9.jpeg",
-      alt: language === 'en'
-        ? "With Professor Olivier Glehen for advanced cancer surgery training"
-        : "প্রফেসর অলিভিয়ার গ্লেহেনের সাথে উন্নত ক্যান্সার সার্জারি প্রশিক্ষণ",
-      caption: language === 'en'
-        ? "With Professor Olivier Glehen (France) for training on advanced cancer surgery"
-        : "ফ্রান্সের প্রফেসর অলিভিয়ার গ্লেহেনের সাথে উন্নত ক্যান্সার সার্জারি প্রশিক্ষণ"
-    },
-    {
-      id: 10,
-      src: "/images/photo10.jpeg",
-      alt: "",
-      caption: ""
-    },
-    {
-      id: 11,
-      src: "/images/photo11.jpeg",
-      alt: "",
-      caption: ""
-    },
-    {
-      id: 12,
-      src: "/images/photo12.jpeg",
-      alt: language === 'en' ? "With Professor Thomas Deska" : "প্রফেসর টমাস ডেস্কার সাথে",
-      caption: language === 'en' ? "With Professor Thomas Deska" : "প্রফেসর টমাস ডেস্কার সাথে"
-    },
-  ];
+  useEffect(() => {
+    fetch("/api/gallery/images")
+      .then((res) => res.json())
+      .then((data) => setImages(data.images?.map((img) => ({ ...img, id: img._id })) || []))
+      .catch(() => console.error("Failed to load gallery images"))
+      .finally(() => setIsLoading(false));
+  }, []);
 
   // Check if mobile on mount and resize
   useEffect(() => {
@@ -210,9 +117,20 @@ export default function Gallery({ language }) {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </div>
 
+        {isLoading && (
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+          </div>
+        )}
+
+        {!isLoading && images.length === 0 && (
+          <p className="text-center text-gray-500 py-10">No photos yet.</p>
+        )}
+
         {/* Main Slider */}
+        {!isLoading && images.length > 0 && (
         <div className="md:mb-12">
-          <div 
+          <div
             className="relative bg-gray-100 rounded-lg overflow-hidden"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
@@ -279,6 +197,7 @@ export default function Gallery({ language }) {
             </div>
           </div>
         </div>
+        )}
 
         {/* Modal Gallery */}
         {selectedImage && (
