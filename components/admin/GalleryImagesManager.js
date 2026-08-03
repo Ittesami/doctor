@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { Loader2, Image as ImageIcon, Plus, Pencil, Trash2, X } from "lucide-react";
+import ImageUploader from "./ImageUploader";
 
 const EMPTY_FORM = { src: "", alt: "", caption: "" };
 
@@ -165,11 +166,22 @@ export default function GalleryImagesManager() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Image URL *</label>
+                <div className="flex items-center gap-2 mb-2">
+                  <ImageUploader
+                    folder="doctor/gallery"
+                    onUploaded={(url) => setForm((f) => ({ ...f, src: url }))}
+                  />
+                  {form.src && (
+                    <span className="text-xs text-green-700 bg-green-50 border border-green-200 px-2 py-1 rounded">
+                      Image ready
+                    </span>
+                  )}
+                </div>
                 <input
                   type="text"
                   value={form.src}
                   onChange={(e) => setForm({ ...form, src: e.target.value })}
-                  placeholder="/images/photo1.jpg or https://..."
+                  placeholder="Upload above, or paste an image URL"
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
                 />

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { Loader2, BookOpen, Plus, Pencil, Trash2, X } from "lucide-react";
+import ImageUploader from "./ImageUploader";
 
 const EMPTY_FORM = {
   title: "",
@@ -266,11 +267,22 @@ export default function PublicationsManager() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Cover Image URL</label>
+                <div className="flex items-center gap-2 mb-2">
+                  <ImageUploader
+                    folder="doctor/publications"
+                    onUploaded={(url) => setForm((f) => ({ ...f, coverImage: url }))}
+                  />
+                  {form.coverImage && (
+                    <span className="text-xs text-green-700 bg-green-50 border border-green-200 px-2 py-1 rounded">
+                      Image ready
+                    </span>
+                  )}
+                </div>
                 <input
                   type="text"
                   value={form.coverImage}
                   onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
-                  placeholder="/images/photo1.jpg or https://..."
+                  placeholder="Upload above, or paste an image URL"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
                 />
               </div>
