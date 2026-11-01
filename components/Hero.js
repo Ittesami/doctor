@@ -1,5 +1,5 @@
 import { Calendar } from "lucide-react";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function HeroSection({ language }) {
   const translations = {
@@ -58,19 +58,12 @@ export default function HeroSection({ language }) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-in-right">
-            <Link
-              href="/appointment"
-              className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md border-2 border-blue-700/50 transition-all font-medium flex items-center justify-center gap-2"
-            >
-              <Calendar className="w-5 h-5" />
+            <Button as={Link} href="/appointment" variant="primary" size="xl" icon={Calendar}>
               {t.bookBtn}
-            </Link>
-            <Link
-              href="/services"
-              className="text-lg px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-md hover:bg-white/20 transition-all font-medium"
-            >
+            </Button>
+            <Button as={Link} href="/services" variant="secondary" size="xl">
               {t.servicesBtn}
-            </Link>
+            </Button>
           </div>
         </div>
 

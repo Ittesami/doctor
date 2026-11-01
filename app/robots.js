@@ -5,6 +5,7 @@ export default function robots() {
       allow: "/",
       disallow: ["/admin", "/api"],
     },
+    host: "https://www.drmdahsanhabib.com",
     sitemap: "https://www.drmdahsanhabib.com/sitemap.xml",
   };
 }

@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { Loader2, BookOpen, Plus, Pencil, Trash2, X } from "lucide-react";
+import Button from "../ui/Button";
 import ImageUploader from "./ImageUploader";
 
 const EMPTY_FORM = {
@@ -16,7 +18,7 @@ const EMPTY_FORM = {
 export default function PublicationsManager() {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [editing, setEditing] = useState(null); // publication object, or "new", or null
+  const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(EMPTY_FORM);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState("");
@@ -110,204 +112,227 @@ export default function PublicationsManager() {
     }
   };
 
-  return (
-    <div>
-      {/* Toolbar */}
-      <div className="flex items-center justify-between mb-5">
-        <p className="text-sm text-gray-500">
-          {publications.length} publication{publications.length !== 1 ? "s" : ""}
-        </p>
-        <button
-          onClick={openCreate}
-          className="flex items-center gap-1.5 text-sm bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-        >
-          <Plus className="w-4 h-4" />
-          New Publication
-        </button>
-      </div>
+  useEffect(() => {
+    if (editing) {
+      document.body.classList.add("modal-open");
+      return () => document.body.classList.remove("modal-open");
+    }
+    document.body.classList.remove("modal-open");
+    return undefined;
+  }, [editing]);
 
-      {/* Loading */}
-      {isLoading && (
-        <div className="flex items-center justify-center py-20">
-          <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
-        </div>
-      )}
-
-      {/* Empty */}
-      {!isLoading && publications.length === 0 && (
-        <div className="text-center py-20">
-          <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 text-lg">No publications yet</p>
-          <p className="text-gray-400 text-sm mt-1">Add your first publication to get started</p>
-        </div>
-      )}
-
-      {/* List */}
-      {!isLoading && publications.length > 0 && (
-        <div className="space-y-3">
-          {publications.map((pub) => (
-            <div
-              key={pub._id}
-              className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center justify-between gap-3"
-            >
-              <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-gray-900 truncate">{pub.title}</h3>
-                <div className="flex flex-wrap gap-2 mt-1 text-xs text-gray-500">
-                  {pub.journal && (
-                    <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded">{pub.journal}</span>
-                  )}
-                  <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">
-                    {formatDate(pub.publishedDate)}
-                  </span>
-                  <span className="text-gray-400">/publications/{pub.slug}</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <button
-                  onClick={() => openEdit(pub)}
-                  className="flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 px-3 py-2 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors font-medium"
-                >
-                  <Pencil className="w-4 h-4" />
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDelete(pub._id)}
-                  className="flex items-center gap-1.5 text-sm text-red-600 hover:text-red-700 px-3 py-2 border border-red-200 rounded-lg hover:bg-red-50 transition-colors font-medium"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
-              </div>
+  const modal = editing && (
+    <div
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-900/45 p-3 sm:p-4 backdrop-blur-sm overflow-y-auto overscroll-contain"
+    >
+      <div className="relative w-full max-w-2xl max-h-[92vh] my-auto overflow-hidden rounded-[30px] border border-sky-100 bg-white shadow-[0_35px_90px_rgba(15,118,110,0.18)]">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-sky-100 bg-gradient-to-r from-sky-700 via-cyan-700 to-emerald-600 px-5 py-4 text-white">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+              <BookOpen className="h-4 w-4" />
             </div>
-          ))}
-        </div>
-      )}
-
-      {/* Create/Edit Modal */}
-      {editing && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between p-5 border-b border-gray-200 sticky top-0 bg-white">
-              <h2 className="text-lg font-bold text-gray-900">
+            <div>
+              <h2 className="text-lg font-black">
                 {editing === "new" ? "New Publication" : "Edit Publication"}
               </h2>
-              <button onClick={closeForm} className="text-gray-400 hover:text-gray-700">
-                <X className="w-5 h-5" />
-              </button>
+              <p className="text-[10px] uppercase tracking-[0.16em] text-cyan-100">Content management</p>
+            </div>
+          </div>
+          <button
+            onClick={closeForm}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
+            aria-label="Close publication form"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="max-h-[calc(92vh-120px)] overflow-y-auto p-5 sm:p-6">
+          <form onSubmit={handleSave} className="space-y-4">
+            {error && (
+              <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label className="mb-1 block text-sm font-semibold text-slate-700">Title *</label>
+              <input
+                type="text"
+                value={form.title}
+                onChange={(e) => setForm({ ...form, title: e.target.value })}
+                required
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
+              />
             </div>
 
-            <form onSubmit={handleSave} className="p-5 space-y-4">
-              {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-3 text-sm">
-                  {error}
-                </div>
-              )}
-
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
+                <label className="mb-1 block text-sm font-semibold text-slate-700">Journal</label>
                 <input
                   type="text"
-                  value={form.title}
-                  onChange={(e) => setForm({ ...form, title: e.target.value })}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
+                  value={form.journal}
+                  onChange={(e) => setForm({ ...form, journal: e.target.value })}
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
                 />
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Journal</label>
-                  <input
-                    type="text"
-                    value={form.journal}
-                    onChange={(e) => setForm({ ...form, journal: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Published Date</label>
-                  <input
-                    type="date"
-                    value={form.publishedDate}
-                    onChange={(e) => setForm({ ...form, publishedDate: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
-                  />
-                </div>
-              </div>
-
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Authors</label>
+                <label className="mb-1 block text-sm font-semibold text-slate-700">Published Date</label>
                 <input
-                  type="text"
-                  value={form.authors}
-                  onChange={(e) => setForm({ ...form, authors: e.target.value })}
-                  placeholder="Comma-separated names"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
+                  type="date"
+                  value={form.publishedDate}
+                  onChange={(e) => setForm({ ...form, publishedDate: e.target.value })}
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
                 />
               </div>
+            </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Excerpt</label>
-                <textarea
-                  value={form.excerpt}
-                  onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
-                  rows={2}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
+            <div>
+              <label className="mb-1 block text-sm font-semibold text-slate-700">Authors</label>
+              <input
+                type="text"
+                value={form.authors}
+                onChange={(e) => setForm({ ...form, authors: e.target.value })}
+                placeholder="Comma-separated names"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
+              />
+            </div>
+
+            <div>
+              <label className="mb-1 block text-sm font-semibold text-slate-700">Excerpt</label>
+              <textarea
+                value={form.excerpt}
+                onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
+                rows={2}
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
+              />
+            </div>
+
+            <div>
+              <label className="mb-1 block text-sm font-semibold text-slate-700">Full Content</label>
+              <textarea
+                value={form.content}
+                onChange={(e) => setForm({ ...form, content: e.target.value })}
+                rows={8}
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
+              />
+            </div>
+
+            <div>
+              <label className="mb-1 block text-sm font-semibold text-slate-700">Cover Image</label>
+              <div className="mb-2 flex items-center gap-2">
+                <ImageUploader
+                  folder="doctor/publications"
+                  onUploaded={(url) => setForm((f) => ({ ...f, coverImage: url }))}
                 />
+                {form.coverImage && (
+                  <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">
+                    Image ready
+                  </span>
+                )}
               </div>
+              <input
+                type="text"
+                value={form.coverImage}
+                onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
+                placeholder="Upload above, or paste an image URL"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-4 focus:ring-sky-100"
+              />
+            </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Content</label>
-                <textarea
-                  value={form.content}
-                  onChange={(e) => setForm({ ...form, content: e.target.value })}
-                  rows={8}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Cover Image URL</label>
-                <div className="flex items-center gap-2 mb-2">
-                  <ImageUploader
-                    folder="doctor/publications"
-                    onUploaded={(url) => setForm((f) => ({ ...f, coverImage: url }))}
-                  />
-                  {form.coverImage && (
-                    <span className="text-xs text-green-700 bg-green-50 border border-green-200 px-2 py-1 rounded">
-                      Image ready
-                    </span>
-                  )}
-                </div>
-                <input
-                  type="text"
-                  value={form.coverImage}
-                  onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
-                  placeholder="Upload above, or paste an image URL"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-900"
-                />
-              </div>
-
-              <div className="flex justify-end gap-3 pt-2">
-                <button
-                  type="button"
-                  onClick={closeForm}
-                  className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={isSaving}
-                  className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:bg-blue-400 transition-colors flex items-center gap-2"
-                >
-                  {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
-                  {editing === "new" ? "Create" : "Save Changes"}
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="flex justify-end gap-3 pt-2">
+              <Button variant="danger" onClick={closeForm}>
+                Cancel
+              </Button>
+              <Button type="submit" loading={isSaving} variant="primary">
+                {editing === "new" ? "Create" : "Save Changes"}
+              </Button>
+            </div>
+          </form>
         </div>
-      )}
+      </div>
     </div>
+  );
+
+  return (
+    <>
+      <div className="space-y-5">
+        <div className="flex items-center justify-between gap-3 rounded-[22px] border border-sky-100 bg-gradient-to-r from-sky-50 via-cyan-50 to-emerald-50 px-4 py-3">
+          <div>
+            <p className="text-[10px] font-black uppercase tracking-[0.18em] text-sky-700">Publications</p>
+            <h3 className="mt-1 text-lg font-black text-slate-900">
+              {publications.length} publication{publications.length !== 1 ? "s" : ""}
+            </h3>
+          </div>
+          <Button onClick={openCreate} variant="secondary" size="md" icon={Plus} className="rounded-xl shadow-[0_12px_20px_rgba(14,165,233,0.18)]">
+            New Publication
+          </Button>
+        </div>
+
+        {isLoading && (
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="h-8 w-8 animate-spin text-sky-600" />
+          </div>
+        )}
+
+        {!isLoading && publications.length === 0 && (
+          <div className="rounded-[24px] border border-dashed border-slate-200 bg-slate-50 px-6 py-16 text-center">
+            <BookOpen className="mx-auto mb-4 h-12 w-12 text-slate-300" />
+            <p className="text-lg font-bold text-slate-600">No publications yet</p>
+            <p className="mt-1 text-sm text-slate-400">Add your first publication to get started</p>
+          </div>
+        )}
+
+        {!isLoading && publications.length > 0 && (
+          <div className="space-y-3">
+            {publications.map((pub) => (
+              <div
+                key={pub._id}
+                className="flex flex-col gap-3 rounded-[20px] border border-slate-200 bg-white p-3 shadow-[0_10px_24px_rgba(15,23,42,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(15,23,42,0.07)] md:flex-row md:items-center md:justify-between"
+              >
+                <div className="flex min-w-0 flex-1 items-center gap-3">
+                  <div className="hidden h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-100 via-cyan-50 to-emerald-100 text-sky-700 md:flex">
+                    <BookOpen className="h-5 w-5" />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className="truncate text-base font-black text-slate-900">{pub.title}</h3>
+                    <div className="mt-1 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-[0.08em] text-slate-500">
+                      {pub.journal && (
+                        <span className="rounded-full bg-sky-50 px-2 py-1 text-sky-700">{pub.journal}</span>
+                      )}
+                      <span className="rounded-full bg-slate-100 px-2 py-1 text-slate-600">
+                        {formatDate(pub.publishedDate)}
+                      </span>
+                      <span className="rounded-full bg-emerald-50 px-2 py-1 text-emerald-700">/publications/{pub.slug}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 self-end md:self-auto">
+                  <button
+                    onClick={() => openEdit(pub)}
+                    className="flex items-center gap-1.5 rounded-xl border border-sky-200 bg-sky-50 px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-sky-700 transition hover:bg-sky-100"
+                  >
+                    <Pencil className="h-3.5 w-3.5" />
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(pub._id)}
+                    className="flex items-center justify-center rounded-xl border border-red-200 bg-red-50 p-2.5 text-red-600 transition hover:bg-red-100"
+                    aria-label={`Delete ${pub.title}`}
+                  >
+                    <Trash2 className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      {typeof document !== "undefined" && modal ? createPortal(modal, document.body) : null}
+    </>
   );
 }

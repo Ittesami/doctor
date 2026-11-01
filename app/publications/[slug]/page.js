@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
 import connectDB from "@/lib/mongodb";
@@ -134,8 +133,6 @@ export default async function PublicationDetailPage({ params }) {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

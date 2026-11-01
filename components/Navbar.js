@@ -4,6 +4,7 @@ import { Menu, X, Phone, Globe } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import Button from "@/components/ui/Button";
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
@@ -104,13 +105,9 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/appointment"
-              className="bg-blue-600 text-white px-4 lg:px-6 py-2 rounded-md hover:bg-blue-700 transition-colors font-medium flex items-center gap-2 text-xs lg:text-sm"
-            >
-              <Phone className="w-4 h-4" />
+            <Button as={Link} href="/appointment" variant="primary" size="sm" icon={Phone} className="text-xs lg:text-sm">
               {t.appointment}
-            </Link>
+            </Button>
           </div>
 
           {/* Right: Language + Mobile toggle */}
@@ -162,14 +159,18 @@ export default function Navbar() {
               ))}
 
               <div className="border-t border-gray-200 pt-2 mt-2">
-                <Link
+                <Button
+                  as={Link}
                   href="/appointment"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center gap-2 text-sm"
+                  variant="primary"
+                  size="md"
+                  icon={Phone}
+                  fullWidth
+                  className="justify-center"
                 >
-                  <Phone className="w-4 h-4" />
                   {t.appointmentFull}
-                </Link>
+                </Button>
 
                 <div className="bg-blue-50 border border-blue-200 px-4 py-3 rounded-lg mt-3">
                   <p className="text-xs text-gray-600">{t.callFor}</p>

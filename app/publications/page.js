@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PublicationsList from "@/components/PublicationsList";
 import connectDB from "@/lib/mongodb";
 import Publication from "@/lib/models/Publication";
@@ -27,7 +26,6 @@ export default async function PublicationsPage() {
     <div className="min-h-screen">
       <Navbar />
       <PublicationsList publications={publications} />
-      <Footer />
     </div>
   );
 }

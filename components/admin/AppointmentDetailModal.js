@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   X, MessageCircle, Phone, Mail, Loader2,
   Calendar, Clock, User, FileText, Building2,
@@ -89,24 +90,47 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
 
   const { status } = appointment;
 
-  return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 overflow-y-auto">
-      <div className="bg-white rounded-lg max-w-lg w-full my-8 max-h-[90vh] overflow-y-auto shadow-xl">
+  useEffect(() => {
+    document.body.classList.add("modal-open");
+    return () => document.body.classList.remove("modal-open");
+  }, []);
+
+  return createPortal(
+    <div
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-900/40 p-3 sm:p-4 backdrop-blur-sm overflow-y-auto overscroll-contain"
+    >
+      <div className="relative w-full max-w-2xl max-h-[92vh] my-auto overflow-hidden rounded-[28px] border border-sky-100 bg-white shadow-[0_30px_80px_rgba(15,118,110,0.18)]">
 
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 px-5 py-4 flex items-center justify-between z-10">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-sky-100 bg-gradient-to-r from-sky-700 via-cyan-700 to-emerald-600 px-5 py-4 text-white">
           <div className="flex items-center gap-3">
-            <h2 className="text-lg font-bold text-gray-900">Appointment Details</h2>
-            <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${STATUS_STYLES[status]}`}>
-              {STATUS_LABELS[status]}
-            </span>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+              <Calendar className="h-4 w-4" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-lg font-black">Appointment Details</h2>
+                <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${STATUS_STYLES[status]}`}>
+                  {STATUS_LABELS[status]}
+                </span>
+              </div>
+              <p className="text-xs text-cyan-100">Patient management</p>
+            </div>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-700 transition-colors">
-            <X className="w-5 h-5" />
+          <button
+            onClick={onClose}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
+            aria-label="Close appointment details"
+          >
+            <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="p-5 space-y-4">
+        <div className="max-h-[calc(92vh-120px)] overflow-y-auto p-5 sm:p-6">
+
+        <div className="space-y-4">
 
           {/* Patient Info */}
           <div className="bg-gray-50 rounded-lg p-4 space-y-3">
@@ -243,7 +267,7 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
                 <button
                   onClick={handleCancel}
                   disabled={isUpdating}
-                  className="flex-1 flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 disabled:opacity-50 text-gray-700 py-2.5 rounded-lg font-medium transition-colors text-sm"
+                  className="flex-1 flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 disabled:opacity-50 text-white py-2.5 rounded-lg font-medium transition-colors text-sm shadow-sm"
                 >
                   {isUpdating ? <Loader2 className="w-4 h-4 animate-spin" /> : <XCircle className="w-4 h-4" />}
                   Cancel
@@ -251,7 +275,7 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
                 <button
                   onClick={handleConfirm}
                   disabled={isUpdating}
-                  className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-2.5 rounded-lg font-medium transition-colors text-sm"
+                  className="flex-1 flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 text-white py-2.5 rounded-lg font-medium transition-colors text-sm shadow-sm"
                 >
                   {isUpdating ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                   Confirm
@@ -300,7 +324,7 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
                 <button
                   onClick={handleAttended}
                   disabled={isUpdating}
-                  className="flex flex-col items-center gap-1 bg-green-500 hover:bg-green-600 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition-colors text-xs"
+                  className="flex flex-col items-center gap-1 bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition-colors text-xs shadow-sm"
                 >
                   {isUpdating ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                   Attended
@@ -308,7 +332,7 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
                 <button
                   onClick={handleNoShow}
                   disabled={isUpdating}
-                  className="flex flex-col items-center gap-1 bg-red-500 hover:bg-red-600 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition-colors text-xs"
+                  className="flex flex-col items-center gap-1 bg-red-500 hover:bg-red-600 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition-colors text-xs shadow-sm"
                 >
                   {isUpdating ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserX className="w-4 h-4" />}
                   No Show
@@ -316,7 +340,7 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
                 <button
                   onClick={handleCancel}
                   disabled={isUpdating}
-                  className="flex flex-col items-center gap-1 bg-gray-400 hover:bg-gray-500 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition-colors text-xs"
+                  className="flex flex-col items-center gap-1 bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition-colors text-xs shadow-sm"
                 >
                   {isUpdating ? <Loader2 className="w-4 h-4 animate-spin" /> : <XCircle className="w-4 h-4" />}
                   Cancel
@@ -350,15 +374,16 @@ export default function AppointmentDetailModal({ appointment, onClose, onUpdated
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 px-5 py-4 bg-gray-50">
+        <div className="border-t border-slate-200 bg-slate-50 px-5 py-4">
           <button
             onClick={onClose}
-            className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 py-2.5 px-4 rounded-lg font-medium transition-colors text-sm"
+            className="w-full rounded-xl bg-slate-200 px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-300"
           >
             Close
           </button>
         </div>
+        </div>
       </div>
     </div>
-  );
+  , document.body);
 }

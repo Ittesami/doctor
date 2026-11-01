@@ -36,8 +36,40 @@
   }
 }
 
+html,
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: "SFPro", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+}
+
+body.modal-open > *:not([role="dialog"]) {
+  opacity: 0.12 !important;
+  filter: blur(3px) brightness(0.4) !important;
+  pointer-events: none !important;
+  transition: all 0.2s ease;
+}
+
+body.modal-open footer,
+body.modal-open [role="contentinfo"],
+body.modal-open .footer,
+body.modal-open [class*="Footer"],
+body.modal-open .fixed.bottom-8.right-8 {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
