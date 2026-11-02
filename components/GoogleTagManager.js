@@ -1,8 +1,7 @@
 import Script from "next/script";
 
 export function GTMScript() {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  if (!gtmId) return null;
+  const gtmId = "GTM-W5N59QZS";
 
   return (
     <Script id="google-tag-manager" strategy="beforeInteractive">
@@ -18,8 +17,7 @@ export function GTMScript() {
 }
 
 export function GTMNoScript() {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  if (!gtmId) return null;
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-W5N59QZS";
 
   return (
     <noscript>

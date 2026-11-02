@@ -21,9 +21,9 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
-  ...(process.env.GOOGLE_SITE_VERIFICATION && {
-    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
-  }),
+  verification: {
+    google: "51TsJcieVnKR_OvrGYjUppTI2Dc3eH6z8f6cKEsiYJ4",
+  },
 };
 
 export default function RootLayout({ children }) {
