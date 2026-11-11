@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 import { Calendar } from "lucide-react";
 import Button from "@/components/ui/Button";
 
@@ -5,38 +7,44 @@ export default function HeroSection({ language }) {
   const translations = {
     en: {
       title: "Dr. Md. Ahsan Habib",
-      credentials: "MBBS (DMC) • BCS (Health) • FCPS (Surgery) • MRCS (Edinburgh) • MS (Colorectal Surgery)",
-      subtitle: "Professor of Colorectal Surgery, Dhaka Medical College",
+      credentials:
+        "MBBS (DMC) • BCS (Health) • FCPS (Surgery) • MRCS (Edinburgh) • MS (Colorectal Surgery)",
+      subtitle:
+        "Professor of Colorectal Surgery, Dhaka Medical College",
       tagline: "Pioneer Laser Colorectal Surgeon in Bangladesh",
       bookBtn: "Book Appointment",
       servicesBtn: "View Services",
       experience: "Years of Experience",
       surgeries: "Successful Surgeries",
-      satisfaction: "Patient Satisfaction"
+      satisfaction: "Patient Satisfaction",
     },
     bn: {
       title: "ডা. মো: আহসান হাবিব",
-      credentials: "এমবিবিএস (ডিএমসি) • বিসিএস (স্বাস্থ্য) • এফসিপিএস (সার্জারি) • এমআরসিএস (এডিনবার্গ) • এমএস (কোলোরেক্টাল সার্জারি)",
-      subtitle: "অধ্যাপক, কোলোরেক্টাল সার্জারি বিভাগ, ঢাকা মেডিক্যাল কলেজ",
+      credentials:
+        "এমবিবিএস (ডিএমসি) • বিসিএস (স্বাস্থ্য) • এফসিপিএস (সার্জারি) • এমআরসিএস (এডিনবার্গ) • এমএস (কোলোরেক্টাল সার্জারি)",
+      subtitle:
+        "অধ্যাপক, কোলোরেক্টাল সার্জারি বিভাগ, ঢাকা মেডিক্যাল কলেজ",
       tagline: "বাংলাদেশে লেজার কোলোরেক্টাল সার্জারির অগ্রদূত",
       bookBtn: "অ্যাপয়েন্টমেন্ট বুক করুন",
       servicesBtn: "সেবা দেখুন",
       experience: "বছরের অভিজ্ঞতা",
       surgeries: "সফল অপারেশন",
-      satisfaction: "রোগী সন্তুষ্টি"
-    }
+      satisfaction: "রোগী সন্তুষ্টি",
+    },
   };
 
-  const t = translations[language];
+  const t = translations[language] || translations.en;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-20 ">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-20">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(/images/hero_background.png)` }}
+        style={{
+          backgroundImage: "url(/images/hero_background.png)",
+        }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-blue-600/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-blue-600/40" />
       </div>
 
       {/* Content */}
@@ -45,23 +53,38 @@ export default function HeroSection({ language }) {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             {t.title}
           </h1>
+
           <div className="inline-block bg-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-md px-6 py-3 mb-8 animate-scale-in">
             <p className="text-lg md:text-xl text-blue-100 font-medium tracking-wide">
               {t.credentials}
             </p>
           </div>
+
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-semibold mb-4">
             {t.subtitle}
           </h2>
+
           <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
             {t.tagline}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-in-right">
-            <Button as={Link} href="/appointment" variant="primary" size="xl" icon={Calendar}>
+            <Button
+              as={Link}
+              href="/appointment"
+              variant="primary"
+              size="xl"
+              icon={Calendar}
+            >
               {t.bookBtn}
             </Button>
-            <Button as={Link} href="/services" variant="secondary" size="xl">
+
+            <Button
+              as={Link}
+              href="/services"
+              variant="secondary"
+              size="xl"
+            >
               {t.servicesBtn}
             </Button>
           </div>
@@ -73,15 +96,20 @@ export default function HeroSection({ language }) {
             { number: "20+", labelKey: "experience" },
             { number: "15000+", labelKey: "surgeries" },
           ].map((stat, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white/10 backdrop-blur-md border border-white/20 rounded-md p-6 hover:bg-white/20 transition-all transform hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{
+                animationDelay: `${index * 0.2}s`,
+              }}
             >
               <div className="text-4xl font-bold text-blue-100 mb-2">
                 {stat.number}
               </div>
-              <div className="text-white/80">{t[stat.labelKey]}</div>
+
+              <div className="text-white/80">
+                {t[stat.labelKey]}
+              </div>
             </div>
           ))}
         </div>
@@ -90,7 +118,7 @@ export default function HeroSection({ language }) {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-white/50 rounded-full"></div>
+          <div className="w-1 h-3 bg-white/50 rounded-full" />
         </div>
       </div>
     </section>
